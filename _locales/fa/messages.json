@@ -1,0 +1,150 @@
+﻿{
+  "name": {
+    "message": "اوقات نماز",
+    "description": ""
+  },
+  "short_name": {
+    "message": "اوقات نماز",
+    "description": ""
+  },
+  "description": {
+    "message": "یک راه آسان برای پیدا کردن اوقات نماز از مرورگر",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "fa",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "Tehran",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "امساک",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "سپیده دم",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": "اشراق",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "ظهر",
+    "description": ""
+  },
+  "asrText": {
+    "message": "عصر",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "مغرب",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "عشاء'",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "نیمه شب",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "جمعه",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "زمان باقی مانده",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "اذان",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": "روش محاسبه",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "اعلان های دسکتاپ را روشن کنید",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": "اعلان‌های دسک‌تاپ روشن هستند.",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "امساک",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "نیمه شب",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "آیکون",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "محل",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "تنظیم زمان",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "تنظیم تاریخ",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "افطار",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": "حنفی عصر",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "متشکرم",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "ترتیب",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "تنظیم",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "اشتراک گذاری",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "زبان",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24 ساعته",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "زمان سپری شده",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "بازنشانی کنید",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "بازنشانی کنید",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "در حال حاضر این بخش فقط به زبان های عربی و انگلیسی موجود است",
+    "description": ""
+  }
+}

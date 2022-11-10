@@ -1,0 +1,150 @@
+{
+  "name": {
+    "message": "Namaz Vakitleri Chrome Eklentisi",
+    "description": ""
+  },
+  "short_name": {
+    "message": "NamazVakitleri",
+    "description": ""
+  },
+  "description": {
+    "message": "Namaz vakitlerine kolayca erişim sağlar ve bir sonraki vakte ne kadar kaldığını gösterir.",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "tr",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "TurkiyeDiyanet",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "İmsak",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "Sabah",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": "Güneş",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "Öğle",
+    "description": ""
+  },
+  "asrText": {
+    "message": "İkindi",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "Akşam",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "Yatsı",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "Gece Yarısı",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "Cuma",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "Kalan Süre",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "Ezan Vakti",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": "Hesaplama Metodu",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "Masaüstü bildirimlerini göster",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": "Masaüstü bildirimleri açık.",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "Gece Yarısı",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "İkon Stiliniz",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "Konum",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "Ekle/Çıkar (Dakika)",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "Hicri Gün Ayarı",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "İftara kalan",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": "Hanefi Mezhebi Geç İkindi",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "Teşekkürler!",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "Ayarlar",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "Temkin Ayarları",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "Paylaşım",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "Dil",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24-Saat",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "Geçen Süre",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "Temkin ayarlarını sıfırla",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "Konum ve ayarları sıfırla",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "Şu anda bu bölüm yalnızca Arapça ve İngilizce olarak mevcuttur.",
+    "description": ""
+  }
+}

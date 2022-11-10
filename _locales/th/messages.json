@@ -1,0 +1,150 @@
+{
+  "name": {
+    "message": "เวลาละหมาด",
+    "description": ""
+  },
+  "short_name": {
+    "message": "เวลาละหมาด",
+    "description": ""
+  },
+  "description": {
+    "message": "รเู้วลาละหมาดครัง้ตอ่ ไปอยา่ งงา่ ยดายและเวลาทเี่ หลอื อย",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "th",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "JAKIM",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "อมิซกั",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "ฟาญะร",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": "ซบุ ฮ",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "ซฮุ รยี",
+    "description": ""
+  },
+  "asrText": {
+    "message": "อสั ร",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "มฆั รบิ",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "อซี า",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "กลางคนื",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "ญมุ อะห",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "เวลาทเี่ หลอื อย",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "เวลาอาซาน",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": "วธิคีำ นวณเวลา",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "การแจง้เตอื นเดสกท์ อป",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": "การแจง้เตอื นของเดสกท์ อปเปิดไดแ้ลว้",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "อมิซกั ",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "กลางคนื",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "เลอื กสไตลไ์ อคอนของคณุ ",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "ตงั้สถานะทอี่ ยขู่ องคณุ ",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "การตงั้คา่ เวลาละหมาด(นาท)ี",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "ตงั้คา่ เวลาฮจิเราะหศ์ กั ราช(วนั )",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "ละศลี อดในเวลา",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": "เวลาละหมาดอสั รขี องฮานาฟี",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "ของคณุ สำ หรับการแบง่ ปัน",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "การตงั้คา่ ",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "เมนูแกไ้ข",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "ตวัเลอื กการแบง่ ปัน",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "ภาษา",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24-h",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "เวลาที่ผ่านไป",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "รีเซ็ต",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "รีเซ็ต",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "ปัจจุบันส่วนนี้มีให้บริการในภาษาอาหรับและภาษาอังกฤษเท่านั้น",
+    "description": ""
+  }
+}

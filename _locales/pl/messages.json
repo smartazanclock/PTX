@@ -1,0 +1,150 @@
+﻿{
+  "name": {
+    "message": "Modlitwa razy Chrome Extension",
+    "description": ""
+  },
+  "short_name": {
+    "message": "Modlitwa razy",
+    "description": ""
+  },
+  "description": {
+    "message": "Łatwy dostęp do czasu modlitwy i zobaczyć, ile czasu pozostało do następnych modlitw.",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "pl",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "EUDiyanet",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "Fajr",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": "Słońce",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "Dhuhr",
+    "description": ""
+  },
+  "asrText": {
+    "message": "Asr",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "Maghrib",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "Isha",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "Północ",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "Jumuah",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "Pozostały Czas",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "Czas Azana",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": "Metoda Obliczania",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "Powiadomienia na pulpicie",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": "Powiadomienia na pulpicie są włączone.",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "Północ",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "Wybierz styl ikony",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "Ustaw Swoją Lokalizację",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "Przesunięcia Czasu Modlitwy (Minuty)",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "Przesunięcie Daty Hijri (Dni)",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "Iftar in",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": "Hanafi Asr",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "Dziękuję za dzielenie się!",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "Ustawienia",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "Korekty Odsunięcia",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "Opcje Udostępniania",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "Język",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24-godzinny",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "Czas, który upłynął",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "Resetowanie",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "Resetowanie",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "Obecnie ta sekcja jest dostępna tylko w języku arabskim i angielskim.",
+    "description": ""
+  }
+}

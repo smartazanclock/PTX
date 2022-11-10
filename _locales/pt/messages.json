@@ -1,0 +1,150 @@
+{
+  "name": {
+    "message": "Extensão do Chrome dos Tempos de Oração",
+    "description": ""
+  },
+  "short_name": {
+    "message": "TemposDeOração",
+    "description": ""
+  },
+  "description": {
+    "message": "Acesse facilmente os horários de oração e veja quanto tempo resta até as próximas orações.",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "pt",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "ISNA",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "Fajr",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": "Amanhecer",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "Dhuhr",
+    "description": ""
+  },
+  "asrText": {
+    "message": "Asr",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "Maghrib",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "Isha",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "Meia-noite",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "Jumuah",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "Tempo Restante",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "Hora de Azan",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": "Método de Cálculo",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "Notificações da Área de Trabalho",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": "Notificações de área de trabalho estão ligadas.",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "Meia-noite",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "Escolha Seu Estilo de Ícone",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "Defina Sua Localização",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "Deslocamentos do Tempo de Oração (Minutos)",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "Deslocamento de Data Islâmico (Dias)",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "Iftar Em",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": "Hanafi Madhhab Asr Tarde",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "Obrigado por compartilhar!",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "Ajustes",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "Ajustes de Deslocamento",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "Opções de Compartilhamento",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "Idioma",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24 horas",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "Tempo Decorrido",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "Redefinir",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "Redefinir",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "Atualmente, esta seção está disponível apenas em árabe e inglês.",
+    "description": ""
+  }
+}

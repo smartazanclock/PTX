@@ -1,0 +1,150 @@
+﻿{
+  "name": {
+    "message": "기도 시간",
+    "description": ""
+  },
+  "short_name": {
+    "message": "기도시간",
+    "description": ""
+  },
+  "description": {
+    "message": "기도 시간에 쉽게 접속하고 다음 기도 시간이 얼마나 남은지 확인.",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "ko",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "MWL",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "임사크",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "파즈르",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": "일출",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "두흐르",
+    "description": ""
+  },
+  "asrText": {
+    "message": "아스르",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "마그립",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "이샤",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "한밤중",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "금요일기도",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "남은 시간",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "아잔 시간",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": "계산 방법",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "데이스크톱 알림",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": "데이스크톱 알림은 켜져 있습니다.",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "임사크",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "한밤중",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "아이콘 스타일을 선택하세요",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "당신의 위치를 설정하세요",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "기도 시간 오프셋 (분(시간))",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "이슬람력 오프셋 (요일)",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "이프타르는",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": "하나피파 마드합 늦은 아스르",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "공유 감사합니다!",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "설정",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "오프셋 조정",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "공유 선택권",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "언어",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24 시간",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "경과 시간",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "초기화",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "초기화",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "현재 이 섹션은 아랍어와 영어로만 제공됩니다.",
+    "description": ""
+  }
+}

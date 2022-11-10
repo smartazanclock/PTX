@@ -1,0 +1,150 @@
+﻿{
+  "name": {
+    "message": "Horaires de prière",
+    "description": ""
+  },
+  "short_name": {
+    "message": "Les heures de prières",
+    "description": ""
+  },
+  "description": {
+    "message": "Accès facile aux heures de prière depuis votre navigateur.",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "fr",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "FranceUOIFAngle12",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "Fajr",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": "Ishraq",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "Dohr",
+    "description": ""
+  },
+  "asrText": {
+    "message": "Asr",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "Maghrib",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "Isha",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "Minuit",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "Jumua",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "Temps restant",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "Temps de prière",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": "Méthode de calcul",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "Activer les notifications de bureau",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": "Les notifications sur le bureau sont activées.",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "Minuit",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "Choisissez votre style d'icône",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "Votre localisation",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "Décalage horaire",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "Décalage de la date",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "Iftar",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": "Hanafi Asr",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "Merci d'avoir partagé",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "Réglages",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "Décalages",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "Options de partage",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "Langue",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24 heures",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "Partagez s'il vous plait",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "Réinitialiser",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "Réinitialiser",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "Actuellement, cette section n'est disponible qu'en arabe et en anglais.",
+    "description": ""
+  }
+}

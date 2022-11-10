@@ -1,0 +1,150 @@
+{
+  "name": {
+    "message": "Thời gian cầu nguyện Chrome Extension",
+    "description": ""
+  },
+  "short_name": {
+    "message": "Thời gian cầu nguyện",
+    "description": ""
+  },
+  "description": {
+    "message": "Dễ dàng truy cập thời gian cầu nguyện và xem còn bao lâu nữa cho đến những lần cầu nguyện tiếp theo.",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "vi",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "JAKIM",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "Fajr",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": "Bình Minh",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "Zohar",
+    "description": ""
+  },
+  "asrText": {
+    "message": "Tuổi",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "Maghrib",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "Isha",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "Nửa đêm",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "Thứ sáu",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "Thời gian còn lại",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "thời điểm cầu nguyện",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": "Phương pháp tính toán",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "Thông báo trên màn hình",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": "Thông báo trên màn hình đang bật.",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "Nửa đêm ",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "Chọn kiểu biểu tượng của bạn",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "Thiết lập vị trí của bạn",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "Thời gian nghỉ cầu nguyện (Phút)",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "Hijri Ngày bù đắp (Ngày)",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "Trước Iftar",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": "Hậu Asr của Hanafi Madhhab",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "Cám ơn vì đã chia sẻ!",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "Cài đặt ",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "Điều chỉnh bù đắp",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "Chia sẻ lựa chọn",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "Ngôn ngữ",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24 giờ",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "Thời gian đã trôi qua",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "Đặt lại Offsets",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "Đặt lại vị trí và cài đặt",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "Phần này hiện chỉ có sẵn bằng tiếng Anh và tiếng Ả Rập.",
+    "description": ""
+  }
+}

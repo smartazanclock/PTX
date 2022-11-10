@@ -1,0 +1,150 @@
+﻿{
+  "name": {
+    "message": "Waktu Solat",
+    "description": ""
+  },
+  "short_name": {
+    "message": "Waktu Solat",
+    "description": ""
+  },
+  "description": {
+    "message": "Akses yang mudah ke waktu solat daripada browser anda",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "ms",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "JAKIM",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "Subuh",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": "Syuruk",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "Zohor",
+    "description": ""
+  },
+  "asrText": {
+    "message": "Asar",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "Maghrib",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "Isyak",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "T Malam",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "Jumaat",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "Masa yang berbaki",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "Waktu Azan",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": "Kaedah pengiraan",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "Aktifkan pemberitahuan desktop",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": "Pemberitahuan desktop dihidupkan.",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "Tengah Malam",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "Pilih ikon pilihan anda",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "Lokasi anda",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "Pengimbangan Masa",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "Tarikh mengimbangi Hijriah",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "Iftar",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": "Hanafi Asar",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "Terima kasih",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "Tetapan",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "Pelarasan masa",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "Sila kongsi",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "Bahasa",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24 Jam",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "Masa Berlalu",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "Tetapkan semula",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "Tetapkan semula",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "Pada masa ini bahagian ini hanya tersedia dalam bahasa Arab dan Inggeris.",
+    "description": ""
+  }
+}

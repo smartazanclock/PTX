@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/smart-azan-clock.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/vars.js"></script>
+</head>
+<body>
+    <div id="appDiv">
+        <div id="topCard" class="card bg-dark text-light mt-0 pt-0 text-center border-0">
+            
+            <div id="loading" style="display:none;">
+                <div id="loadingInnerDiv">
+                    <img id="loadingImg" src="images/check.png" />
+                </div>
+            </div>
+
+            <div class="card-header p-0 m-0">
+                <div class="container">
+                    <div class="row my-1 px-1">
+                        <div class="col-1 p-0 m-0"><img class="menu-img menu-clock img-fluid rounded pointerOn bg-secondary" /></div>
+                        <div class="col-1 p-0 m-0"><img class="menu-img menu-settings img-fluid rounded pointerOn" src="images/settings.png" /></div>
+                        <div class="col-1 p-0 m-0">
+                            <img id="offset-adjustments-blank" style="display:none" class="offset-adjustments menu-img menu-offsets img-fluid rounded pointerOn" src="images/offset-adjustments-blank.png" />
+                            <img id="offset-adjustments-red" style="display:none" class="offset-adjustments menu-img menu-offsets img-fluid rounded pointerOn" src="images/offset-adjustments-red.png" />
+                        </div>
+                        <div id="duaDiv" class="col-1 p-0 m-0" style="display:hidden;">
+                            <img id="dome" style="display:none" class="dome menu-img menu-dua img-fluid rounded pointerOn" src="images/dome.png" />
+                            <img id="dome-dot" style="display:none" class="dome menu-img menu-dua img-fluid rounded pointerOn" src="images/dome-dot.png" />
+                        </div>
+                        <div class="col text-right pr-1 pt-1 mx-0 pl-0 ml-0">
+                            <span id="addressMenuText" class="menu-text badge badge-light menu-settings pointerOn"></span>
+                            <span id="settingsMenuText" class="menu-text badge badge-secondary" style="display:none">Settings</span>
+                            <span id="offsetsMenuText" class="menu-text badge badge-secondary" style="display:none">Prayer Time Offsets</span>
+                            <span id="duaMenuText" class="menu-text badge badge-secondary" style="display:none"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body text-center py-0">
+                
+                <div id="times" class="tabDiv">
+
+                    <img class="align-center img-fluid mt-2 mb-1" id="clock" />
+
+                    <div class="d-flex flex-row justify-content-center align-items-center">
+                        <div>
+                            <div><span id="ntTitle" class="small"></span></div>
+                            <div id="nextText" class="badge"></div>
+                            <div class="mt-1">
+                                <span id="elapsedText" class="badge badge-darkish"></span>
+                                <span id="remainingForIftar" class="badge badge-darkish"></span>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                
+                <div id="basicSettings" class="text-left tabDiv" style="display:none;">
+
+
+                    <div class="badge badge-dark mt-2" id="addressTitle"></div>
+                    <form id="addressForm">
+                        <div class="row mt-1">
+
+                            <div class="col pr-1">
+                                <input type="text" class="form-control form-control-sm" name="address" id="address" />
+                            </div>
+                            <div class="col-2 m-0 p-0">
+                                <button type="submit" id="addressButton" class="btn btn-primary btn-sm"><img src="images/right-arrow.png" /></button>
+                            </div>
+
+                        </div>
+                    </form>
+                    
+
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="badge badge-dark" id="calculationMethodTitle"></div>
+                            <select class="form-control form-control-sm" name="calculationMethod" id="calculationMethod">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="badge badge-dark" id="iconTitle"></div>
+                            <div class="btn-group btn-group-sm btn-block" role="group">
+                                <button id="badgeButton" type="button" value="badge" class="btn iconButton">
+                                    <img id="barImg" class="mt-1" />
+                                </button>
+                                <button id="clockButton" type="button" value="clock" class="btn iconButton">
+                                    <img id="iconImg" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-darkish rounded mt-3 border-0">
+                        <div class="card-body py-1 px-2 pointerOn" id="desktopNotificationsToggle">
+                            <img src="images/on.png" id="desktopNotificationsOn" style="display:none;" />
+                            <img src="images/off.png" id="desktopNotificationsOff" style="display:none;" />
+                            <span class="badge" id="desktopNotificationsTitle"></span>
+                        </div>
+                    </div>
+
+                    <div class="card bg-darkish rounded mt-2 border-0">
+                        <div class="card-body py-1 px-2 pointerOn" id="hanafiAsrToggle">
+                            <img src="images/on.png" id="hanafiAsrOn" style="display:none;" />
+                            <img src="images/off.png" id="hanafiAsrOff" style="display:none;" />
+                            <span class="badge" id="hanafiAsrTitle"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col mr-0 pr-0">
+                            <div class="card bg-darkish rounded border-0">
+                                <div class="card-body py-1 px-2 pointerOn" id="showImsakToggle">
+                                    <img src="images/on.png" id="showImsakOn" style="display:none;" />
+                                    <img src="images/off.png" id="showImsakOff" style="display:none;" />
+                                    <span class="badge" id="showImsakTitle"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto ml-0 pl-1">
+                            <div class="card bg-darkish rounded border-0">
+                                <div class="card-body py-1 px-2 pointerOn" id="showMidnightToggle">
+                                    <img src="images/on.png" id="showMidnightOn" style="display:none;" />
+                                    <img src="images/off.png" id="showMidnightOff" style="display:none;" />
+                                    <span class="badge" id="showMidnightTitle"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-auto mr-0 pr-1">
+                            <div class="card bg-darkish rounded border-0">
+                                <div class="card-body py-1 px-2 pointerOn" id="hour24Toggle">
+                                    <img src="images/on.png" id="hour24On" style="display:none;" />
+                                    <img src="images/off.png" id="hour24Off" style="display:none;" />
+                                    <span class="badge" id="hour24Title"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col ml-0 pl-0">
+                            <div class="card bg-darkish rounded border-0">
+                                <select class="form-control form-control-sm" name="displayLanguage" id="displayLanguage">
+                                    <option value="ar">العربية</option>
+                                    <option value="id">Bahasa Indonesia</option>
+                                    <option value="ms">Bahasa Melayu</option>
+                                    <option value="de">Deutsch</option>
+                                    <option value="en">English</option>
+                                    <option value="es">español</option>
+                                    <option value="fr">Français</option>
+                                    <option value="nl">Nederlands</option>
+                                    <option value="it">italiano</option>
+                                    <option value="pl">polski</option>
+                                    <option value="pt">Portuguese</option>
+                                    <option value="sv">svenska</option>
+                                    <option value="ru">русский</option>
+                                    <option value="vi">Tiếng Việt</option>
+                                    <option value="tr">Türkçe</option>
+                                    <option value="uk">українська</option>
+                                    <option value="fa">فارسی</option>
+                                    <option value="hi">हिन्दी</option>
+                                    <option value="bn">বাংলা</option>
+                                    <option value="ta">தமிழ்</option>
+                                    <option value="th">ไทย</option>
+                                    <option value="ko">한국어</option>
+                                    <option value="ja">日本</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                
+                <div id="offsetAdjustments" class="text-left tabDiv" style="display:none;">
+                    <span class="badge badge-dark calculationMethodTitle pl-0"></span><br />
+                    <span class="badge badge-light" id="calculationMethodName"></span><br />
+                    <span class="badge badge-light" id="fajrAngle"></span>
+                    <span class="badge badge-light" id="ishaAngle"></span>
+
+                    <hr class="my-1" />
+
+                    <div class="badge badge-dark" id="offsetTitle"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div id="imsakOffsetDiv" class="col bg-darkish p-2 mr-1 rounded text-center">
+                                <span class="offadj imsakDiv badge badge-light mx-3"></span><br />
+                                <button class="btn btn-dark btn-xs offsetDecrease pointerOn" id="imsakOffsetDecrease" data-vakit="imsak">-</button>
+                                <span id="imsakOffset" class="badge badge-light">0</span>
+                                <button class="btn btn-dark btn-xs offsetIncrease pointerOn" id="imsakOffsetIncrease" data-vakit="imsak">+</button>
+                            </div>
+                            <div class="col bg-darkish p-2 rounded text-center">
+                                <span class="offadj fajrDiv badge badge-light mx-3"></span><br />
+                                <button class="btn btn-dark btn-xs offsetDecrease pointerOn" id="fajrOffsetDecrease" data-vakit="fajr">-</button>
+                                <span id="fajrOffset" class="badge badge-light">0</span>
+                                <button class="btn btn-dark btn-xs offsetIncrease pointerOn" id="fajrOffsetIncrease" data-vakit="fajr">+</button>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col bg-darkish p-2 mr-1 rounded text-center">
+                                <span class="offadj dhuhrDiv badge badge-light mx-3"></span><br />
+                                <button class="btn btn-dark btn-xs offsetDecrease pointerOn" id="dhuhrOffsetDecrease" data-vakit="dhuhr">-</button>
+                                <span id="dhuhrOffset" class="badge badge-light">0</span>
+                                <button class="btn btn-dark btn-xs offsetIncrease pointerOn" id="dhuhrOffsetIncrease" data-vakit="dhuhr">+</button>
+                            </div>
+                            <div class="col bg-darkish p-2 rounded text-center">
+                                <span class="offadj asrDiv badge badge-light mx-3"></span><br />
+                                <button class="btn btn-dark btn-xs offsetDecrease pointerOn" id="asrOffsetDecrease" data-vakit="asr">-</button>
+                                <span id="asrOffset" class="badge badge-light">0</span>
+                                <button class="btn btn-dark btn-xs offsetIncrease pointerOn" id="asrOffsetIncrease" data-vakit="asr">+</button>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col bg-darkish p-2 mr-1 rounded text-center">
+                                <span class="offadj maghribDiv badge badge-light mx-3"></span><br />
+                                <button class="btn btn-dark btn-xs offsetDecrease pointerOn" id="maghribOffsetDecrease" data-vakit="maghrib">-</button>
+                                <span id="maghribOffset" class="badge badge-light">0</span>
+                                <button class="btn btn-dark btn-xs offsetIncrease pointerOn" id="maghribOffsetIncrease" data-vakit="maghrib">+</button>
+                            </div>
+                            <div class="col bg-darkish p-2 rounded text-center">
+                                <span class="offadj ishaDiv badge badge-light mx-3"></span><br />
+                                <button class="btn btn-dark btn-xs offsetDecrease pointerOn" id="ishaOffsetDecrease" data-vakit="isha">-</button>
+                                <span id="ishaOffset" class="badge badge-light">0</span>
+                                <button class="btn btn-dark btn-xs offsetIncrease pointerOn" id="ishaOffsetIncrease" data-vakit="isha">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="badge badge-dark mt-2" id="hijriDateOffsetTitle"></div>
+
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col bg-darkish p-2 rounded text-center">
+                                <span class="badge badge-light todaysDateArabic"></span>
+                                <br />
+                                <button id="hijriDateDecrease" class="btn btn-dark btn-xs pointerOn">-</button>
+                                <span id="hijriDateOffset" class="badge badge-light">0</span>
+                                <button id="hijriDateIncrease" class="btn btn-dark btn-xs pointerOn">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="offsetsResetButton" class="btn btn-secondary btn-sm mt-3 mb-1 btn-block">Reset</button>
+
+                    <div class="text-center">
+                        <span class="badge badge-dark" title="Double click to reset the extension" id="version"></span>
+                    </div>
+                </div>
+
+                <div id="dua" class="tabDiv h-100" style="display:none;">
+
+                    <div class="p-2 mt-2" style="max-height:523px; overflow: auto;">
+                        <div class="text-right">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+                        <div id="dua-arabic" class="dua text-right mt-2" style="font-size:17px"></div>
+                        <hr class="my-2" />
+                        <div id="dua-text" class="dua text-left" style="font-size:14px"></div>
+                        <hr class="my-2" />
+                        <div class="text-left"><span id="dua-ref" class="dua small"></span></div>
+                        <div id="dua-dhikr" class="dua p-2 my-2 text-light bg-darkish text-right rounded border border-secondary" style="font-size:14px"></div>
+                        <div id="onlyInEnglishAndArabic" class="mt-2 small text-left" style="color: khaki"></div>
+                    </div>
+                    
+
+                </div>
+
+            </div>
+
+            <div id="footer" class="card-footer bg-darkish pt-1">
+                
+                <div id="vakitsContainer" class="container">
+
+                    <div class="fdate row mt-1">
+                        <div class="col text-center">
+                            <span class="badge badge-light todaysDateArabic"></span>
+                        </div>
+                    </div>
+                    <div class="fdate row mt-1">
+                        <div class="col text-center"><span id="todaysDate" class="badge badge-light"></span></div>
+                    </div>
+
+                    <div class="row mt-2 justify-content-center">
+                        <div class="vakitDiv p-0 imsakDiv"></div>
+                        <div class="vakitDiv p-0 fajrDiv"></div>
+                        <div class="vakitDiv p-0 sunriseDiv"></div>
+                        <div class="vakitDiv p-0 dhuhrDiv"></div>
+                    </div>
+                    <div class="row mt-1 justify-content-center">
+                        <div class="vakitDiv p-0 asrDiv"></div>
+                        <div class="vakitDiv p-0 maghribDiv"></div>
+                        <div class="vakitDiv p-0 ishaDiv"></div>
+                        <div class="vakitDiv p-0 midnightDiv"></div>
+                    </div>
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>

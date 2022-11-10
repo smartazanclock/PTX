@@ -1,0 +1,150 @@
+﻿{
+  "name": {
+    "message": "Prayer Times Chrome Extension",
+    "description": ""
+  },
+  "short_name": {
+    "message": "PrayerTimes",
+    "description": ""
+  },
+  "description": {
+    "message": "Easily access prayer times and see how much time is left until next prayers.",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "en",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "ISNA",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "Fajr",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": "Sunrise",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "Dhuhr",
+    "description": ""
+  },
+  "asrText": {
+    "message": "Asr",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "Maghrib",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "Isha",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "Midnight",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "Jumuah",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "Remaining",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "Azan Time",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": "Calculation Method",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "Desktop Notifications",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": "Desktop notifications are on.",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "Midnight",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "Icon Style",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "Set Your Location",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "Prayer Time Offsets (Minutes)",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "Hijri Date Offset (Days)",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "Iftar In",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": "Hanafi Madhhab Late Asr",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "Thanks for sharing!",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "Settings",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "Offset Adjustments",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "Sharing Options",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "Language",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24-hour",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "Elapsed",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "Reset Offsets",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "Reset Location & Settings",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "",
+    "description": ""
+  }
+}

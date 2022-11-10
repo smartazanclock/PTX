@@ -1,0 +1,83 @@
+body {
+    background-color: whitesmoke;
+}
+
+#appDiv {
+    padding: 9px;
+    text-align: center;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#topCard {
+    width:313px;
+    height:579px;
+}
+
+
+#clock {
+    max-height: 235px;
+    pointer-events:none;
+    user-select:none;
+}
+
+.menu-img {
+    padding:5px;
+}
+
+.btn-xs {
+    padding: 0px 7px;
+    font-size: 13px;
+    border-radius: .2rem;
+}
+
+.btn-darkish, .badge-darkish, .bg-darkish {
+    background-color: #4B5158;
+}
+
+#nextText {
+    font-size: 25px;
+}
+
+.menu-text {
+    max-width:220px;
+    overflow:hidden;
+}
+
+.currentVakit {
+    border: 2px solid white;
+    border-radius: 3px;
+    background-color: #343a40;
+    color: white;
+}
+
+.offadj.currentVakit {
+    background-color: #007bff;
+    border: 0;
+    color: white;
+}
+
+.vakitTime {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.pointerOn {
+    cursor: pointer;
+}
+
+#loading {
+    position: relative;
+    z-index: 199;
+}
+
+#loadingInnerDiv {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 579px;
+    padding-top: 199px;
+    background-color: black;
+    opacity: 0.59;
+}

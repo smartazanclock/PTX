@@ -1,0 +1,150 @@
+{
+  "name": {
+    "message": "Chrome-extensie voor gebedstijden",
+    "description": ""
+  },
+  "short_name": {
+    "message": "Gebedstijden",
+    "description": ""
+  },
+  "description": {
+    "message": "Krijg eenvoudig toegang tot gebedstijden en zie hoeveel tijd er nog is tot de volgende gebeden.",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "nl",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "EUDiyanet",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "Fajr",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": "Ishraq",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "Dhuhr",
+    "description": ""
+  },
+  "asrText": {
+    "message": "Asr",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "Maghrib",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "Isha",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "Midnacht",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "Jumuah",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "Overgebleven tijd",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "Azan-tijd",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": "Rekenmethode",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "Bureaublad notificaties",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": "Desktopmeldingen zijn ingeschakeld.",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "Midnacht",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "Kies uw pictogramstijl",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "Bepaal jouw locatie",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "Gebedstijdverschuivingen (minuten)",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "Hijri-datumverschuiving (dagen)",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "Iftar in",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": "Hanafi Madhhab Late Asr",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "Bedankt voor het delen!",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "Instellingen",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "Offset-aanpassingen",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "Opties voor delen",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "Taal",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24-uurs",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "Verstreken tijd",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "Resetten",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "Resetten",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "Momenteel is deze sectie alleen beschikbaar in het Arabisch en Engels.",
+    "description": ""
+  }
+}

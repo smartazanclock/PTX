@@ -1,0 +1,150 @@
+﻿{
+  "name": {
+    "message": "Waktu Shalat",
+    "description": ""
+  },
+  "short_name": {
+    "message": "Waktu Shalat",
+    "description": ""
+  },
+  "description": {
+    "message": "Cara mudah mengetahui waktu sholat dari browser",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "id",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "KEMENAG",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "Fajar",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": "Israq",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "Dhuhur",
+    "description": ""
+  },
+  "asrText": {
+    "message": "Ashar",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "Maghrib",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "Isya'",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "T Malam",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "Jum'at",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "Sisa Waktu",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "Adzan",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": "Metode Perhitungan",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "Aktifkan pemberitahuan desktop",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": "Pemberitahuan desktop aktif.",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "Tengah Malam",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "Ikon",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "Lokasi",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "Penyesuaian  Waktu",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "Penyesuaian Tanggal",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "Iftar",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": "Hanafi Ashar",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "Terima kasih",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "Pengaturan",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "Penyesuaian",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "Bagikan",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "Bahasa",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24 jam",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "Waktu berlalu",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "Mengatur ulang",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "Mengatur ulang",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "Saat ini bagian ini hanya tersedia dalam bahasa Arab dan Inggris.",
+    "description": ""
+  }
+}

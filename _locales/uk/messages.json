@@ -1,0 +1,150 @@
+﻿{
+  "name": {
+    "message": "Розширення Chrome Час молитви",
+    "description": ""
+  },
+  "short_name": {
+    "message": "Час молитви",
+    "description": ""
+  },
+  "description": {
+    "message": "Легко перегляньте час молитов і подивіться, скільки часу залишилося до наступних молитов.",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "uk",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "ISNA",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "Імсак",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "Фаджр",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": "Схід сонця",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "Зухр",
+    "description": ""
+  },
+  "asrText": {
+    "message": "Аср",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "Магріб",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "Іша",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "Опівніч",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "Джума",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "Залишилося",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "Час Азана",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": "Метод розрахунку",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "Сповіщення на робочому столі",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": "Сповіщення на робочому столі ввімкнено.",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "Імсак",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "Опівніч",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "Стиль значка",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "Встановіть своє місцезнаходження",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "Зміщення часу молитви (хвилини)",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "Зміщення дати Хіджри (дні)",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "Іфтар",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": "Ханафітський Мазхаб Пізній Аср",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "Дякую, що поділились!",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "Налаштування",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "Коригування зміщення",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "Способи поділитися",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "Мова",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24-годинний",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "Минулий час",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "Скинути зміщення",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "Скинути розташування та налаштування",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "Цей розділ доступний лише арабською та англійською мовами.",
+    "description": ""
+  }
+}

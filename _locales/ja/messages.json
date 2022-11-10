@@ -1,0 +1,150 @@
+{
+  "name": {
+    "message": "お祈り時間・クローム拡張",
+    "description": ""
+  },
+  "short_name": {
+    "message": "お祈り時間",
+    "description": ""
+  },
+  "description": {
+    "message": "容易にお祈り時間をご覧になり、次のお祈りまで何時間が残っているか、をご存知になることができます。",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "ja",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "ISNA",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "イムサーク",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "ファジュル",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": "日の出",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "ズフル",
+    "description": ""
+  },
+  "asrText": {
+    "message": "アスル",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "マグリブ",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "イシャー",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "夜中",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "ジュムア",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "残り時間",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "アザーンの時間",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": "計算方法",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "デスクトップ通知",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": "デスクトップ通知は有効になっています。",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "イムサーク",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "夜中",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "アイコン様式を選択",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "位置を設定",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "お祈り時間オフセット “「分」",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "ヒジリ日付のオフセット(日にち)",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "イフタール",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": "ハナフィー宗門の遅いアスル",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "共有してくださり、ありがとうございます。",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "設定",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "オフセットを調整",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "共有選択肢",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "言語",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24時間",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "経過時間",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "オフセットを再設定",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "位置と設定をリセット",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "現在、このセクションはアラビア語と英語でのみご利用いただけます。",
+    "description": ""
+  }
+}

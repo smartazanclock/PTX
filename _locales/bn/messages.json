@@ -1,0 +1,150 @@
+﻿{
+  "name": {
+    "message": " নামাজের সময় ক্রোম এক্সটেনশন ",
+    "description": ""
+  },
+  "short_name": {
+    "message": "নামাজেরসময়",
+    "description": ""
+  },
+  "description": {
+    "message": " নামাজের সময়সমূহ সহজেই দেখুন এবং পরবর্তী নামাজের জন্য কত সময় বাকি আছে তা দেখুন।",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "bn",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "MWL",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "ফজর",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": " সূর্যোদয়",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "যোহর",
+    "description": ""
+  },
+  "asrText": {
+    "message": "আসর",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "মাগরীব",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "এশা",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "মধ্যরাত",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "জুম্মাহ",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "অবশিষ্ট সময়",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "আজানের সময়",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": " হিসাব পদ্ধতি ",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "ডেস্কটপ নোটিফিকেশন",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": " ডেস্কটপ নোটিফিকেশন চালু রয়েছে",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "মধ্যরাত",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "আপনার আইকনের ধরন পছন্দ করুন",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "আপনার লোকেশন সেট করুন",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "নামাজের সময় (মিনিট)",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "হিজরী তারিখ অফসেট(দিন)",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "ইফতারের পূর্বে",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": " হানাফী মাযহাবের দেরীতে আসর ",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "শেয়ার করার জন্য ধন্যবাদ!",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "সেটিংস",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "অফসেট এডজাস্টমেন্টস",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "শেয়ারিং অপশন ",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "ভাষা",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24 ঘন্টা",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "ব্যায়িত সময়",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "রিসেট",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "রিসেট সেটিংস",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "বর্তমানে এই বিভাগটি শুধুমাত্র আরবি এবং ইংরেজিতে উপলব্ধ।",
+    "description": ""
+  }
+}

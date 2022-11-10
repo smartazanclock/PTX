@@ -1,0 +1,150 @@
+﻿{
+  "name": {
+    "message": "Tiempos de oración",
+    "description": ""
+  },
+  "short_name": {
+    "message": "Horarios de oración",
+    "description": ""
+  },
+  "description": {
+    "message": "Fácil acceso a los horarios de oracion a partir de su navegador",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "es",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "Egypt",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "Fajr",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": "Amanecer",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "Dhuhr",
+    "description": ""
+  },
+  "asrText": {
+    "message": "Asr",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "Maghrib",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "Isha",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "M noche",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "Jumua",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "Tiempo restante",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "Tiempo de Azan",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": "Método de cálculo",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "Notificaciones de escritorio",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": "Las notificaciones de escritorio están habilitadas",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "Medianoche",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "Tu estilo de icono",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "Tu ubicación",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "Desplazamiento de tiempo",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "Desplazamiento de fecha",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "Iftar",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": "Hanafi Asr",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "Gracias por compartir",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "Ajustes",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "Compensaciones",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "Por favor comparte",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "Idioma",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24 horas",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "Tiempo transcurrido",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "Reiniciar",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "Reiniciar",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "Actualmente, esta sección solo está disponible en árabe e inglés.",
+    "description": ""
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "name": {
+    "message": "Bönetider Chrome Tillägg",
+    "description": ""
+  },
+  "short_name": {
+    "message": "Bönetider",
+    "description": ""
+  },
+  "description": {
+    "message": "Lättåtkomliga bönetider och överblick på resterande tid innan nästa bön",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "EUDiyanet",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "sv",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "Fajr",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": "Sol",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "Dhuhr",
+    "description": ""
+  },
+  "asrText": {
+    "message": "Asr",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "Maghrib",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "Isha",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "Midnatt",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "Jumuah",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "Återstående Tid",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "Tid För Adhan",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": "Uträkningsmetod",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "Notifikationer För Skrivbord",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": "Notifikationer för Skrivbord är påslagna",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "Midnatt",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "Välj Din Ikon-Stil",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "Ställ In Din Plats",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "Utjämning För Bönetider (Minuter)",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "Utjämning För Hijri Datum (Dagar)",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "Iftar har trätt in",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": "Hanafi Madhhab Sen Asr",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "Tack för din delning!",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "Inställningar",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "Inställningar För Utjämning",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "Alternativ För Delning",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "Språk",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24-timmarsformat",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "Förfluten tid",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "Återställa",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "Återställa",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "För närvarande är det här avsnittet endast tillgängligt på arabiska och engelska.",
+    "description": ""
+  }
+}

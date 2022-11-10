@@ -1,0 +1,150 @@
+﻿{
+  "name": {
+    "message": "अज़ान के दौरान क्रोम एक्सटेंशन",
+    "description": ""
+  },
+  "short_name": {
+    "message": "अज़ान के दौरान",
+    "description": ""
+  },
+  "description": {
+    "message": "आसानी से प्रार्थना के समय की जाँच करें और देखें कि अगली प्रार्थना के लिए कितना समय बचा है।",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "hi",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "ISNA",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "फज्र",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": "सूर्योदय",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "ज़ोहर",
+    "description": ""
+  },
+  "asrText": {
+    "message": "असर",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "मगरिब",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "ईशा",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "आधी रात",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "जुम्माह",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "बचा हुआ समय",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "अज़ान के दौरान",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": "लेखांकन विधि",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "डेस्कटॉप सूचनाएं",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": "डेस्कटॉप सूचनाएं चालू हैं",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "आधी रात",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "अपने आइकन का प्रकार चुनें",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "अपना स्थान तय करे",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "प्रार्थना का समय (मिनट)",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "हिजरी तिथि ऑफसेट (दिन)",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "इफ्तार से पहले",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": "हनफ़ी माधबी के असर के दौरान",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "साझा करने के लिए धन्यवाद!",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "समायोजन",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "ऑफसेट समायोजन",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "विकल्प साझा करना",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "भाषा",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24 घंटे का",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "बीता हुआ समय",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "रीसेट",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "स्थान और सेटिंग रीसेट करें",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "वर्तमान में यह खंड केवल अरबी और अंग्रेजी में उपलब्ध है।",
+    "description": ""
+  }
+}

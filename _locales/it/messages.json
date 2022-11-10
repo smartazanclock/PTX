@@ -1,0 +1,150 @@
+﻿{
+  "name": {
+    "message": "Estensione per Chrome dei tempi di preghiera",
+    "description": ""
+  },
+  "short_name": {
+    "message": "Tempi di preghiera",
+    "description": ""
+  },
+  "description": {
+    "message": "Accedi facilmente ai tempi di preghiera e guarda quanto tempo manca alle prossime preghiere.",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "it",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "EUDiyanet",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "Fajr",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": "Alba",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "Dhuhr",
+    "description": ""
+  },
+  "asrText": {
+    "message": "Asr",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "Maghrib",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "Isha",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "M.Notte",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "Jumuah",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "Tempo Rimasto",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "Tempo di Azan",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": "Metodo di Calcolo",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "Notifiche sul desktop",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": "Le notifiche desktop sono attive.",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "Imsak",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "Mezzanotte",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "Scegli lo stile dell'icona",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "Imposta la tua posizione",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "Offset del tempo di preghiera (minuti)",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "Offset data Hijri (giorni)",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "L’iftar",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": "Hanafi Madhhab tardo Asr",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "Grazie per la condivisione!",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "Impostazioni",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "Regolazioni offset",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "Opzioni di condivisione",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "Lingua",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24 ore",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "Tempo trascorso",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "Ripristina",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "Ripristina",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "Attualmente questa sezione è disponibile solo in arabo e inglese.",
+    "description": ""
+  }
+}

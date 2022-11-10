@@ -1,0 +1,150 @@
+﻿{
+  "name": {
+    "message": "مواعيد الصلاة",
+    "description": ""
+  },
+  "short_name": {
+    "message": "مواعيد الصلاة",
+    "description": ""
+  },
+  "description": {
+    "message": "سهولة معرفة  مواعيد الصلاة من خلال المتصفح الخاص بك",
+    "description": ""
+  },
+  "languageCode": {
+    "message": "ar",
+    "description": ""
+  },
+  "defaultMethod": {
+    "message": "MWL",
+    "description": ""
+  },
+  "imsakText": {
+    "message": "إمساق",
+    "description": ""
+  },
+  "fajrText": {
+    "message": "الفجر",
+    "description": ""
+  },
+  "sunriseText": {
+    "message": "إشراق",
+    "description": ""
+  },
+  "dhuhrText": {
+    "message": "الظهر",
+    "description": ""
+  },
+  "asrText": {
+    "message": "العصر",
+    "description": ""
+  },
+  "maghribText": {
+    "message": "المغرب",
+    "description": ""
+  },
+  "ishaText": {
+    "message": "العشاء",
+    "description": ""
+  },
+  "midnightText": {
+    "message": "نصف الليل",
+    "description": ""
+  },
+  "jumuaText": {
+    "message": "الجمعة",
+    "description": ""
+  },
+  "nextTextTitle": {
+    "message": "الوقت المتبقي",
+    "description": ""
+  },
+  "azanTimeTitle": {
+    "message": "موعد الآذان",
+    "description": ""
+  },
+  "calculationMethodTitle": {
+    "message": "طريقة الحساب",
+    "description": ""
+  },
+  "desktopNotificationsTitle": {
+    "message": "تمكين إشعارات سطح المكتب",
+    "description": ""
+  },
+  "desktopNotificationsOnTitle": {
+    "message": "إشعارات سطح المكتب قيد التشغيل",
+    "description": ""
+  },
+  "showImsakTitle": {
+    "message": "إمساك",
+    "description": ""
+  },
+  "showMidnightTitle": {
+    "message": "نصف الليل",
+    "description": ""
+  },
+  "iconTitle": {
+    "message": "اختر نمط الأيقونة الخاصة بك",
+    "description": ""
+  },
+  "addressTitle": {
+    "message": "موقعك الجغرافي",
+    "description": ""
+  },
+  "offsetTitle": {
+    "message": "تعويض الدقائق",
+    "description": ""
+  },
+  "hijriDateOffsetTitle": {
+    "message": "موازنة التاريخ",
+    "description": ""
+  },
+  "remainingForIftarTitle": {
+    "message": "الإفطار في",
+    "description": ""
+  },
+  "hanafiAsrTitle": {
+    "message": "حنفي العصر",
+    "description": ""
+  },
+  "shareTitle": {
+    "message": "شكرا للمشاركة",
+    "description": ""
+  },
+  "settingsMenuText": {
+    "message": "إعدادات",
+    "description": ""
+  },
+  "offsetsMenuText": {
+    "message": "تعويضات",
+    "description": ""
+  },
+  "shareMenuText": {
+    "message": "شارك من فضلك",
+    "description": ""
+  },
+  "changeLanguageText": {
+    "message": "لغة",
+    "description": ""
+  },
+  "hour24Title": {
+    "message": "24 ساعة",
+    "description": ""
+  },
+  "elapsedTimeTitle": {
+    "message": "الوقت المنقضي",
+    "description": ""
+  },
+  "offsetsResetButton": {
+    "message": "اعادة الضبط",
+    "description": ""
+  },
+  "extensionResetButton": {
+    "message": "اعادة الضبط",
+    "description": ""
+  },
+  "onlyInEnglishAndArabic": {
+    "message": "",
+    "description": ""
+  }
+}
