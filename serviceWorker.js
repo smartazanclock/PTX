@@ -1,4 +1,4 @@
-self.importScripts('js/praytimes.js','js/functions.js');
+self.importScripts('js/praytimes.js', 'js/functions.js');
 
 chrome.runtime.onInstalled.addListener(() => { UserInitiation.start() });
 chrome.runtime.onStartup.addListener(() => { goRun('onStartUp') });
@@ -15,7 +15,8 @@ const UserInitiation = {
                 let lc = result.appSettings.i18n.languageCode;
                 lang = (availableLangs.indexOf(lc) >= 0) ? lc : 'en';
             }
-            fetch('../_locales/' + lang + '/messages.json').then((response)  => { response.json().then((data) => {
+            fetch('../_locales/' + lang + '/messages.json').then((response) => {
+                response.json().then((data) => {
                     Object.entries(data).forEach(([key, value]) => { i18nValues[key] = value.message });
                     this.initUser(i18nValues, result.appSettings);
                 });
@@ -23,17 +24,15 @@ const UserInitiation = {
         });
     },
     initUser(i18nValues, appSettings) {
-        
-        if (appSettings && appSettings.address) 
-        {
+
+        if (appSettings && appSettings.address) {
             /* existing user: new version */
             appSettings.i18n = i18nValues;
             chrome.storage.local.set({ 'appSettings': appSettings }, () => {
                 this.initAlarm();
             });
         }
-        else
-        {
+        else {
             /* new user: first installation */
             fetch('https://smartazanclock.com/iplocation', { method: 'POST' }).then((response) => {
                 if (response.status === 200) {
@@ -88,8 +87,8 @@ const SmartAzanClock = {
     appSettings: {},
     colors: { black: 'black', silver: 'whitesmoke', tomato: '#F20031', gray: '#2E3338' },
     ctx: new OffscreenCanvas(470, 470).getContext("2d", { alpha: true }),
-    itx: new OffscreenCanvas(38,   38).getContext("2d", { alpha: true }),
-    btx: new OffscreenCanvas(38,   38).getContext("2d", { alpha: true }),
+    itx: new OffscreenCanvas(38, 38).getContext("2d", { alpha: true }),
+    btx: new OffscreenCanvas(38, 38).getContext("2d", { alpha: true }),
     clearCanvas(canvas) {
         canvas.save();
         canvas.translate(0, 0);
@@ -115,7 +114,7 @@ const SmartAzanClock = {
                     .extensionOps()
             }
             else
-                UserInitiation.start(); 
+                UserInitiation.start();
         });
     },
     populateVakitsAndVars() {
@@ -128,10 +127,10 @@ const SmartAzanClock = {
             prayTimes.adjust({ asr: 'Hanafi' });
 
 
-        let baseTuneValues = {imsak:0, sunrise:0, fajr:0, dhuhr:0, asr:0, maghrib:0, isha:0 }
+        let baseTuneValues = { imsak: 0, sunrise: 0, fajr: 0, dhuhr: 0, asr: 0, maghrib: 0, isha: 0 }
         let methodDefaultTuneValues = calculationMethods[this.appSettings.calculationMethod].methodOffsets;
-        this.tuneValues = {...baseTuneValues, ...methodDefaultTuneValues }
-        
+        this.tuneValues = { ...baseTuneValues, ...methodDefaultTuneValues }
+
         if (this.appSettings.vakitOffsets) {
             if (this.appSettings.vakitOffsets.imsak)
                 this.tuneValues.imsak += this.appSettings.vakitOffsets.imsak;
@@ -149,15 +148,15 @@ const SmartAzanClock = {
 
         prayTimes.tune({ imsak: this.tuneValues.imsak, fajr: this.tuneValues.fajr, sunrise: this.tuneValues.sunrise, dhuhr: this.tuneValues.dhuhr, asr: this.tuneValues.asr, maghrib: this.tuneValues.maghrib, isha: this.tuneValues.isha });
 
-        this.currentTime = new Date(new Date().toLocaleString("en-US", { timeZone: this.appSettings.timeZoneID })); 
+        this.currentTime = new Date(new Date().toLocaleString("en-US", { timeZone: this.appSettings.timeZoneID }));
         this.currentTimeString = this.currentTime.getHours() + ':' + fillInZeros(this.currentTime.getMinutes());
         this.prayerTimes = prayTimes.getTimes(this.currentTime, [this.appSettings.lat, this.appSettings.lng, 0], getOffsetHoursFromTimeZone(this.appSettings.timeZoneID), 0, '24h');
         this.appSettings.calculationMethodName = prayTimes.getDefaults()[this.appSettings.calculationMethod].name;
-        
+
         this.appSettings.fajrAngle = prayTimes.getDefaults()[this.appSettings.calculationMethod].params.fajr;
         if (this.appSettings.fajrAngle.toString().indexOf('min') < 0)
             this.appSettings.fajrAngle += '°';
-        
+
         this.appSettings.ishaAngle = prayTimes.getDefaults()[this.appSettings.calculationMethod].params.isha;
         if (this.appSettings.ishaAngle.toString().indexOf('min') < 0)
             this.appSettings.ishaAngle += '°';
@@ -229,7 +228,7 @@ const SmartAzanClock = {
             this.clockFaceVakit = "";
         if (this.currentVakit.name === "Midnight")
             this.clockFaceVakit = this.appSettings.i18n['ishaText'];
-        
+
         if (this.appSettings.i18n.languageCode == "en")
             this.clockFaceVakit = this.clockFaceVakit.toUpperCase();
 
@@ -252,8 +251,8 @@ const SmartAzanClock = {
         canvas.save();
         canvas.translate(canvas.canvas.width * 0.5, canvas.canvas.height * 0.5);
         this.fillCircle(canvas, r * 1.5, 0, 0, this.iconColor);
-        
-        if (this.aroundTheClock)  {
+
+        if (this.aroundTheClock) {
             this.drawArc(canvas, 0, 2 * Math.PI + Math.PI / 40, r * 1.05, r / 3, this.iconTextColor);
             this.drawHand(canvas, this.nextVakit.startAngle12(), r * 0.9, r * 1.13, r / 4, this.iconColor);
         }
@@ -375,7 +374,7 @@ const SmartAzanClock = {
                 this.print(canvas, this.clockFaceVakit, 27, this.colors.silver, -r * 0.5);
 
         }
-        
+
         canvas.restore();
 
         return this;
@@ -387,8 +386,8 @@ const SmartAzanClock = {
         if (hijriMonth === "9")
             isRamadan = true;
 
-        let elapsedText = this.appSettings.i18n.elapsedTimeTitle + ' ' + diffBetweenTimes(this.currentVakit.time, this.currentTimeString); 
-        
+        let elapsedText = this.appSettings.i18n.elapsedTimeTitle + ' ' + diffBetweenTimes(this.currentVakit.time, this.currentTimeString);
+
 
         let nextText = this.currentVakit.nextVakitIn();
         let nextTextTitle = this.appSettings.i18n.nextTextTitle;
@@ -439,8 +438,7 @@ const SmartAzanClock = {
             });
         }
 
-        if (this.currentVakit.name === "Sunrise") 
-        {
+        if (this.currentVakit.name === "Sunrise") {
             let toText = " -> " + this.appSettings.i18n.dhuhrText;
             if (this.currentTime.getDay() === 5)
                 toText = " -> " + this.appSettings.i18n.jumuaText;
@@ -451,8 +449,8 @@ const SmartAzanClock = {
             chrome.action.setTitle({ title: (this.clockFaceVakit ? '[' + this.clockFaceVakit + '] ' : '') + nextTextTitle + ' ' + nextText + ' -> ' + this.appSettings.i18n[this.nextVakit.name.toLowerCase() + 'Text'] });
         }
 
-        chrome.action.setBadgeText({ 'text': '' }); 
-        
+        chrome.action.setBadgeText({ 'text': '' });
+
         if (this.appSettings.iconStyle === "badge") {
             chrome.action.setBadgeText({ 'text': nextText });
             chrome.action.setBadgeBackgroundColor({ 'color': this.badgeBackgroundColor });
@@ -466,7 +464,7 @@ const SmartAzanClock = {
         this.appSettings.nextTextTitle = nextTextTitle;
 
         this.appSettings.elapsedText = elapsedText;
-        
+
         this.appSettings.iconStyle = this.appSettings.iconStyle ?? "badge";
 
         this.appSettings.remainingForIftar = null;
@@ -492,24 +490,24 @@ const SmartAzanClock = {
 
                                 this.appSettings.clock = reader3.result;
                                 this.appSettings.lastRun = new Date().getTime();
-                                
+
                                 chrome.storage.local.set({ 'appSettings': this.appSettings }, function () {
-                                        chrome.runtime.sendMessage({msg: "runApp"}, function(response) {
-                                            if (!chrome.runtime.lastError) {
-                                                /* msg is received */
-                                            }
-                                            else {
-                                                /* popup not open to receive the msg */
-                                            }
-                                        });
+                                    chrome.runtime.sendMessage({ msg: "runApp" }, function (response) {
+                                        if (!chrome.runtime.lastError) {
+                                            /* msg is received */
+                                        }
+                                        else {
+                                            /* popup not open to receive the msg */
+                                        }
+                                    });
                                 });
                             }
-                        }); 
+                        });
                     }
-                }); 
-                
+                });
+
             }
-        }); 
+        });
 
         return true;
 
@@ -543,7 +541,7 @@ const SmartAzanClock = {
     drawArc(canvas, startAngle, endAngle, radius, lineWidth, color) {
         canvas.save();
         canvas.beginPath();
-        canvas.arc(0, 0, radius, startAngle, endAngle, false); 
+        canvas.arc(0, 0, radius, startAngle, endAngle, false);
         canvas.lineWidth = lineWidth;
         canvas.lineCap = "butt";
         canvas.strokeStyle = color;
@@ -559,7 +557,7 @@ const SmartAzanClock = {
             canvas.textAlign = "center";
             canvas.font = "bold " + r * 0.15 + "px Arial";
             let ang = n * Math.PI / 6 - Math.PI;
-            canvas.rotate(ang); 
+            canvas.rotate(ang);
             canvas.translate(0, r * 1.35);
             canvas.rotate(-ang);
             p = n;
@@ -583,7 +581,7 @@ const SmartAzanClock = {
             canvas.restore();
         }
     },
-    fillCircle(canvas, r, x, y, color)  {
+    fillCircle(canvas, r, x, y, color) {
         canvas.save();
         canvas.beginPath();
         canvas.arc(x, y, r, 0, Math.PI * 2);
@@ -591,7 +589,7 @@ const SmartAzanClock = {
         canvas.fill();
         canvas.restore();
     },
-    drawHand(canvas, angle, from, to, lineWidth, color)  {
+    drawHand(canvas, angle, from, to, lineWidth, color) {
         canvas.save();
         canvas.beginPath();
         canvas.rotate(angle);
@@ -603,7 +601,7 @@ const SmartAzanClock = {
         canvas.stroke();
         canvas.restore();
     },
-    drawArrow(canvas, angle, x, width, height, color)  {
+    drawArrow(canvas, angle, x, width, height, color) {
         canvas.save();
         canvas.beginPath();
         canvas.rotate(angle);
@@ -616,11 +614,11 @@ const SmartAzanClock = {
     }
 };
 
-const goRun = (info) => { 
-    SmartAzanClock.run(info) 
+const goRun = (info) => {
+    SmartAzanClock.run(info)
 }
 
 const all = () => {
-    chrome.storage.local.get((result) => { console.log(result) }); 
+    chrome.storage.local.get((result) => { console.log(result) });
     chrome.alarms.get('everyMinute', (d) => { console.log(d) });
 }

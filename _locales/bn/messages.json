@@ -139,10 +139,6 @@
     "message": "রিসেট",
     "description": ""
   },
-  "extensionResetButton": {
-    "message": "রিসেট সেটিংস",
-    "description": ""
-  },
   "onlyInEnglishAndArabic": {
     "message": "বর্তমানে এই বিভাগটি শুধুমাত্র আরবি এবং ইংরেজিতে উপলব্ধ।",
     "description": ""

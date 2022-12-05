@@ -139,10 +139,6 @@
     "message": "Скинути зміщення",
     "description": ""
   },
-  "extensionResetButton": {
-    "message": "Скинути розташування та налаштування",
-    "description": ""
-  },
   "onlyInEnglishAndArabic": {
     "message": "Цей розділ доступний лише арабською та англійською мовами.",
     "description": ""

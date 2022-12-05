@@ -10,19 +10,35 @@ body {
 }
 
 #topCard {
-    width:313px;
-    height:579px;
+    width: 313px;
+    height: 579px;
+}
+
+.csb::-webkit-scrollbar {
+    width: 7px;
+}
+
+.csb::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.csb::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.csb::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 
 #clock {
     max-height: 235px;
-    pointer-events:none;
-    user-select:none;
+    pointer-events: none;
+    user-select: none;
 }
 
 .menu-img {
-    padding:5px;
+    padding: 5px;
 }
 
 .btn-xs {
@@ -31,7 +47,9 @@ body {
     border-radius: .2rem;
 }
 
-.btn-darkish, .badge-darkish, .bg-darkish {
+.btn-darkish,
+.badge-darkish,
+.bg-darkish {
     background-color: #4B5158;
 }
 
@@ -40,8 +58,8 @@ body {
 }
 
 .menu-text {
-    max-width:220px;
-    overflow:hidden;
+    max-width: 220px;
+    overflow: hidden;
 }
 
 .currentVakit {

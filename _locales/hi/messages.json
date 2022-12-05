@@ -139,10 +139,6 @@
     "message": "रीसेट",
     "description": ""
   },
-  "extensionResetButton": {
-    "message": "स्थान और सेटिंग रीसेट करें",
-    "description": ""
-  },
   "onlyInEnglishAndArabic": {
     "message": "वर्तमान में यह खंड केवल अरबी और अंग्रेजी में उपलब्ध है।",
     "description": ""

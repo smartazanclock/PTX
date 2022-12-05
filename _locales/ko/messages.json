@@ -139,10 +139,6 @@
     "message": "초기화",
     "description": ""
   },
-  "extensionResetButton": {
-    "message": "초기화",
-    "description": ""
-  },
   "onlyInEnglishAndArabic": {
     "message": "현재 이 섹션은 아랍어와 영어로만 제공됩니다.",
     "description": ""

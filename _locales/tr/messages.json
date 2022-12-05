@@ -139,10 +139,6 @@
     "message": "Temkin ayarlarını sıfırla",
     "description": ""
   },
-  "extensionResetButton": {
-    "message": "Konum ve ayarları sıfırla",
-    "description": ""
-  },
   "onlyInEnglishAndArabic": {
     "message": "Şu anda bu bölüm yalnızca Arapça ve İngilizce olarak mevcuttur.",
     "description": ""

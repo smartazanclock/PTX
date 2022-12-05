@@ -139,10 +139,6 @@
     "message": "Zurücksetzen",
     "description": ""
   },
-  "extensionResetButton": {
-    "message": "Zurücksetzen",
-    "description": ""
-  },
   "onlyInEnglishAndArabic": {
     "message": "Derzeit ist dieser Abschnitt nur auf Arabisch und Englisch verfügbar.",
     "description": ""

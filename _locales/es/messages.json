@@ -139,10 +139,6 @@
     "message": "Reiniciar",
     "description": ""
   },
-  "extensionResetButton": {
-    "message": "Reiniciar",
-    "description": ""
-  },
   "onlyInEnglishAndArabic": {
     "message": "Actualmente, esta sección solo está disponible en árabe e inglés.",
     "description": ""

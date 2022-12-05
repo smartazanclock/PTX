@@ -139,10 +139,6 @@
     "message": "オフセットを再設定",
     "description": ""
   },
-  "extensionResetButton": {
-    "message": "位置と設定をリセット",
-    "description": ""
-  },
   "onlyInEnglishAndArabic": {
     "message": "現在、このセクションはアラビア語と英語でのみご利用いただけます。",
     "description": ""

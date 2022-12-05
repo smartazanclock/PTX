@@ -139,10 +139,6 @@
     "message": "Reset Offsets",
     "description": ""
   },
-  "extensionResetButton": {
-    "message": "Reset Location & Settings",
-    "description": ""
-  },
   "onlyInEnglishAndArabic": {
     "message": "",
     "description": ""

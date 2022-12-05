@@ -139,10 +139,6 @@
     "message": "Återställa",
     "description": ""
   },
-  "extensionResetButton": {
-    "message": "Återställa",
-    "description": ""
-  },
   "onlyInEnglishAndArabic": {
     "message": "För närvarande är det här avsnittet endast tillgängligt på arabiska och engelska.",
     "description": ""

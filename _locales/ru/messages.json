@@ -139,10 +139,6 @@
     "message": "Сброс настроек",
     "description": ""
   },
-  "extensionResetButton": {
-    "message": "Сброс настроек",
-    "description": ""
-  },
   "onlyInEnglishAndArabic": {
     "message": "В настоящее время этот раздел доступен только на арабском и английском языках.",
     "description": ""

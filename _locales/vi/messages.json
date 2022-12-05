@@ -139,10 +139,6 @@
     "message": "Đặt lại Offsets",
     "description": ""
   },
-  "extensionResetButton": {
-    "message": "Đặt lại vị trí và cài đặt",
-    "description": ""
-  },
   "onlyInEnglishAndArabic": {
     "message": "Phần này hiện chỉ có sẵn bằng tiếng Anh và tiếng Ả Rập.",
     "description": ""

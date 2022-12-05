@@ -12,11 +12,10 @@ $(function () {
 
 const goGoRun = (info) => {
     if (navigator.serviceWorker)
-        navigator.serviceWorker.controller.postMessage({ 'msg': (info ?? '') }) 
+        navigator.serviceWorker.controller.postMessage({ 'msg': (info ?? '') })
 }
 
-const runApp = () => 
-{
+const runApp = () => {
 
     chrome.storage.local.get(['appSettings'], function (result) {
 
@@ -26,7 +25,7 @@ const runApp = () =>
         $('.menu-clock').attr("src", appSettings.icon);
         $('#iconImg').attr("src", appSettings.icon);
         $('#barImg').attr("src", appSettings.bar);
-    
+
         $('#elapsedText').html(appSettings.elapsedText);
         $('#nextText').css("background-color", appSettings.iconColor);
         $('#nextText').css("color", appSettings.iconTextColor);
@@ -41,7 +40,7 @@ const runApp = () =>
             $('#remainingForIftar').html(appSettings.remainingForIftar).show();
         }
 
-        Object.entries(appSettings.i18n).forEach(function ([key,value]) {
+        Object.entries(appSettings.i18n).forEach(function ([key, value]) {
             $('#' + key).text(value);
             $('.' + key).text(value);
         });
@@ -57,30 +56,28 @@ const runApp = () =>
         });
 
 
-        $('.dome').hide(); 
-        if (appSettings.dua != null) 
-        {
-            
+        $('.dome').hide();
+        if (appSettings.dua != null) {
+
             if (appSettings.lastReadDuaID === appSettings.dua.id)
-                $('#dome').show(); 
+                $('#dome').show();
             else
-                $('#dome-dot').show(); 
+                $('#dome-dot').show();
 
-            $('#duaMenuText').html(appSettings.dua.title);
+            if (appSettings.dua.title && appSettings.dua.title != $('#duaMenuText').html())
+                $('#duaMenuText').html(appSettings.dua.title);
 
-            $('.dua').hide(); 
+            if (appSettings.dua.arabic && appSettings.dua.arabic != $('#dua-arabic').html())
+                $('#dua-arabic').html(appSettings.dua.arabic);
 
-            if (appSettings.dua.arabic)
-                $('#dua-arabic').html(appSettings.dua.arabic).show();
+            if (appSettings.dua.text && appSettings.dua.text != $('#dua-text').html())
+                $('#dua-text').html(appSettings.dua.text);
 
-            if (appSettings.dua.text)
-                $('#dua-text').html(appSettings.dua.text).show();
+            if (appSettings.dua.dhikr && appSettings.dua.dhikr != $('#dua-dhikr').html())
+                $('#dua-dhikr').html(appSettings.dua.dhikr);
 
-            if (appSettings.dua.dhikr)
-                $('#dua-dhikr').html(appSettings.dua.dhikr).show();
-
-            if (appSettings.dua.ref)
-                $('#dua-ref').html(appSettings.dua.ref).show();
+            if (appSettings.dua.ref && appSettings.dua.ref != $('#dua-ref').html())
+                $('#dua-ref').html(appSettings.dua.ref);
 
 
         }
@@ -90,7 +87,7 @@ const runApp = () =>
     });
 }
 
-$(function () {   
+$(function () {
 
     /* event handlers */
 
@@ -195,6 +192,13 @@ $(function () {
         });
     });
 
+    $(".aeToggle").click(function () {
+        $('#dua-arabic').toggle();
+        $('#dua-text').toggle();
+        $('#arabicToggle').toggle();
+        $('#englishToggle').toggle();
+    });
+
     $(".iconButton").click(function (e) {
         setThenSave('iconStyle', e.currentTarget.value);
     });
@@ -220,13 +224,13 @@ $(function () {
                         chrome.storage.local.set({ 'appSettings': appSettings }, () => {
                             goGoRun('address updated');
                             $('#addressButton').attr('disabled', false);
-                            $('#loadingImg').attr('src','/images/check.png');
+                            $('#loadingImg').attr('src', '/images/check.png');
                             $(':focus').blur();
                             hideLoadingOnSuccess();
                         });
                     });
                 }
-                else 
+                else
                     addressSearchFail()
 
             }).catch((err) => { addressSearchFail() });
@@ -277,7 +281,8 @@ $(function () {
         let code = e.target.value;
         let i18nValues = {};
         let lang = (availableLangs.indexOf(code) >= 0) ? code : 'en';
-        fetch('_locales/' + lang + '/messages.json').then((response)  => { response.json().then((data) => {
+        fetch('_locales/' + lang + '/messages.json').then((response) => {
+            response.json().then((data) => {
                 Object.entries(data).forEach(([key, value]) => { i18nValues[key] = value.message });
                 appSettings.i18n = i18nValues;
                 appSettings.dua = null;
@@ -286,11 +291,12 @@ $(function () {
         });
     });
 
-    $("#version").dblclick(function (e) {
+    $("#appResetButton").click(function (e) {
         document.getSelection().removeAllRanges();
         showLoading();
         chrome.storage.local.clear();
         goGoRun('extension reset');
+        setTimeout(() => { refreshDua() }, 2000);
         $(".menu-clock").trigger("click");
         hideLoadingOnSuccess();
     });
@@ -302,27 +308,26 @@ const refreshDua = () => {
         appSettings = result.appSettings;
         let today = new Date().toLocaleDateString();
         if (!appSettings.dua || appSettings.dua.lastUpdate !== today) {
-            fetch('https://smartazanclock.com/dua?lang='+appSettings.i18n.languageCode, { method: 'POST' }).then(response => {
-                    if (response.status == 200) {
-                        response.json().then((data) => {
-                            appSettings.dua = data;
-                            appSettings.dua.lastUpdate = today;
-                            saveAppSettings(appSettings);
-                        });
-                    }
+            fetch('https://smartazanclock.com/dua?lang=' + appSettings.i18n.languageCode, { method: 'POST' }).then(response => {
+                if (response.status == 200) {
+                    response.json().then((data) => {
+                        appSettings.dua = data;
+                        appSettings.dua.lastUpdate = today;
+                        saveAppSettings(appSettings);
+                    });
+                }
             }).catch((err) => { console.log(err) });
         }
     });
 }
 
 const populateCalculationMethods = () => {
-    Object.entries(calculationMethods).forEach(function ([key,value]) {
+    Object.entries(calculationMethods).forEach(function ([key, value]) {
         $('#calculationMethod').append('<option value="' + key + '">' + value.name + '</option>');
     });
 }
 
-const setThenSave = (name, value) =>
-{
+const setThenSave = (name, value) => {
     chrome.storage.local.get(['appSettings'], function (result) {
         appSettings = result.appSettings;
         appSettings[name] = value;
@@ -331,8 +336,7 @@ const setThenSave = (name, value) =>
 }
 
 const saveAppSettings = (appSettings) => {
-    chrome.storage.local.set({ 'appSettings': appSettings }, function ()
-    {
+    chrome.storage.local.set({ 'appSettings': appSettings }, function () {
         goGoRun('appSettings updated');
         refreshDua();
         $(':focus').blur();
@@ -345,12 +349,12 @@ const setFields = (appSettings) => {
         $('#address').val(appSettings.address);
 
     $('#displayLanguage').val(appSettings.i18n.languageCode);
-    
+
     let topAddressMaxLen = 21;
     let topAddress = appSettings.address.substring(0, topAddressMaxLen) + ((appSettings.address.length > topAddressMaxLen) ? '…' : '');
     $('#addressMenuText').html(topAddress);
 
-    $('#version').text('V.' + chrome.runtime.getManifest().version);
+    $('#appResetButton').text('Reset App V.' + chrome.runtime.getManifest().version);
     $('#calculationMethod').val(appSettings.calculationMethod);
     $('#calculationMethodName').html(appSettings.calculationMethodName);
     $('#fajrAngle').html(appSettings.i18n['fajrText'] + ' ' + appSettings.fajrAngle);
@@ -375,12 +379,11 @@ const setFields = (appSettings) => {
                 stdLimit = 30;
 
             $('#' + v[0] + 'Offset').html(v[1]);
-            if (v[1] != 0) 
-            {
+            if (v[1] != 0) {
                 $('#' + v[0] + 'Offset').removeClass('badge-light').addClass('badge-danger');
                 offsetPresent = true;
             }
-                
+
 
             $('#' + v[0] + 'OffsetIncrease').attr("disabled", false);
             $('#' + v[0] + 'OffsetDecrease').attr("disabled", false);
@@ -399,7 +402,7 @@ const setFields = (appSettings) => {
 
         });
     }
-    
+
     $('#hijriDateOffset').html(0).removeClass('badge-danger').addClass('badge-light');
     $('#hijriDateIncrease').attr("disabled", false);
     $('#hijriDateDecrease').attr("disabled", false);
@@ -422,19 +425,17 @@ const setFields = (appSettings) => {
     }
 
     $('.offset-adjustments').hide();
-    
-    if (offsetPresent)
-    {
+
+    if (offsetPresent) {
         $('#offset-adjustments-red').show();
         $('#offsetsResetButton').removeClass('btn-secondary').addClass('btn-danger');
     }
-        
-    else 
-    {
+
+    else {
         $('#offset-adjustments-blank').show();
         $('#offsetsResetButton').removeClass('btn-danger').addClass('btn-secondary');
     }
-    
+
 
     $('.iconButton').removeClass('btn-primary').addClass('btn-darkish');
     $('#' + appSettings.iconStyle.toLowerCase() + 'Button').removeClass('btn-darkish').addClass("btn-primary");
@@ -494,14 +495,14 @@ const setFields = (appSettings) => {
     }
 }
 
-const saveOffset = (name, action) =>  {
+const saveOffset = (name, action) => {
     chrome.storage.local.get(['appSettings'], function (result) {
-        
+
         appSettings = result.appSettings;
 
-        if (!appSettings.vakitOffsets) 
+        if (!appSettings.vakitOffsets)
             appSettings.vakitOffsets = {};
-        
+
         let cv = appSettings.vakitOffsets[name] ?? 0;
 
         if (action == '+')
@@ -512,15 +513,15 @@ const saveOffset = (name, action) =>  {
         chrome.storage.local.set({ 'appSettings': appSettings }, function () {
             goGoRun('offset update');
             $(':focus').blur();
-        });        
+        });
 
     });
 }
 
-const saveHijriDateOffset = (action) =>  {
+const saveHijriDateOffset = (action) => {
 
     chrome.storage.local.get(['appSettings'], function (result) {
-        
+
         appSettings = result.appSettings;
 
         if (!appSettings.hijriDateOffset)
@@ -538,7 +539,7 @@ const saveHijriDateOffset = (action) =>  {
         chrome.storage.local.set({ 'appSettings': appSettings }, function () {
             goGoRun('hijri date offset updated');
             $(':focus').blur();
-        });     
+        });
 
     });
 
@@ -552,17 +553,18 @@ const addressSearchFail = () => {
 }
 
 
-const showLoading = () =>  {
-    $('#loadingImg').attr('src','/images/loading.png');
+const showLoading = () => {
+    $('#loadingImg').attr('src', '/images/loading.png');
     $('#loading').show();
 }
 
-const hideLoadingOnSuccess = () =>  {
-    $('#loadingImg').attr('src','/images/check.png');
-    setTimeout(()=> { $('#loading').hide() }, 500);
+const hideLoadingOnSuccess = () => {
+    $('#loadingImg').attr('src', '/images/check.png');
+    setTimeout(() => { $('#loading').hide() }, 500);
 }
 
-const hideLoadingOnError = () =>  {
-    $('#loadingImg').attr('src','/images/x.png');
-    setTimeout(()=> { $('#loading').hide() }, 500);
+const hideLoadingOnError = () => {
+    $('#loadingImg').attr('src', '/images/x.png');
+    setTimeout(() => { $('#loading').hide() }, 500);
 }
+
