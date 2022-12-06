@@ -59,26 +59,50 @@ const runApp = () => {
         $('.dome').hide();
         if (appSettings.dua != null) {
 
+
+
+
+
             if (appSettings.lastReadDuaID === appSettings.dua.id)
                 $('#dome').show();
             else
                 $('#dome-dot').show();
 
-            if (appSettings.dua.title && appSettings.dua.title != $('#duaMenuText').html())
-                $('#duaMenuText').html(appSettings.dua.title);
+            let duaTitle = appSettings.dua.title ?? '';
+            let duaArabic = appSettings.dua.arabic ?? '';
+            let duaText = appSettings.dua.text ?? '';
+            let duaDhikr = appSettings.dua.dhikr ?? '';
+            let duaRef = appSettings.dua.ref ?? '';
 
-            if (appSettings.dua.arabic && appSettings.dua.arabic != $('#dua-arabic').html())
-                $('#dua-arabic').html(appSettings.dua.arabic);
+            if (duaTitle != $('#duaMenuText').html())
+                $('#duaMenuText').html(duaTitle);
 
-            if (appSettings.dua.text && appSettings.dua.text != $('#dua-text').html())
-                $('#dua-text').html(appSettings.dua.text);
+            if (duaArabic != $('#dua-arabic').html())
+                $('#dua-arabic').html(duaArabic);
 
-            if (appSettings.dua.dhikr && appSettings.dua.dhikr != $('#dua-dhikr').html())
-                $('#dua-dhikr').html(appSettings.dua.dhikr);
+            if (duaText != $('#dua-text').html())
+                $('#dua-text').html(duaText);
 
-            if (appSettings.dua.ref && appSettings.dua.ref != $('#dua-ref').html())
-                $('#dua-ref').html(appSettings.dua.ref);
+            if (duaDhikr != $('#dua-dhikr').html())
+                $('#dua-dhikr').html(duaDhikr);
 
+            if (duaRef != $('#dua-ref').html())
+                $('#dua-ref').html(duaRef);
+
+            if (!duaArabic)
+                $('#dua-arabic').hide()
+            if (!duaText)
+                $('#dua-text').hide()
+            if (!duaDhikr)
+                $('#dua-dhikr').hide()
+            if (!duaRef)
+                $('#dua-ref').hide()
+
+            if (!duaArabic || !duaText)
+                $('.aeToggle').hide()
+
+            if (duaArabic && !duaText)
+                $('#dua-arabic').show()
 
         }
 
