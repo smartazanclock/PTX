@@ -3,7 +3,7 @@ body {
 }
 
 #appDiv {
-    padding: 9px;
+    padding: 7px;
     text-align: center;
     margin: 0 auto;
     overflow: hidden;
@@ -30,7 +30,6 @@ body {
     background: #555;
 }
 
-
 #clock {
     max-height: 235px;
     pointer-events: none;
@@ -50,7 +49,7 @@ body {
 .btn-darkish,
 .badge-darkish,
 .bg-darkish {
-    background-color: #4B5158;
+    background-color: #37393E;
 }
 
 #nextText {
@@ -62,17 +61,10 @@ body {
     overflow: hidden;
 }
 
-.currentVakit {
-    border: 2px solid white;
-    border-radius: 3px;
-    background-color: #343a40;
-    color: white;
-}
-
 .offadj.currentVakit {
-    background-color: #007bff;
-    border: 0;
-    color: white;
+    background-color: #007bff !important;
+    border: 0 !important;
+    color: white !important;
 }
 
 .vakitTime {
@@ -98,4 +90,24 @@ body {
     padding-top: 199px;
     background-color: black;
     opacity: 0.59;
+}
+
+#dua-text {
+    font-size: 15px;
+    text-align: left;
+}
+
+#dua-dhikr {
+    background-color: #298933;
+    text-shadow: 0px 0px 9px #1e6024;
+    font-size: 24px;
+    font-family: Arial;
+    direction: rtl;
+    text-align: right;
+}
+
+#dua-arabic {
+    direction: rtl;
+    text-align: right;
+    text-shadow: 0px 0px 9px #1e6024;
 }

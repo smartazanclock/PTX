@@ -49,19 +49,15 @@ const runApp = () => {
             let vd = $('.' + vakit.toLowerCase() + 'Div');
             let timeValue = (appSettings.timeFormat == 12) ? value.time12 : value.time24;
             vd.html('<div class="pt-1 small">' + appSettings.i18n[value.name.toLowerCase() + 'Text'] + '</div>' + '<div class="p-1 vakitTime">' + timeValue + '</div>');
-            vd.removeClass('currentVakit');
+            vd.removeClass('currentVakit bg-gradient border-light');
             if (value.isCurrentVakit == 1) {
-                vd.addClass("currentVakit");
+                vd.addClass("currentVakit bg-gradient border border-light rounded");
             }
         });
 
 
         $('.dome').hide();
         if (appSettings.dua != null) {
-
-
-
-
 
             if (appSettings.lastReadDuaID === appSettings.dua.id)
                 $('#dome').show();
@@ -74,35 +70,31 @@ const runApp = () => {
             let duaDhikr = appSettings.dua.dhikr ?? '';
             let duaRef = appSettings.dua.ref ?? '';
 
+            duaDhikr = duaDhikr.replace('\n', '<br/>')
+
             if (duaTitle != $('#duaMenuText').html())
                 $('#duaMenuText').html(duaTitle);
 
-            if (duaArabic != $('#dua-arabic').html())
-                $('#dua-arabic').html(duaArabic);
-
             if (duaText != $('#dua-text').html())
-                $('#dua-text').html(duaText);
+                $('#dua-text').html(duaText).show();
+
+            if (duaArabic != $('#dua-arabic').html())
+                $('#dua-arabic').html(duaArabic).show();
 
             if (duaDhikr != $('#dua-dhikr').html())
-                $('#dua-dhikr').html(duaDhikr);
+                $('#dua-dhikr').html(duaDhikr).show();
 
             if (duaRef != $('#dua-ref').html())
-                $('#dua-ref').html(duaRef);
+                $('#dua-ref').html(duaRef).show();
 
-            if (!duaArabic)
-                $('#dua-arabic').hide()
             if (!duaText)
-                $('#dua-text').hide()
+                $('#dua-text').hide();
             if (!duaDhikr)
-                $('#dua-dhikr').hide()
+                $('#dua-dhikr').hide();
+            if (!duaArabic)
+                $('#dua-arabic').hide();
             if (!duaRef)
-                $('#dua-ref').hide()
-
-            if (!duaArabic || !duaText)
-                $('.aeToggle').hide()
-
-            if (duaArabic && !duaText)
-                $('#dua-arabic').show()
+                $('#dua-ref').hide();
 
         }
 
@@ -216,15 +208,14 @@ $(function () {
         });
     });
 
-    $(".aeToggle").click(function () {
-        $('#dua-arabic').toggle();
-        $('#dua-text').toggle();
-        $('#arabicToggle').toggle();
-        $('#englishToggle').toggle();
-    });
-
     $(".iconButton").click(function (e) {
         setThenSave('iconStyle', e.currentTarget.value);
+    });
+
+    $("#googleMapsButton").click(function (e) {
+        console.log('you are here');
+        console.log(appSettings.address)
+        window.open('https://maps.google.com/?q=' + appSettings.address)
     });
 
     $("#addressForm").submit(function (event) {
@@ -290,14 +281,6 @@ $(function () {
                 goGoRun('offsets reset');
                 $(':focus').blur();
             });
-        });
-    });
-
-    $("#vakitsContainer").click(function (e) {
-        chrome.storage.local.get(['appSettings'], function (result) {
-            appSettings = result.appSettings;
-            appSettings.timeFormat = (appSettings.timeFormat == 12) ? '24' : '12';
-            saveAppSettings(appSettings);
         });
     });
 
@@ -383,12 +366,12 @@ const setFields = (appSettings) => {
     $('#calculationMethodName').html(appSettings.calculationMethodName);
     $('#fajrAngle').html(appSettings.i18n['fajrText'] + ' ' + appSettings.fajrAngle);
     $('#ishaAngle').html(appSettings.i18n['ishaText'] + ' ' + appSettings.ishaAngle);
-    $('#imsakOffset').html(0).removeClass('badge-danger').addClass('badge-light');
-    $('#fajrOffset').html(0).removeClass('badge-danger').addClass('badge-light');
-    $('#dhuhrOffset').html(0).removeClass('badge-danger').addClass('badge-light');
-    $('#asrOffset').html(0).removeClass('badge-danger').addClass('badge-light');
-    $('#maghribOffset').html(0).removeClass('badge-danger').addClass('badge-light');
-    $('#ishaOffset').html(0).removeClass('badge-danger').addClass('badge-light');
+    $('#imsakOffset').html(0).removeClass('bg-danger text-light').addClass('bg-light text-dark');
+    $('#fajrOffset').html(0).removeClass('bg-danger text-light').addClass('bg-light text-dark');
+    $('#dhuhrOffset').html(0).removeClass('bg-danger text-light').addClass('bg-light text-dark');
+    $('#asrOffset').html(0).removeClass('bg-danger text-light').addClass('bg-light text-dark');
+    $('#maghribOffset').html(0).removeClass('bg-danger text-light').addClass('bg-light text-dark');
+    $('#ishaOffset').html(0).removeClass('bg-danger text-light').addClass('bg-light text-dark');
     $('#imsakOffsetIncrease').attr("disabled", true);
     $('#maghribOffsetDecrease').attr("disabled", true);
     if (appSettings.calculationMethod == 'TurkiyeDiyanet' || appSettings.calculationMethod == 'EUDiyanet')
@@ -404,10 +387,9 @@ const setFields = (appSettings) => {
 
             $('#' + v[0] + 'Offset').html(v[1]);
             if (v[1] != 0) {
-                $('#' + v[0] + 'Offset').removeClass('badge-light').addClass('badge-danger');
+                $('#' + v[0] + 'Offset').removeClass('bg-light text-dark').addClass('bg-danger text-light');
                 offsetPresent = true;
             }
-
 
             $('#' + v[0] + 'OffsetIncrease').attr("disabled", false);
             $('#' + v[0] + 'OffsetDecrease').attr("disabled", false);
@@ -427,7 +409,7 @@ const setFields = (appSettings) => {
         });
     }
 
-    $('#hijriDateOffset').html(0).removeClass('badge-danger').addClass('badge-light');
+    $('#hijriDateOffset').html(0).removeClass('bg-danger text-light').addClass('bg-light text-dark');
     $('#hijriDateIncrease').attr("disabled", false);
     $('#hijriDateDecrease').attr("disabled", false);
 
@@ -436,7 +418,7 @@ const setFields = (appSettings) => {
         $('#hijriDateOffset').html(appSettings.hijriDateOffset);
 
         if (appSettings.hijriDateOffset != 0) {
-            $('#hijriDateOffset').removeClass('badge-light').addClass('badge-danger');
+            $('#hijriDateOffset').removeClass('bg-light text-dark').addClass('bg-danger text-light');
             offsetPresent = true;
         }
 
