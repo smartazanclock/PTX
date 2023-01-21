@@ -115,6 +115,10 @@
     "message": "Ustawienia",
     "description": ""
   },
+  "asmaMenuText": {
+    "message": "Asma Al-Husna",
+    "description": ""
+  },
   "offsetsMenuText": {
     "message": "Korekty Odsunięcia",
     "description": ""
@@ -139,8 +143,8 @@
     "message": "Resetowanie",
     "description": ""
   },
-  "onlyInEnglishAndArabic": {
-    "message": "Obecnie ta sekcja jest dostępna tylko w języku arabskim i angielskim.",
+  "naInYourLanguage": {
+    "message": "Ta sekcja nie jest dostępna w Twoim języku.",
     "description": ""
   }
 }

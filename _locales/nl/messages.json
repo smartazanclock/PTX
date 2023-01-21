@@ -115,6 +115,10 @@
     "message": "Instellingen",
     "description": ""
   },
+  "asmaMenuText": {
+    "message": "Asma Al-Husna",
+    "description": ""
+  },
   "offsetsMenuText": {
     "message": "Offset-aanpassingen",
     "description": ""
@@ -139,8 +143,8 @@
     "message": "Resetten",
     "description": ""
   },
-  "onlyInEnglishAndArabic": {
-    "message": "Momenteel is deze sectie alleen beschikbaar in het Arabisch en Engels.",
+  "naInYourLanguage": {
+    "message": "Deze sectie is niet beschikbaar in uw taal.",
     "description": ""
   }
 }

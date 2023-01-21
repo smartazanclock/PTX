@@ -34,6 +34,9 @@
                             class="offset-adjustments menu-img menu-offsets img-fluid rounded pointerOn"
                             src="images/offset-adjustments-red.png" />
                     </div>
+                    <div class="col-1"><img class="menu-img menu-asma img-fluid rounded pointerOn"
+                            src="images/asma.png" />
+                    </div>
                     <div class="col-1" id="duaDiv" style="display:hidden"><img id="dome" style="display:none"
                             class="dome menu-img menu-dua img-fluid rounded pointerOn" src="images/dome.png" />
                         <img id="dome-dot" style="display:none"
@@ -42,11 +45,10 @@
                     <div class="flex-grow-1 text-end pt-1">
                         <span id="addressMenuText"
                             class="menu-text badge bg-light text-dark menu-settings pointerOn"></span>
-                        <span id="settingsMenuText" class="menu-text badge bg-light text-dark"
-                            style="display:none"></span>
-                        <span id="offsetsMenuText" class="menu-text badge bg-light text-dark"
-                            style="display:none"></span>
-                        <span id="duaMenuText" class="menu-text badge bg-light text-dark" style="display:none"></span>
+                        <span id="settingsMenuText" class="menu-text badge" style="display:none"></span>
+                        <span id="offsetsMenuText" class="menu-text badge" style="display:none"></span>
+                        <span id="asmaMenuText" class="menu-text badge" style="display:none"></span>
+                        <span id="duaMenuText" class="menu-text badge" style="display:none"></span>
                     </div>
                 </div>
 
@@ -72,7 +74,7 @@
 
                 </div>
 
-                <div id="basicSettings" class="tabDiv text-start" style="display:none;">
+                <div id="basicSettings" class="tabDiv text-start" style="display:none">
 
                     <form id="addressForm">
                         <div class="badge mt-1 p-0" id="addressTitle"></div>
@@ -181,7 +183,7 @@
 
                 </div>
 
-                <div id="offsetAdjustments" class="tabDiv text-start" style="display:none;">
+                <div id="offsetAdjustments" class="tabDiv text-start" style="display:none">
 
                     <span class="badge calculationMethodTitle p-0"></span>
                     <div class="p-0">
@@ -262,19 +264,55 @@
                         <button id="hijriDateIncrease" class="btn btn-dark btn-xs pointerOn">+</button>
                     </div>
 
-                    <button id="offsetsResetButton" class="btn btn-secondary btn-sm mt-2 mb-1 col-12"></button>
+                    <button id="offsetsResetButton" class="btn text-light border-0 btn-sm mt-2 mb-1 col-12"></button>
 
-                    <button id="appResetButton" class="btn btn-dark btn-sm col-12"></span>
+                    <button id="appResetButton" class="btn btn-dark text-light btn-sm col-12"></span>
 
                 </div>
 
-                <div id="dua" class="tabDiv text-start csb" style="display:none;">
+                <div id="dua" class="tabDiv text-start csb" style="display:none">
                     <div class="mt-2 csb pe-2" style="max-height:519px; overflow: auto;">
-                        <div id="dua-text" class="mb-3"></div>
-                        <div id="dua-dhikr" class="p-2 mb-3 text-light rounded"></div>
-                        <div id="dua-arabic" class="mb-3"></div>
-                        <div id="dua-ref" class="badge bg-secondary text-light col-12"></div>
-                        <div id="onlyInEnglishAndArabic" class="small mt-3 text-warning"></div>
+                        <div id="dua-text" class="mb-2"></div>
+                        <div id="dua-dhikr" class="p-2 mb-2 text-light rounded"></div>
+                        <div id="dua-arabic" class="mb-2"></div>
+                        <div id="dua-ref" class="badge bg-light text-dark col-12"></div>
+                        <div class="naInYourLanguage small mt-2 text-warning"></div>
+                    </div>
+                </div>
+
+                <div id="asma" class="tabDiv text-start h-100 " style="display:none">
+                    <div class="d-flex flex-column h-100 justify-content-between align-items-center text-center">
+                        <div id="asma-arabic" class="w-100 rounded py-4 mt-3"></div>
+                        <div id="asma-name"></div>
+                        <div id="asma-meaning"></div>
+                        <div class="d-flex flex-row w-100 align-items-center justify-content-center">
+                            <div><img id="previousAsma" class="pointerOn" src="images/previous.png"
+                                    title="Left arrow" />
+                            </div>
+                            <div class="w-50">
+                                <div class="fs-1">ﷻ</div>
+                                <div id="asma-id" class="small"></div>
+                            </div>
+                            <div><img id="nextAsma" class="pointerOn" src="images/next.png" title="Right arrow" /></div>
+                        </div>
+                        <div class="text-start">
+                            Narrated by Abu Huraira (ra): Allah's Messenger ﷺ said, "Allah has ninety-nine Names,
+                            one-hundred less one; and he who
+                            memorized them all by heart will enter Paradise."
+                        </div>
+                        <div class="d-flex flex-row justify-content-between align-items-center w-100">
+                            <div>
+                                <span class="badge bg-light text-dark">Sahih al-Bukhari 7392</span>
+                            </div>
+                            <div>
+                                <button id="asmaSearchButton" class="btn btn-dark">
+                                    <img src="images/google.png" />
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="naInYourLanguage small text-warning text-start mb-3"></div>
+                        </div>
                     </div>
                 </div>
 

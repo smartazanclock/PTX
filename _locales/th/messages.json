@@ -115,6 +115,10 @@
     "message": "การตงั้คา่ ",
     "description": ""
   },
+  "asmaMenuText": {
+    "message": "Asma Al-Husna",
+    "description": ""
+  },
   "offsetsMenuText": {
     "message": "เมนูแกไ้ข",
     "description": ""
@@ -139,8 +143,8 @@
     "message": "รีเซ็ต",
     "description": ""
   },
-  "onlyInEnglishAndArabic": {
-    "message": "ปัจจุบันส่วนนี้มีให้บริการในภาษาอาหรับและภาษาอังกฤษเท่านั้น",
+  "naInYourLanguage": {
+    "message": "ส่วนนี้ไม่มีในภาษาของคุณ",
     "description": ""
   }
 }

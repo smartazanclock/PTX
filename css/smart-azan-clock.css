@@ -49,7 +49,7 @@ body {
 .btn-darkish,
 .badge-darkish,
 .bg-darkish {
-    background-color: #37393E;
+    background-color: #31373E;
 }
 
 #nextText {
@@ -65,6 +65,11 @@ body {
     background-color: #007bff !important;
     border: 0 !important;
     color: white !important;
+}
+
+.offsetDecrease:disabled,
+.offsetIncrease:disabled {
+    background-color: gray;
 }
 
 .vakitTime {
@@ -110,4 +115,22 @@ body {
     direction: rtl;
     text-align: right;
     text-shadow: 0px 0px 9px #1e6024;
+}
+
+
+#asma-arabic {
+    background-color: #298933;
+    text-shadow: 0px 0px 9px #1e6024;
+    font-size: 41px;
+    font-family: Arial;
+}
+
+#asma-name {
+    font-size: 25px;
+    font-family: Arial;
+}
+
+#asma-meaning {
+    font-size: 15px;
+    font-family: Arial;
 }

@@ -115,6 +115,10 @@
     "message": "समायोजन",
     "description": ""
   },
+  "asmaMenuText": {
+    "message": "Asma Al-Husna",
+    "description": ""
+  },
   "offsetsMenuText": {
     "message": "ऑफसेट समायोजन",
     "description": ""
@@ -139,8 +143,8 @@
     "message": "रीसेट",
     "description": ""
   },
-  "onlyInEnglishAndArabic": {
-    "message": "वर्तमान में यह खंड केवल अरबी और अंग्रेजी में उपलब्ध है।",
+  "naInYourLanguage": {
+    "message": "यह अनुभाग आपकी भाषा में उपलब्ध नहीं है।",
     "description": ""
   }
 }

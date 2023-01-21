@@ -49,53 +49,19 @@ const runApp = () => {
             let vd = $('.' + vakit.toLowerCase() + 'Div');
             let timeValue = (appSettings.timeFormat == 12) ? value.time12 : value.time24;
             vd.html('<div class="pt-1 small">' + appSettings.i18n[value.name.toLowerCase() + 'Text'] + '</div>' + '<div class="p-1 vakitTime">' + timeValue + '</div>');
-            vd.removeClass('currentVakit bg-gradient border-light');
+            let cClass = 'currentVakit bg-dark  border border-light rounded';
+            vd.removeClass(cClass);
             if (value.isCurrentVakit == 1) {
-                vd.addClass("currentVakit bg-gradient border border-light rounded");
+                vd.addClass(cClass);
             }
         });
 
-
         $('.dome').hide();
-        if (appSettings.dua != null) {
-
+        if (appSettings.dua) {
             if (appSettings.lastReadDuaID === appSettings.dua.id)
                 $('#dome').show();
             else
                 $('#dome-dot').show();
-
-            let duaTitle = appSettings.dua.title ?? '';
-            let duaArabic = appSettings.dua.arabic ?? '';
-            let duaText = appSettings.dua.text ?? '';
-            let duaDhikr = appSettings.dua.dhikr ?? '';
-            let duaRef = appSettings.dua.ref ?? '';
-
-            duaDhikr = duaDhikr.replace('\n', '<br/>')
-
-            if (duaTitle != $('#duaMenuText').html())
-                $('#duaMenuText').html(duaTitle);
-
-            if (duaText != $('#dua-text').html())
-                $('#dua-text').html(duaText).show();
-
-            if (duaArabic != $('#dua-arabic').html())
-                $('#dua-arabic').html(duaArabic).show();
-
-            if (duaDhikr != $('#dua-dhikr').html())
-                $('#dua-dhikr').html(duaDhikr).show();
-
-            if (duaRef != $('#dua-ref').html())
-                $('#dua-ref').html(duaRef).show();
-
-            if (!duaText)
-                $('#dua-text').hide();
-            if (!duaDhikr)
-                $('#dua-dhikr').hide();
-            if (!duaArabic)
-                $('#dua-arabic').hide();
-            if (!duaRef)
-                $('#dua-ref').hide();
-
         }
 
         setFields(appSettings);
@@ -147,18 +113,48 @@ $(function () {
         $('#footer').hide();
         $('.menu-text').hide();
         $('#duaMenuText').show();
-        setThenSave('lastReadDuaID', appSettings.dua.id);
+        displayDua();
     });
 
+    $(".menu-asma").click(function (e) {
+        $('.menu-img').removeClass('bg-secondary');
+        $('img.menu-asma').addClass('bg-secondary');
+        $('.tabDiv').hide();
+        $('#asma').show();
+        $('#footer').hide();
+        $('.menu-text').hide();
+        $('#asmaMenuText').show();
+        displayAsma();
+    });
+
+    $("#previousAsma").click(() => {
+        previousAsma();
+    });
+
+    $("#nextAsma").click(() => {
+        nextAsma();
+    });
+
+    document.onkeydown = checkKey;
+    function checkKey(e) {
+        e = e || window.event;
+        if (e.keyCode == '37') {
+            previousAsma()
+        }
+        else if (e.keyCode == '39') {
+            nextAsma()
+        }
+    }
+
     $("#calculationMethod").change(function () {
-        setThenSave('calculationMethod', $('#calculationMethod').val());
+        setThenSaveAndRefresh('calculationMethod', $('#calculationMethod').val());
     });
 
     $("#desktopNotificationsToggle").click(function () {
         chrome.storage.local.get(['appSettings'], function (result) {
             appSettings = result.appSettings;
             appSettings.desktopNotifications = ((appSettings.desktopNotifications ?? 0) + 1) % 2;
-            saveAppSettings(appSettings);
+            saveAppSettingsAndRefresh(appSettings);
             chrome.notifications.clear('test');
             if (appSettings.desktopNotifications == 1) {
                 chrome.notifications.create(
@@ -180,7 +176,7 @@ $(function () {
         chrome.storage.local.get(['appSettings'], function (result) {
             appSettings = result.appSettings;
             appSettings.showImsak = ((appSettings.showImsak ?? 0) + 1) % 2;
-            saveAppSettings(appSettings);
+            saveAppSettingsAndRefresh(appSettings);
         });
     });
 
@@ -188,7 +184,7 @@ $(function () {
         chrome.storage.local.get(['appSettings'], function (result) {
             appSettings = result.appSettings;
             appSettings.showMidnight = ((appSettings.showMidnight ?? 0) + 1) % 2;
-            saveAppSettings(appSettings);
+            saveAppSettingsAndRefresh(appSettings);
         });
     });
 
@@ -196,7 +192,7 @@ $(function () {
         chrome.storage.local.get(['appSettings'], function (result) {
             appSettings = result.appSettings;
             appSettings.timeFormat = (appSettings.timeFormat == 12) ? '24' : '12';
-            saveAppSettings(appSettings);
+            saveAppSettingsAndRefresh(appSettings);
         });
     });
 
@@ -204,18 +200,20 @@ $(function () {
         chrome.storage.local.get(['appSettings'], function (result) {
             appSettings = result.appSettings;
             appSettings.hanafiAsr = ((appSettings.hanafiAsr ?? 0) + 1) % 2;
-            saveAppSettings(appSettings);
+            saveAppSettingsAndRefresh(appSettings);
         });
     });
 
     $(".iconButton").click(function (e) {
-        setThenSave('iconStyle', e.currentTarget.value);
+        setThenSaveAndRefresh('iconStyle', e.currentTarget.value);
     });
 
     $("#googleMapsButton").click(function (e) {
-        console.log('you are here');
-        console.log(appSettings.address)
         window.open('https://maps.google.com/?q=' + appSettings.address)
+    });
+
+    $("#asmaSearchButton").click(function (e) {
+        window.open('https://google.com/search?q=' + $('#asma-name').html() + ' Asma Al-Husna meaning')
     });
 
     $("#addressForm").submit(function (event) {
@@ -293,7 +291,8 @@ $(function () {
                 Object.entries(data).forEach(([key, value]) => { i18nValues[key] = value.message });
                 appSettings.i18n = i18nValues;
                 appSettings.dua = null;
-                saveAppSettings(appSettings);
+                saveAppSettingsAndRefresh(appSettings);
+                setTimeout(() => { refreshDua() }, 2000);
             });
         });
     });
@@ -320,12 +319,80 @@ const refreshDua = () => {
                     response.json().then((data) => {
                         appSettings.dua = data;
                         appSettings.dua.lastUpdate = today;
-                        saveAppSettings(appSettings);
+                        justSaveAppSettings(appSettings);
                     });
                 }
             }).catch((err) => { console.log(err) });
         }
     });
+}
+
+const displayDua = () => {
+    chrome.storage.local.get(['appSettings'], function (result) {
+        appSettings = result.appSettings;
+        let duaTitle = appSettings.dua.title ?? '';
+        let duaArabic = appSettings.dua.arabic ?? '';
+        let duaText = appSettings.dua.text ?? '';
+        let duaDhikr = appSettings.dua.dhikr ?? '';
+        let duaRef = appSettings.dua.ref ?? '';
+        duaDhikr = duaDhikr.replace('\n', '<br/>')
+
+        $('#duaMenuText').html(duaTitle);
+        $('#dua-text').html(duaText).show();
+        $('#dua-arabic').html(duaArabic).show();
+        $('#dua-dhikr').html(duaDhikr).show();
+        $('#dua-ref').html(duaRef).show();
+
+        if (!duaText)
+            $('#dua-text').hide();
+        if (!duaDhikr)
+            $('#dua-dhikr').hide();
+        if (!duaArabic)
+            $('#dua-arabic').hide();
+        if (!duaRef)
+            $('#dua-ref').hide();
+
+        appSettings.lastReadDuaID = appSettings.dua.id;
+        justSaveAppSettings(appSettings);
+
+    });
+
+}
+
+const displayAsma = () => {
+    chrome.storage.local.get(['appSettings'], function (result) {
+        appSettings = result.appSettings;
+        let currentAsmaID = appSettings.asmaID ?? 1;
+        // fetch('../_locales/' + appSettings.i18n.languageCode  + '/asma.json').then((response) => {
+        fetch('../_locales/en/asma.json').then((response) => {
+            response.json().then((data) => {
+                let asma = data.AsmaAlHusna[currentAsmaID - 1];
+                $('#asma-arabic').html(asma.arabic_text);
+                $('#asma-name').html(asma.name);
+                $('#asma-meaning').html(asma.meaning);
+                $('#asma-id').html(currentAsmaID);
+                appSettings.asmaID = currentAsmaID;
+                justSaveAppSettings(appSettings);
+            });
+        }).catch((err) => { console.log(err) });;
+    });
+}
+
+const previousAsma = () => {
+    appSettings.asmaID--;
+    if (appSettings.asmaID <= 0)
+        appSettings.asmaID = 99;
+    justSaveAppSettings(appSettings);
+    displayAsma();
+}
+
+const nextAsma = () => {
+    appSettings.asmaID++;
+    if (appSettings.asmaID > 99) {
+        appSettings.asmaID = 1;
+    }
+    justSaveAppSettings(appSettings);
+    displayAsma();
 }
 
 const populateCalculationMethods = () => {
@@ -334,18 +401,23 @@ const populateCalculationMethods = () => {
     });
 }
 
-const setThenSave = (name, value) => {
+const setThenSaveAndRefresh = (name, value) => {
     chrome.storage.local.get(['appSettings'], function (result) {
         appSettings = result.appSettings;
         appSettings[name] = value;
-        saveAppSettings(appSettings);
+        saveAppSettingsAndRefresh(appSettings);
     });
 }
 
-const saveAppSettings = (appSettings) => {
+const saveAppSettingsAndRefresh = (appSettings) => {
     chrome.storage.local.set({ 'appSettings': appSettings }, function () {
         goGoRun('appSettings updated');
-        refreshDua();
+        $(':focus').blur();
+    });
+}
+
+const justSaveAppSettings = (appSettings) => {
+    chrome.storage.local.set({ 'appSettings': appSettings }, function () {
         $(':focus').blur();
     });
 }
@@ -434,12 +506,12 @@ const setFields = (appSettings) => {
 
     if (offsetPresent) {
         $('#offset-adjustments-red').show();
-        $('#offsetsResetButton').removeClass('btn-secondary').addClass('btn-danger');
+        $('#offsetsResetButton').removeClass('btn-darkish').addClass('btn-danger');
     }
 
     else {
         $('#offset-adjustments-blank').show();
-        $('#offsetsResetButton').removeClass('btn-danger').addClass('btn-secondary');
+        $('#offsetsResetButton').removeClass('btn-danger').addClass('btn-darkish');
     }
 
 
@@ -557,7 +629,6 @@ const addressSearchFail = () => {
     $(':focus').blur();
     hideLoadingOnError();
 }
-
 
 const showLoading = () => {
     $('#loadingImg').attr('src', '/images/loading.png');

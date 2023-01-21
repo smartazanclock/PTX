@@ -115,6 +115,10 @@
     "message": "Ajustes",
     "description": ""
   },
+  "asmaMenuText": {
+    "message": "Asma Al-Husna",
+    "description": ""
+  },
   "offsetsMenuText": {
     "message": "Ajustes de Deslocamento",
     "description": ""
@@ -139,8 +143,8 @@
     "message": "Redefinir",
     "description": ""
   },
-  "onlyInEnglishAndArabic": {
-    "message": "Atualmente, esta seção está disponível apenas em árabe e inglês.",
+  "naInYourLanguage": {
+    "message": "Esta seção não está disponível em seu idioma.",
     "description": ""
   }
 }

@@ -115,6 +115,10 @@
     "message": "Einstellungen",
     "description": ""
   },
+  "asmaMenuText": {
+    "message": "Asma Al-Husna",
+    "description": ""
+  },
   "offsetsMenuText": {
     "message": "Zeitverschiebungen",
     "description": ""
@@ -139,8 +143,8 @@
     "message": "Zurücksetzen",
     "description": ""
   },
-  "onlyInEnglishAndArabic": {
-    "message": "Derzeit ist dieser Abschnitt nur auf Arabisch und Englisch verfügbar.",
+  "naInYourLanguage": {
+    "message": "Dieser Abschnitt ist nicht in Ihrer Sprache verfügbar.",
     "description": ""
   }
 }

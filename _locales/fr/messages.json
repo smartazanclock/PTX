@@ -115,6 +115,10 @@
     "message": "Réglages",
     "description": ""
   },
+  "asmaMenuText": {
+    "message": "Asma Al-Husna",
+    "description": ""
+  },
   "offsetsMenuText": {
     "message": "Décalages",
     "description": ""
@@ -139,8 +143,8 @@
     "message": "Réinitialiser",
     "description": ""
   },
-  "onlyInEnglishAndArabic": {
-    "message": "Actuellement, cette section n'est disponible qu'en arabe et en anglais.",
+  "naInYourLanguage": {
+    "message": "Cette section n'est pas disponible dans votre langue.",
     "description": ""
   }
 }

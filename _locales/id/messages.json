@@ -115,6 +115,10 @@
     "message": "Pengaturan",
     "description": ""
   },
+  "asmaMenuText": {
+    "message": "Asma Al-Husna",
+    "description": ""
+  },
   "offsetsMenuText": {
     "message": "Penyesuaian",
     "description": ""
@@ -139,8 +143,8 @@
     "message": "Mengatur ulang",
     "description": ""
   },
-  "onlyInEnglishAndArabic": {
-    "message": "Saat ini bagian ini hanya tersedia dalam bahasa Arab dan Inggris.",
+  "naInYourLanguage": {
+    "message": "Bagian ini tidak tersedia dalam bahasa Anda.",
     "description": ""
   }
 }

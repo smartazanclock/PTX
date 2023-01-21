@@ -115,6 +115,10 @@
     "message": "Ajustes",
     "description": ""
   },
+  "asmaMenuText": {
+    "message": "Asma Al-Husna",
+    "description": ""
+  },
   "offsetsMenuText": {
     "message": "Compensaciones",
     "description": ""
@@ -139,8 +143,8 @@
     "message": "Reiniciar",
     "description": ""
   },
-  "onlyInEnglishAndArabic": {
-    "message": "Actualmente, esta sección solo está disponible en árabe e inglés.",
+  "naInYourLanguage": {
+    "message": "Esta sección no está disponible en su idioma.",
     "description": ""
   }
 }

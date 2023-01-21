@@ -115,6 +115,10 @@
     "message": "Impostazioni",
     "description": ""
   },
+  "asmaMenuText": {
+    "message": "Asma Al-Husna",
+    "description": ""
+  },
   "offsetsMenuText": {
     "message": "Regolazioni offset",
     "description": ""
@@ -139,8 +143,8 @@
     "message": "Ripristina",
     "description": ""
   },
-  "onlyInEnglishAndArabic": {
-    "message": "Attualmente questa sezione è disponibile solo in arabo e inglese.",
+  "naInYourLanguage": {
+    "message": "Questa sezione non è disponibile nella tua lingua.",
     "description": ""
   }
 }

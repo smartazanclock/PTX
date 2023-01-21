@@ -115,6 +115,10 @@
     "message": "設定",
     "description": ""
   },
+  "asmaMenuText": {
+    "message": "Asma Al-Husna",
+    "description": ""
+  },
   "offsetsMenuText": {
     "message": "オフセットを調整",
     "description": ""
@@ -139,8 +143,8 @@
     "message": "オフセットを再設定",
     "description": ""
   },
-  "onlyInEnglishAndArabic": {
-    "message": "現在、このセクションはアラビア語と英語でのみご利用いただけます。",
+  "naInYourLanguage": {
+    "message": "このセクションは、あなたの言語では利用できません。",
     "description": ""
   }
 }

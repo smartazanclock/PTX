@@ -115,6 +115,10 @@
     "message": "সেটিংস",
     "description": ""
   },
+  "asmaMenuText": {
+    "message": "Asma Al-Husna",
+    "description": ""
+  },
   "offsetsMenuText": {
     "message": "অফসেট এডজাস্টমেন্টস",
     "description": ""
@@ -139,8 +143,8 @@
     "message": "রিসেট",
     "description": ""
   },
-  "onlyInEnglishAndArabic": {
-    "message": "বর্তমানে এই বিভাগটি শুধুমাত্র আরবি এবং ইংরেজিতে উপলব্ধ।",
+  "naInYourLanguage": {
+    "message": "এই বিভাগটি আপনার ভাষায় উপলব্ধ নয়।",
     "description": ""
   }
 }

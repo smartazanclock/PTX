@@ -115,6 +115,10 @@
     "message": "Inställningar",
     "description": ""
   },
+  "asmaMenuText": {
+    "message": "Asma Al-Husna",
+    "description": ""
+  },
   "offsetsMenuText": {
     "message": "Inställningar För Utjämning",
     "description": ""
@@ -139,8 +143,8 @@
     "message": "Återställa",
     "description": ""
   },
-  "onlyInEnglishAndArabic": {
-    "message": "För närvarande är det här avsnittet endast tillgängligt på arabiska och engelska.",
+  "naInYourLanguage": {
+    "message": "Det här avsnittet är inte tillgängligt på ditt språk.",
     "description": ""
   }
 }

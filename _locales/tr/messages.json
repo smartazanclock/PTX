@@ -115,6 +115,10 @@
     "message": "Ayarlar",
     "description": ""
   },
+  "asmaMenuText": {
+    "message": "Esma El-Hüsna",
+    "description": ""
+  },
   "offsetsMenuText": {
     "message": "Temkin Ayarları",
     "description": ""
@@ -139,8 +143,8 @@
     "message": "Temkin ayarlarını sıfırla",
     "description": ""
   },
-  "onlyInEnglishAndArabic": {
-    "message": "Şu anda bu bölüm yalnızca Arapça ve İngilizce olarak mevcuttur.",
+  "naInYourLanguage": {
+    "message": "Bu bölüm henüz Türkçe olarak mevcut değil.",
     "description": ""
   }
 }
