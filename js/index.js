@@ -5,7 +5,8 @@ chrome.runtime.onMessage.addListener(() => { runApp() });
 $(function () {
     /* once on 1st load */
     populateCalculationMethods();
-    refreshDua();
+    refreshAndDisplayDua();
+    displayAsma();
     goGoRun('running on index load');
     setInterval(goGoRun, 1000);
 });
@@ -113,7 +114,7 @@ $(function () {
         $('#footer').hide();
         $('.menu-text').hide();
         $('#duaMenuText').show();
-        displayDua();
+        setLastReadDua();
     });
 
     $(".menu-asma").click(function (e) {
@@ -213,7 +214,7 @@ $(function () {
     });
 
     $("#asmaSearchButton").click(function (e) {
-        window.open('https://google.com/search?q=' + $('#asma-name').html() + ' Asma Al-Husna meaning')
+        window.open('https://google.com/search?q=' + $('#asma-name').html() + ' ' + appSettings.i18n['asmaMenuText'])
     });
 
     $("#addressForm").submit(function (event) {
@@ -292,7 +293,7 @@ $(function () {
                 appSettings.i18n = i18nValues;
                 appSettings.dua = null;
                 saveAppSettingsAndRefresh(appSettings);
-                setTimeout(() => { refreshDua() }, 2000);
+                setTimeout(() => { refreshAndDisplayDua() }, 2000);
             });
         });
     });
@@ -302,14 +303,14 @@ $(function () {
         showLoading();
         chrome.storage.local.clear();
         goGoRun('extension reset');
-        setTimeout(() => { refreshDua() }, 2000);
+        setTimeout(() => { refreshAndDisplayDua() }, 2000);
         $(".menu-clock").trigger("click");
         hideLoadingOnSuccess();
     });
 
 });
 
-const refreshDua = () => {
+const refreshAndDisplayDua = () => {
     chrome.storage.local.get(['appSettings'], function (result) {
         appSettings = result.appSettings;
         let today = new Date().toLocaleDateString();
@@ -319,60 +320,74 @@ const refreshDua = () => {
                     response.json().then((data) => {
                         appSettings.dua = data;
                         appSettings.dua.lastUpdate = today;
+                        displayDua(appSettings.dua);
                         justSaveAppSettings(appSettings);
                     });
                 }
             }).catch((err) => { console.log(err) });
         }
+        else {
+            displayDua(appSettings.dua);
+        }
+
     });
 }
 
-const displayDua = () => {
-    chrome.storage.local.get(['appSettings'], function (result) {
-        appSettings = result.appSettings;
-        let duaTitle = appSettings.dua.title ?? '';
-        let duaArabic = appSettings.dua.arabic ?? '';
-        let duaText = appSettings.dua.text ?? '';
-        let duaDhikr = appSettings.dua.dhikr ?? '';
-        let duaRef = appSettings.dua.ref ?? '';
-        duaDhikr = duaDhikr.replace('\n', '<br/>')
+const displayDua = (dua) => {
 
-        $('#duaMenuText').html(duaTitle);
-        $('#dua-text').html(duaText).show();
-        $('#dua-arabic').html(duaArabic).show();
-        $('#dua-dhikr').html(duaDhikr).show();
-        $('#dua-ref').html(duaRef).show();
+    let duaTitle = dua.title ?? '';
+    let duaArabic = dua.arabic ?? '';
+    let duaText = dua.text ?? '';
+    let duaDhikr = dua.dhikr ?? '';
+    let duaRef = dua.ref ?? '';
+    duaDhikr = duaDhikr.replace('\n', '<br/>')
 
-        if (!duaText)
-            $('#dua-text').hide();
-        if (!duaDhikr)
-            $('#dua-dhikr').hide();
-        if (!duaArabic)
-            $('#dua-arabic').hide();
-        if (!duaRef)
-            $('#dua-ref').hide();
+    $('#duaMenuText').html(duaTitle);
+    $('#dua-text').html(duaText).show();
+    $('#dua-arabic').html(duaArabic).show();
+    $('#dua-dhikr').html(duaDhikr).show();
+    $('#dua-ref').html(duaRef).show();
 
-        appSettings.lastReadDuaID = appSettings.dua.id;
-        justSaveAppSettings(appSettings);
+    if (!duaText)
+        $('#dua-text').hide();
+    if (!duaDhikr)
+        $('#dua-dhikr').hide();
+    if (!duaArabic)
+        $('#dua-arabic').hide();
+    if (!duaRef)
+        $('#dua-ref').hide();
+}
 
-    });
-
+const setLastReadDua = () => {
+    appSettings.lastReadDuaID = appSettings.dua.id;
+    justSaveAppSettings(appSettings);
 }
 
 const displayAsma = () => {
     chrome.storage.local.get(['appSettings'], function (result) {
         appSettings = result.appSettings;
         let currentAsmaID = appSettings.asmaID ?? 1;
-        // fetch('../_locales/' + appSettings.i18n.languageCode  + '/asma.json').then((response) => {
-        fetch('../_locales/en/asma.json').then((response) => {
+
+        appSettings.asmaID = currentAsmaID;
+        justSaveAppSettings(appSettings);
+
+        $('#asma-footer').show();
+        let lang = 'en';
+        let asmaAvailableInLangs = 'en';
+        if (asmaAvailableInLangs.indexOf(appSettings.i18n.languageCode) >= 0) {
+            $('#asma-footer').hide();
+            lang = appSettings.i18n.languageCode;
+        }
+
+        fetch('../_locales/' + lang + '/asma.json').then((response) => {
             response.json().then((data) => {
                 let asma = data.AsmaAlHusna[currentAsmaID - 1];
+                $('#asma-hadith').html(data.Hadith);
                 $('#asma-arabic').html(asma.arabic_text);
                 $('#asma-name').html(asma.name);
                 $('#asma-meaning').html(asma.meaning);
                 $('#asma-id').html(currentAsmaID);
-                appSettings.asmaID = currentAsmaID;
-                justSaveAppSettings(appSettings);
+
             });
         }).catch((err) => { console.log(err) });;
     });

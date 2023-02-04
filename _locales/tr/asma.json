@@ -1,499 +1,499 @@
 {
-    "Hadith": "Narrated by Abu Huraira (ra): Allah's Messenger ﷺ said: Allah has ninety-nine Names, one-hundred less one; and he who memorized them all by heart will enter Paradise.",
+    "Hadith": "Ebu Hureyre'nin (ra) bildirdiği bir hadisi şerifte Peygamber Efendimiz ﷺ şöyle buyurdu: Allah'ın 99 ismi vardır. Kim bunları ezberlerse (îman eder ve ezbere sayarsa) Cennete girer.",
     "AsmaAlHusna": [
         {
-            "name": "Al-Rahman",
-            "meaning": "The Most Merciful",
+            "name": "Er-Rahman",
+            "meaning": "Tüm yaratılanlara merhamet eden",
             "arabic_text": "ٱلْرَّحْمَـانُ"
         },
         {
-            "name": "Al-Rahim",
-            "meaning": "The Most Compassionate",
+            "name": "Er-Rahim",
+            "meaning": "Ahirette inananlara sonsuz ihsan, ikram ve lütufta bulunan",
             "arabic_text": "ٱلْرَّحِيْمُ"
         },
         {
-            "name": "Al-Malik",
-            "meaning": "The Eternal Lord",
+            "name": "El-Melik",
+            "meaning": "Tüm evrenin sahibi, saltanatı ve mülkü sürekli olan",
             "arabic_text": "ٱلْمَلِكُ"
         },
         {
-            "name": "Al-Quddus",
-            "meaning": "The Most Sacred",
+            "name": "El-Kuddûs",
+            "meaning": "Her noksanlıktan uzak ve her türlü takdîse lâyık olan",
             "arabic_text": "ٱلْقُدُّوسُ"
         },
         {
-            "name": "Al-Salam",
-            "meaning": "The Source of Peace",
+            "name": "Es-Selâm",
+            "meaning": "Tüm tehlikelerden selamete çıkaran",
             "arabic_text": "ٱلْسَّلَامُ"
         },
         {
-            "name": "Al-Mu'min",
-            "meaning": "The Giver of Faith",
+            "name": "El-Mü'min",
+            "meaning": "Koruyan, Güvenilen",
             "arabic_text": "ٱلْمُؤْمِنُ"
         },
         {
-            "name": "Al-Muhaymin",
-            "meaning": "The Protector",
+            "name": "El-Müheymin",
+            "meaning": "Her şeyi gören ve gözeten",
             "arabic_text": "ٱلْمُهَيْمِنُ"
         },
         {
-            "name": "Al-Aziz",
-            "meaning": "All Mighty",
+            "name": "El-Aziz",
+            "meaning": "Her şeyin galibi ve izzet sahibi olan",
             "arabic_text": "ٱلْعَزِيزُ"
         },
         {
-            "name": "Al-Jabbar",
-            "meaning": "The Compeller",
+            "name": "El-Cebbar",
+            "meaning": "Kudret sahibi olan",
             "arabic_text": "ٱلْجَبَّارُ"
         },
         {
-            "name": "Al-Mutakabbir",
-            "meaning": "The Supreme, The Majestic",
+            "name": "El-Mütekebbir",
+            "meaning": "Büyüklükte eşi, benzeri olmayan",
             "arabic_text": "ٱلْمُتَكَبِّرُ"
         },
         {
-            "name": "Al-Khaliq",
-            "meaning": "The Creator",
+            "name": "El-Hâlık",
+            "meaning": "Yaratan, yoktan var eden",
             "arabic_text": "ٱلْخَالِقُ"
         },
         {
-            "name": "Al-Bari",
-            "meaning": "The Maker",
+            "name": "El-Bâri",
+            "meaning": "Her şeyi kusursuz ve uyumlu yaratan",
             "arabic_text": "ٱلْبَارِئُ"
         },
         {
-            "name": "Al-Musawwir",
-            "meaning": "The Shaper of Beauty",
+            "name": "El-Musavvir",
+            "meaning": "Varlıklara şekil veren",
             "arabic_text": "ٱلْمُصَوِّرُ"
         },
         {
-            "name": "Al-Ghaffar",
-            "meaning": "The Forgiving",
+            "name": "El-Gaffâr",
+            "meaning": "Mağfireti bol olan",
             "arabic_text": "ٱلْغَفَّارُ"
         },
         {
-            "name": "Al-Qahhar",
-            "meaning": "The Subduer",
+            "name": "El-Kahhâr",
+            "meaning": "Her şeye, her istediğini yapacak surette, galip ve hakim olan",
             "arabic_text": "ٱلْقَهَّارُ"
         },
         {
-            "name": "Al-Wahhab",
-            "meaning": "The Supreme Bestower",
+            "name": "El-Vehhâb",
+            "meaning": "Karşılıksız hibeler veren, çok fazla ihsan eden",
             "arabic_text": "ٱلْوَهَّابُ"
         },
         {
-            "name": "Al-Razzaq",
-            "meaning": "The Sustainer",
+            "name": "Er-Rezzâk",
+            "meaning": "Bütün mahlükatın rızkını veren ve ihtiyacını karşılayan",
             "arabic_text": "ٱلْرَّزَّاقُ"
         },
         {
-            "name": "Al-Fattah",
-            "meaning": "The Opener",
+            "name": "El-Fettâh",
+            "meaning": "Her türlü müşkülleri açan ve kolaylaştıran, darlıktan kurtaran",
             "arabic_text": "ٱلْفَتَّاحُ"
         },
         {
-            "name": "Al-Aleem",
-            "meaning": "The All-Knowing",
+            "name": "El-Alîm",
+            "meaning": "Gizli açık, geçmiş, gelecek, her şeyi en ince detaylarına kadar bilen",
             "arabic_text": "ٱلْعَلِيمُ"
         },
         {
-            "name": "Al-Qabid",
-            "meaning": "The Withholder",
+            "name": "El-Kâbıd",
+            "meaning": "Dilediğine darlık veren, sıkan, daraltan",
             "arabic_text": "ٱلْقَابِضُ"
         },
         {
-            "name": "Al-Basit",
-            "meaning": "The Expander",
+            "name": "El-Bâsıt",
+            "meaning": "Dilediğine bolluk veren, açan, genişleten",
             "arabic_text": "ٱلْبَاسِطُ"
         },
         {
-            "name": "Al-Khafid",
-            "meaning": "The Reducer",
+            "name": "El-Hâfıd",
+            "meaning": "Dereceleri alçaltan",
             "arabic_text": "ٱلْخَافِضُ"
         },
         {
-            "name": "Al-Rafi",
-            "meaning": "The Exalter",
+            "name": "Er-Râfi",
+            "meaning": "Şeref verip yükselten",
             "arabic_text": "ٱلْرَّافِعُ"
         },
         {
-            "name": "Al-Muizz",
-            "meaning": "The Bestower of Honor",
+            "name": "El-Mu'ız",
+            "meaning": "Dilediğini aziz eden, izzet veren",
             "arabic_text": "ٱلْمُعِزُّ"
         },
         {
-            "name": "Al-Muzill",
-            "meaning": "The Humiliator",
+            "name": "El-Müzil",
+            "meaning": "Dilediğini zillete düşüren",
             "arabic_text": "ٱلْمُذِلُّ"
         },
         {
-            "name": "Al-Sami",
-            "meaning": "The All-Hearing",
+            "name": "Es-Semi",
+            "meaning": "Her şeyi en iyi işiten",
             "arabic_text": "ٱلْسَّمِيعُ"
         },
         {
-            "name": "Al-Basir",
-            "meaning": "The All-Seeing",
+            "name": "El-Basîr",
+            "meaning": "Gizli açık, her şeyi en iyi gören",
             "arabic_text": "ٱلْبَصِيرُ"
         },
         {
-            "name": "Al-Hakam",
-            "meaning": "The Judge, The Giver of Justice",
+            "name": "El-Hakem",
+            "meaning": "Mutlak hakim, hakkı batıldan ayıran. Hikmetle hükmeden.",
             "arabic_text": "ٱلْحَكَمُ"
         },
         {
-            "name": "Al-Adl",
-            "meaning": "The Just",
+            "name": "El-Adl",
+            "meaning": "Mutlak adil, çok adaletli.",
             "arabic_text": "ٱلْعَدْلُ"
         },
         {
-            "name": "Al-Latif",
-            "meaning": "The Subtle One",
+            "name": "El-Latîf",
+            "meaning": "Lütuf ve ihsan sahibi olan. Bütün incelikleri bilen.",
             "arabic_text": "ٱلْلَّطِيفُ"
         },
         {
-            "name": "Al-Khabir",
-            "meaning": "The All-Aware",
+            "name": "El-Habîr",
+            "meaning": "Olmuş olacak her şeyden haberdar.",
             "arabic_text": "ٱلْخَبِيرُ"
         },
         {
-            "name": "Al-Halim",
-            "meaning": "The Forbearing",
+            "name": "El-Halîm",
+            "meaning": "Cezada, acele etmeyen, yumuşak davranan.",
             "arabic_text": "ٱلْحَلِيمُ"
         },
         {
-            "name": "Al-Azim",
-            "meaning": "The Magnificent",
+            "name": "El-Azîm",
+            "meaning": "Büyüklükte benzeri yok. Pek yüce.",
             "arabic_text": "ٱلْعَظِيمُ"
         },
         {
-            "name": "Al-Ghafur",
-            "meaning": "The Forgiving",
+            "name": "El-Gafûr",
+            "meaning": "Affı, mağfireti bol.",
             "arabic_text": "ٱلْغَفُورُ"
         },
         {
-            "name": "Al-Shakur",
-            "meaning": "The Grateful",
+            "name": "Eş-Şekûr",
+            "meaning": "Az amele, çok sevap veren.",
             "arabic_text": "ٱلْشَّكُورُ"
         },
         {
-            "name": "Al-Ali",
-            "meaning": "The High",
+            "name": "El-Aliyy",
+            "meaning": "Yüce",
             "arabic_text": "ٱلْعَلِيُّ"
         },
         {
-            "name": "Al-Kabir",
-            "meaning": "The Great",
+            "name": "El-Kebîr",
+            "meaning": "Büyük olan",
             "arabic_text": "ٱلْكَبِيرُ"
         },
         {
-            "name": "Al-Hafiz",
-            "meaning": "The Preserver",
+            "name": "El-Hafîz",
+            "meaning": "Koruyan",
             "arabic_text": "ٱلْحَفِيظُ"
         },
         {
-            "name": "Al-Muqit",
-            "meaning": "The Nourisher",
+            "name": "El-Mukît",
+            "meaning": "Rızık veren",
             "arabic_text": "ٱلْمُقِيتُ"
         },
         {
-            "name": "Al-Hasib",
-            "meaning": "The Accounter",
+            "name": "El-Hasîb",
+            "meaning": "Hesaba çeken",
             "arabic_text": "ٱلْحَسِيبُ"
         },
         {
-            "name": "Al-Jalil",
-            "meaning": "The Majestic",
+            "name": "El-Celîl",
+            "meaning": "Yüksek sıfatları olan",
             "arabic_text": "ٱلْجَلِيلُ"
         },
         {
-            "name": "Al-Karim",
-            "meaning": "The Generous",
+            "name": "El-Kerîm",
+            "meaning": "Keremi, lütuf ve ihsanı bol, karşılıksız veren, çok ikram eden.",
             "arabic_text": "ٱلْكَرِيمُ"
         },
         {
-            "name": "Al-Raqib",
-            "meaning": "The Watchful",
+            "name": "Er-Rakîb",
+            "meaning": "Gözeten",
             "arabic_text": "ٱلْرَّقِيبُ"
         },
         {
-            "name": "Al-Mujib",
-            "meaning": "The Responsive One",
+            "name": "El-Mucîb",
+            "meaning": "Duaları kabul eden",
             "arabic_text": "ٱلْمُجِيبُ"
         },
         {
-            "name": "Al-Wasi",
-            "meaning": "The All-Encompassing",
+            "name": "El-Vâsi",
+            "meaning": "Rahmet, kudret ve ilmi ile her şeyi ihata eden",
             "arabic_text": "ٱلْوَاسِعُ"
         },
         {
-            "name": "Al-Hakim",
-            "meaning": "The Wise",
+            "name": "El-Hakîm",
+            "meaning": "Hikmetli",
             "arabic_text": "ٱلْحَكِيمُ"
         },
         {
-            "name": "Al-Wadud",
-            "meaning": "The Most Loving",
+            "name": "El-Vedûd",
+            "meaning": "Kullarını seven",
             "arabic_text": "ٱلْوَدُودُ"
         },
         {
-            "name": "Al-Majid",
-            "meaning": "The Glorious",
+            "name": "El-Mecîd",
+            "meaning": "Şerefi yüksek olan",
             "arabic_text": "ٱلْمَجِيدُ"
         },
         {
-            "name": "Al-Ba'ith",
-            "meaning": "The Resurrector",
+            "name": "El-Bâis",
+            "meaning": "Ölmüş olanları dirilten",
             "arabic_text": "ٱلْبَاعِثُ"
         },
         {
-            "name": "Al-Shahid",
+            "name": "Eş-Şehîd",
             "meaning": "The Witness",
             "arabic_text": "ٱلْشَّهِيدُ"
         },
         {
-            "name": "Al-Haqq",
+            "name": "El-Hakk",
             "meaning": "The Absolute Truth",
             "arabic_text": "ٱلْحَقُّ"
         },
         {
-            "name": "Al-Wakil",
+            "name": "El-Vekîl",
             "meaning": "The Trustee",
             "arabic_text": "ٱلْوَكِيلُ"
         },
         {
-            "name": "Al-Qawiyy",
+            "name": "El-Kaviyy",
             "meaning": "The Strong",
             "arabic_text": "ٱلْقَوِيُّ"
         },
         {
-            "name": "Al-Matin",
+            "name": "El-Metîn",
             "meaning": "The Firm",
             "arabic_text": "ٱلْمَتِينُ"
         },
         {
-            "name": "Al-Wali",
+            "name": "El-Veliyy",
             "meaning": "The Protecting Friend",
             "arabic_text": "ٱلْوَلِيُّ"
         },
         {
-            "name": "Al-Hamid",
+            "name": "El-Hamîd",
             "meaning": "The Praiseworthy",
             "arabic_text": "ٱلْحَمِيدُ"
         },
         {
-            "name": "Al-Muhsi",
+            "name": "El-Muhsi",
             "meaning": "The Accounter",
             "arabic_text": "ٱلْمُحْصِيُ"
         },
         {
-            "name": "Al-Mubdi",
+            "name": "El-Mübdi",
             "meaning": "The Originator",
             "arabic_text": "ٱلْمُبْدِئُ"
         },
         {
-            "name": "Al-Mu'id",
+            "name": "El-Muîd",
             "meaning": "The Restorer",
             "arabic_text": "ٱلْمُعِيدُ"
         },
         {
-            "name": "Al-Muhyi",
+            "name": "El-Muhyî",
             "meaning": "The Giver of Life",
             "arabic_text": "ٱلْمُحْيِى"
         },
         {
-            "name": "Al-Mumit",
+            "name": "El-Mümît",
             "meaning": "The Taker of Life",
             "arabic_text": "ٱلْمُمِيتُ"
         },
         {
-            "name": "Al-Hayy",
+            "name": "El-Hayy",
             "meaning": "The Ever-Living",
             "arabic_text": "ٱلْحَىُّ"
         },
         {
-            "name": "Al-Qayyum",
+            "name": "El-Kayyûm",
             "meaning": "The Sustainer of All Existence",
             "arabic_text": "ٱلْقَيُّومُ"
         },
         {
-            "name": "Al-Wajid",
+            "name": "El-Vâcid",
             "meaning": "The Finder",
             "arabic_text": "ٱلْوَاجِدُ"
         },
         {
-            "name": "Al-Majid",
+            "name": "El-Macîd",
             "meaning": "The Glorious",
             "arabic_text": "ٱلْمَاجِدُ"
         },
         {
-            "name": "Al-Wahid",
+            "name": "El-Vâhid",
             "meaning": "The One",
             "arabic_text": "ٱلْوَاحِدُ"
         },
         {
-            "name": "Al-Ahad",
+            "name": "El-Ehad",
             "meaning": "The One and Only",
             "arabic_text": "ٱلْأَحَد"
         },
         {
-            "name": "As-Samad",
+            "name": "Es-Samed",
             "meaning": "The Self-Sufficient",
             "arabic_text": "ٱلْصَّمَدُ"
         },
         {
-            "name": "Al-Qadir",
+            "name": "El-Kâdir",
             "meaning": "The All-Powerful",
             "arabic_text": "ٱلْقَادِرُ"
         },
         {
-            "name": "Al-Muqtadir",
+            "name": "El-Muktedir",
             "meaning": "The Creator of All Power",
             "arabic_text": "ٱلْمُقْتَدِرُ"
         },
         {
-            "name": "Al-Muqaddim",
+            "name": "El-Mukaddim",
             "meaning": "The Expediter",
             "arabic_text": "ٱلْمُقَدِّمُ"
         },
         {
-            "name": "Al-Mu'akhkhir",
+            "name": "El-Muahhir",
             "meaning": "The Delayer",
             "arabic_text": "ٱلْمُؤَخِّرُ"
         },
         {
-            "name": "Al-Awwal",
+            "name": "El-Evvel",
             "meaning": "The First",
             "arabic_text": "ٱلأَوَّلُ"
         },
         {
-            "name": "Al-Akhir",
+            "name": "El-Âhir",
             "meaning": "The Last",
             "arabic_text": "ٱلْآخِرُ"
         },
         {
-            "name": "Az-Zahir",
+            "name": "El-Zâhir",
             "meaning": "The Manifest",
             "arabic_text": "ٱلْظَّاهِرُ"
         },
         {
-            "name": "Al-Batin",
+            "name": "El-Bâtın",
             "meaning": "The Hidden",
             "arabic_text": "ٱلْبَاطِنُ"
         },
         {
-            "name": "Al-Wali",
+            "name": "El-Vâlî",
             "meaning": "The Governor",
             "arabic_text": "ٱلْوَالِي"
         },
         {
-            "name": "Al-Muta'ali",
+            "name": "El-Müteâlî",
             "meaning": "The Most Exalted",
             "arabic_text": "ٱلْمُتَعَالِي"
         },
         {
-            "name": "Al-Barr",
+            "name": "El-Berr",
             "meaning": "The Most Kind and Righteous",
             "arabic_text": "ٱلْبَرُّ"
         },
         {
-            "name": "At-Tawwab",
+            "name": "Et-Tevvâb",
             "meaning": "The Acceptor of Repentance",
             "arabic_text": "ٱلْتَّوَّابُ"
         },
         {
-            "name": "Al-Muntaqim",
+            "name": "El-Müntekim",
             "meaning": "The Avenger",
             "arabic_text": "ٱلْمُنْتَقِمُ"
         },
         {
-            "name": "Al-Afuww",
+            "name": "El-Afüvv",
             "meaning": "The Pardoner",
             "arabic_text": "ٱلْعَفُوُّ"
         },
         {
-            "name": "Ar-Ra'uf",
+            "name": "Er-Raûf",
             "meaning": "The Compassionate",
             "arabic_text": "ٱلْرَّؤُفُ"
         },
         {
-            "name": "Malik-al-Mulk",
+            "name": "Mâlik-ül Mülk",
             "meaning": "The Owner of All Sovereignty",
             "arabic_text": "مَالِكُ ٱلْمُلْكُ"
         },
         {
-            "name": "Dhul-Jalali wal-Ikram",
+            "name": "Zül-Celâli vel İkrâm",
             "meaning": "The Lord of Majesty and Generosity",
             "arabic_text": "ذُو ٱلْجَلَالِ وَٱلْإِكْرَامُ"
         },
         {
-            "name": "Al-Muqsit",
+            "name": "El-Muksit",
             "meaning": "The Just",
             "arabic_text": "ٱلْمُقْسِطُ"
         },
         {
-            "name": "Al-Jami",
+            "name": "El-Câmi",
             "meaning": "The Gatherer",
             "arabic_text": "ٱلْجَامِعُ"
         },
         {
-            "name": "Al-Ghani",
+            "name": "El-Ganiyy",
             "meaning": "The Rich",
             "arabic_text": "ٱلْغَنيُّ"
         },
         {
-            "name": "Al-Mughni",
+            "name": "El-Mugnî",
             "meaning": "The Enricher",
             "arabic_text": "ٱلْمُغْنِيُّ"
         },
         {
-            "name": "Al-Mani",
+            "name": "El-Mâni",
             "meaning": "The Preventer",
             "arabic_text": "ٱلْمَانِعُ"
         },
         {
-            "name": "Ad-Darr",
+            "name": "Ed-Dârr",
             "meaning": "The Afflicter",
             "arabic_text": "ٱلْضَّارُ"
         },
         {
-            "name": "An-Nafi",
+            "name": "En-Nâfi",
             "meaning": "The Benefactor",
             "arabic_text": "ٱلْنَّافِعُ"
         },
         {
-            "name": "An-Nur",
+            "name": "En-Nûr",
             "meaning": "The Light",
             "arabic_text": "ٱلْنُّورُ"
         },
         {
-            "name": "Al-Hadi",
-            "meaning": "The Guide",
+            "name": "El-Hâdî",
+            "meaning": "Hidayet veren",
             "arabic_text": "ٱلْهَادِي"
         },
         {
-            "name": "Al-Badi",
-            "meaning": "The Incomparable",
+            "name": "El-Bedî",
+            "meaning": "Eşsiz güzellik sahibi",
             "arabic_text": "ٱلْبَدِيعُ"
         },
         {
-            "name": "Al-Baqi",
-            "meaning": "The Everlasting",
+            "name": "El-Bâkî",
+            "meaning": "Ebedi olan",
             "arabic_text": "ٱلْبَاقِي"
         },
         {
-            "name": "Al-Warith",
-            "meaning": "The Inheritor of All",
+            "name": "El-Vâris",
+            "meaning": "Her şeyin asıl sahibi",
             "arabic_text": "ٱلْوَارِثُ"
         },
         {
-            "name": "Ar-Rashid",
-            "meaning": "The Guide to the Right Path",
+            "name": "Er-Reşîd",
+            "meaning": "Yol gösteren",
             "arabic_text": "ٱلْرَّشِيدُ"
         },
         {
-            "name": "As-Sabur",
-            "meaning": "The Patient",
+            "name": "Es-Sabûr",
+            "meaning": "En Sabırlı",
             "arabic_text": "ٱلْصَّبُورُ"
         }
     ]
