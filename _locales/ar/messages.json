@@ -115,10 +115,6 @@
     "message": "إعدادات",
     "description": ""
   },
-  "asmaMenuText": {
-    "message": "Asma Al-Husna",
-    "description": ""
-  },
   "offsetsMenuText": {
     "message": "تعويضات",
     "description": ""
@@ -141,10 +137,6 @@
   },
   "offsetsResetButton": {
     "message": "اعادة الضبط",
-    "description": ""
-  },
-  "naInYourLanguage": {
-    "message": "هذا القسم غير متوفر بلغتك",
     "description": ""
   }
 }

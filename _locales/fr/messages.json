@@ -115,10 +115,6 @@
     "message": "Réglages",
     "description": ""
   },
-  "asmaMenuText": {
-    "message": "Asma Al-Husna",
-    "description": ""
-  },
   "offsetsMenuText": {
     "message": "Décalages",
     "description": ""
@@ -141,10 +137,6 @@
   },
   "offsetsResetButton": {
     "message": "Réinitialiser",
-    "description": ""
-  },
-  "naInYourLanguage": {
-    "message": "Cette section n'est pas disponible dans votre langue.",
     "description": ""
   }
 }

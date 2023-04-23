@@ -5,8 +5,6 @@ chrome.runtime.onMessage.addListener(() => { runApp() });
 $(function () {
     /* once on 1st load */
     populateCalculationMethods();
-    refreshAndDisplayDua();
-    displayAsma();
     goGoRun('running on index load');
     setInterval(goGoRun, 1000);
 });
@@ -46,11 +44,6 @@ const runApp = () => {
             $('.' + key).text(value);
         });
 
-        $('.naInYourLanguage').hide();
-        if (appSettings.i18n.naInYourLanguage) {
-            $('.naInYourLanguage').show();
-        }
-
         Object.entries(appSettings.appVakits).forEach(function ([vakit, value]) {
             let vd = $('.' + vakit.toLowerCase() + 'Div');
             let timeValue = (appSettings.timeFormat == 12) ? value.time12 : value.time24;
@@ -61,14 +54,6 @@ const runApp = () => {
                 vd.addClass(cClass);
             }
         });
-
-        $('.dome').hide();
-        if (appSettings.dua) {
-            if (appSettings.lastReadDuaID === appSettings.dua.id)
-                $('#dome').show();
-            else
-                $('#dome-dot').show();
-        }
 
         setFields(appSettings);
 
@@ -110,47 +95,6 @@ $(function () {
         $('.menu-text').hide();
         $('#offsetsMenuText').show();
     });
-
-    $(".menu-dua").click(function (e) {
-        $('.menu-img').removeClass('bg-secondary');
-        $('img.menu-dua').addClass('bg-secondary');
-        $('.tabDiv').hide();
-        $('#dua').show();
-        $('#footer').hide();
-        $('.menu-text').hide();
-        $('#duaMenuText').show();
-        setLastReadDua();
-    });
-
-    $(".menu-asma").click(function (e) {
-        $('.menu-img').removeClass('bg-secondary');
-        $('img.menu-asma').addClass('bg-secondary');
-        $('.tabDiv').hide();
-        $('#asma').show();
-        $('#footer').hide();
-        $('.menu-text').hide();
-        $('#asmaMenuText').show();
-        displayAsma();
-    });
-
-    $("#previousAsma").click(() => {
-        previousAsma();
-    });
-
-    $("#nextAsma").click(() => {
-        nextAsma();
-    });
-
-    document.onkeydown = checkKey;
-    function checkKey(e) {
-        e = e || window.event;
-        if (e.keyCode == '37') {
-            previousAsma()
-        }
-        else if (e.keyCode == '39') {
-            nextAsma()
-        }
-    }
 
     $("#calculationMethod").change(function () {
         setThenSaveAndRefresh('calculationMethod', $('#calculationMethod').val());
@@ -216,10 +160,6 @@ $(function () {
 
     $("#googleMapsButton").click(function (e) {
         window.open('https://maps.google.com/?q=' + appSettings.address)
-    });
-
-    $("#asmaSearchButton").click(function (e) {
-        window.open('https://google.com/search?q=' + $('#asma-name').html() + ' ' + appSettings.i18n['asmaMenuText'])
     });
 
     $("#addressForm").submit(function (event) {
@@ -296,9 +236,7 @@ $(function () {
             response.json().then((data) => {
                 Object.entries(data).forEach(([key, value]) => { i18nValues[key] = value.message });
                 appSettings.i18n = i18nValues;
-                appSettings.dua = null;
                 saveAppSettingsAndRefresh(appSettings);
-                setTimeout(() => { refreshAndDisplayDua() }, 2000);
             });
         });
     });
@@ -308,114 +246,11 @@ $(function () {
         showLoading();
         chrome.storage.local.clear();
         goGoRun('extension reset');
-        setTimeout(() => { refreshAndDisplayDua() }, 2000);
         $(".menu-clock").trigger("click");
         hideLoadingOnSuccess();
     });
 
 });
-
-const refreshAndDisplayDua = () => {
-    chrome.storage.local.get(['appSettings'], function (result) {
-        appSettings = result.appSettings;
-        let today = new Date().toLocaleDateString();
-        if (!appSettings.dua || appSettings.dua.lastUpdate !== today) {
-            fetch('https://smartazanclock.com/dua?lang=' + appSettings.i18n.languageCode, { method: 'POST' }).then(response => {
-                if (response.status == 200) {
-                    response.json().then((data) => {
-                        appSettings.dua = data;
-                        appSettings.dua.lastUpdate = today;
-                        displayDua(appSettings.dua);
-                        justSaveAppSettings(appSettings);
-                    });
-                }
-            }).catch((err) => { console.log(err) });
-        }
-        else {
-            displayDua(appSettings.dua);
-        }
-
-    });
-}
-
-const displayDua = (dua) => {
-
-    let duaTitle = dua.title ?? '';
-    let duaArabic = dua.arabic ?? '';
-    let duaText = dua.text ?? '';
-    let duaDhikr = dua.dhikr ?? '';
-    let duaRef = dua.ref ?? '';
-    duaDhikr = duaDhikr.replace('\n', '<br/>')
-    duaRef = 'https://' + duaRef.replace('https://', '');
-
-    $('#duaMenuText').html(duaTitle);
-    $('#dua-text').html(duaText).show();
-    $('#dua-arabic').html(duaArabic).show();
-    $('#dua-dhikr').html(duaDhikr).show();
-    $('#dua-ref').attr('href', duaRef).show();
-
-    if (!duaText)
-        $('#dua-text').hide();
-    if (!duaDhikr)
-        $('#dua-dhikr').hide();
-    if (!duaArabic)
-        $('#dua-arabic').hide();
-    if (!duaRef)
-        $('#dua-ref').attr('href', '#').show();
-}
-
-const setLastReadDua = () => {
-    appSettings.lastReadDuaID = appSettings.dua.id;
-    justSaveAppSettings(appSettings);
-}
-
-const displayAsma = () => {
-    chrome.storage.local.get(['appSettings'], function (result) {
-        appSettings = result.appSettings;
-        let currentAsmaID = appSettings.asmaID ?? 1;
-
-        appSettings.asmaID = currentAsmaID;
-        justSaveAppSettings(appSettings);
-
-        $('#asma-footer').show();
-        let lang = 'en';
-        let asmaAvailableInLangs = 'en';
-        if (asmaAvailableInLangs.indexOf(appSettings.i18n.languageCode) >= 0) {
-            $('#asma-footer').hide();
-            lang = appSettings.i18n.languageCode;
-        }
-
-        fetch('../_locales/' + lang + '/asma.json').then((response) => {
-            response.json().then((data) => {
-                let asma = data.AsmaAlHusna[currentAsmaID - 1];
-                $('#asma-hadith').html(data.Hadith);
-                $('#asma-arabic').html(asma.arabic_text);
-                $('#asma-name').html(asma.name);
-                $('#asma-meaning').html(asma.meaning);
-                $('#asma-id').html(currentAsmaID);
-
-            });
-        }).catch((err) => { console.log(err) });;
-    });
-}
-
-const previousAsma = () => {
-    appSettings.asmaID--;
-    if (appSettings.asmaID <= 0)
-        appSettings.asmaID = 99;
-    justSaveAppSettings(appSettings);
-    displayAsma();
-}
-
-const nextAsma = () => {
-    appSettings.asmaID++;
-    if (appSettings.asmaID > 99) {
-        appSettings.asmaID = 1;
-    }
-    justSaveAppSettings(appSettings);
-    displayAsma();
-}
-
 
 const populateCalculationMethods = () => {
     Object.entries(calculationMethods).forEach(function ([key, value]) {

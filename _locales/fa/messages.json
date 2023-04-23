@@ -115,10 +115,6 @@
     "message": "ترتیب",
     "description": ""
   },
-  "asmaMenuText": {
-    "message": "Asma Al-Husna",
-    "description": ""
-  },
   "offsetsMenuText": {
     "message": "تنظیم",
     "description": ""
@@ -141,10 +137,6 @@
   },
   "offsetsResetButton": {
     "message": "بازنشانی کنید",
-    "description": ""
-  },
-  "naInYourLanguage": {
-    "message": "این بخش به زبان شما موجود نیست",
     "description": ""
   }
 }

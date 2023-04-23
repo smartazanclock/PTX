@@ -115,10 +115,6 @@
     "message": "Settings",
     "description": ""
   },
-  "asmaMenuText": {
-    "message": "Asma Al-Husna",
-    "description": ""
-  },
   "offsetsMenuText": {
     "message": "Offset Adjustments",
     "description": ""
@@ -141,10 +137,6 @@
   },
   "offsetsResetButton": {
     "message": "Reset Offsets",
-    "description": ""
-  },
-  "naInYourLanguage": {
-    "message": "",
     "description": ""
   }
 }

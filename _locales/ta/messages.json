@@ -115,10 +115,6 @@
     "message": "அமைப்புகள்",
     "description": ""
   },
-  "asmaMenuText": {
-    "message": "Asma Al-Husna",
-    "description": ""
-  },
   "offsetsMenuText": {
     "message": "ஆஃப்செட் சரிசெய்தல்",
     "description": ""
@@ -141,10 +137,6 @@
   },
   "offsetsResetButton": {
     "message": "மீட்டமை",
-    "description": ""
-  },
-  "naInYourLanguage": {
-    "message": "இந்தப் பிரிவு உங்கள் மொழியில் இல்லை.",
     "description": ""
   }
 }

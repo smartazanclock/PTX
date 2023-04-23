@@ -115,10 +115,6 @@
     "message": "समायोजन",
     "description": ""
   },
-  "asmaMenuText": {
-    "message": "Asma Al-Husna",
-    "description": ""
-  },
   "offsetsMenuText": {
     "message": "ऑफसेट समायोजन",
     "description": ""
@@ -141,10 +137,6 @@
   },
   "offsetsResetButton": {
     "message": "रीसेट",
-    "description": ""
-  },
-  "naInYourLanguage": {
-    "message": "यह अनुभाग आपकी भाषा में उपलब्ध नहीं है।",
     "description": ""
   }
 }

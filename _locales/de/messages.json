@@ -115,10 +115,6 @@
     "message": "Einstellungen",
     "description": ""
   },
-  "asmaMenuText": {
-    "message": "Asma Al-Husna",
-    "description": ""
-  },
   "offsetsMenuText": {
     "message": "Zeitverschiebungen",
     "description": ""
@@ -141,10 +137,6 @@
   },
   "offsetsResetButton": {
     "message": "Zurücksetzen",
-    "description": ""
-  },
-  "naInYourLanguage": {
-    "message": "Dieser Abschnitt ist nicht in Ihrer Sprache verfügbar.",
     "description": ""
   }
 }

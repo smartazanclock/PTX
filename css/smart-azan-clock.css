@@ -96,30 +96,3 @@ body {
     background-color: black;
     opacity: 0.59;
 }
-
-#dua-dhikr,
-#ayat-arabic {
-    background-color: #298933;
-    text-shadow: 0px 0px 7px #1e6024;
-    font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
-    direction: rtl;
-    text-align: right;
-}
-
-#asma-arabic {
-    background-color: #298933;
-    text-shadow: 0px 0px 9px #1e6024;
-    font-size: 41px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#asma-name {
-    font-size: 25px;
-}
-
-#dua-text,
-#dua-arabic,
-#asma-hadith {
-    font-size: 0.95em;
-}

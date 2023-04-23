@@ -115,10 +115,6 @@
     "message": "설정",
     "description": ""
   },
-  "asmaMenuText": {
-    "message": "Asma Al-Husna",
-    "description": ""
-  },
   "offsetsMenuText": {
     "message": "오프셋 조정",
     "description": ""
@@ -141,10 +137,6 @@
   },
   "offsetsResetButton": {
     "message": "초기화",
-    "description": ""
-  },
-  "naInYourLanguage": {
-    "message": "이 섹션은 귀하의 언어로 제공되지 않습니다.",
     "description": ""
   }
 }

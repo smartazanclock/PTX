@@ -115,10 +115,6 @@
     "message": "Tetapan",
     "description": ""
   },
-  "asmaMenuText": {
-    "message": "Asma Al-Husna",
-    "description": ""
-  },
   "offsetsMenuText": {
     "message": "Pelarasan masa",
     "description": ""
@@ -141,10 +137,6 @@
   },
   "offsetsResetButton": {
     "message": "Tetapkan semula",
-    "description": ""
-  },
-  "naInYourLanguage": {
-    "message": "Bahagian ini tidak tersedia dalam bahasa anda.",
     "description": ""
   }
 }

@@ -115,10 +115,6 @@
     "message": "Cài đặt ",
     "description": ""
   },
-  "asmaMenuText": {
-    "message": "Asma Al-Husna",
-    "description": ""
-  },
   "offsetsMenuText": {
     "message": "Điều chỉnh bù đắp",
     "description": ""
@@ -141,10 +137,6 @@
   },
   "offsetsResetButton": {
     "message": "Đặt lại Offsets",
-    "description": ""
-  },
-  "naInYourLanguage": {
-    "message": "Phần này không có sẵn bằng ngôn ngữ của bạn.",
     "description": ""
   }
 }

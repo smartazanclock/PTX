@@ -115,10 +115,6 @@
     "message": "Настройки",
     "description": ""
   },
-  "asmaMenuText": {
-    "message": "Asma Al-Husna",
-    "description": ""
-  },
   "offsetsMenuText": {
     "message": "Смещения времени",
     "description": ""
@@ -141,10 +137,6 @@
   },
   "offsetsResetButton": {
     "message": "Сброс настроек",
-    "description": ""
-  },
-  "naInYourLanguage": {
-    "message": "Этот раздел недоступен на вашем языке.",
     "description": ""
   }
 }

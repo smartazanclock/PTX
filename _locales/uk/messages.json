@@ -115,10 +115,6 @@
     "message": "Налаштування",
     "description": ""
   },
-  "asmaMenuText": {
-    "message": "Asma Al-Husna",
-    "description": ""
-  },
   "offsetsMenuText": {
     "message": "Коригування зміщення",
     "description": ""
@@ -141,10 +137,6 @@
   },
   "offsetsResetButton": {
     "message": "Скинути зміщення",
-    "description": ""
-  },
-  "naInYourLanguage": {
-    "message": "Цей розділ недоступний вашою мовою.",
     "description": ""
   }
 }

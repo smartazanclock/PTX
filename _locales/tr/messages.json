@@ -115,10 +115,6 @@
     "message": "Ayarlar",
     "description": ""
   },
-  "asmaMenuText": {
-    "message": "Esma'ül Hüsna",
-    "description": ""
-  },
   "offsetsMenuText": {
     "message": "Temkin Ayarları",
     "description": ""
@@ -141,10 +137,6 @@
   },
   "offsetsResetButton": {
     "message": "Temkin ayarlarını sıfırla",
-    "description": ""
-  },
-  "naInYourLanguage": {
-    "message": "Bu bölüm henüz Türkçe olarak mevcut değil.",
     "description": ""
   }
 }
