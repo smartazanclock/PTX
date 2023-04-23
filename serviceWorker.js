@@ -427,7 +427,7 @@ const SmartAzanClock = {
                         'notification',
                         {
                             type: "image",
-                            imageUrl: 'images/notification.png',
+                            imageUrl: 'images/notification.jpg',
                             iconUrl: 'images/icons/128.png',
                             title: nextText,
                             message: this.appSettings.address
