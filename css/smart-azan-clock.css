@@ -15,7 +15,7 @@ body {
 }
 
 .csb::-webkit-scrollbar {
-    width: 7px;
+    width: 5px;
 }
 
 .csb::-webkit-scrollbar-track {
@@ -97,40 +97,29 @@ body {
     opacity: 0.59;
 }
 
-#dua-text {
-    font-size: 15px;
-    text-align: left;
-}
-
-#dua-dhikr {
+#dua-dhikr,
+#ayat-arabic {
     background-color: #298933;
-    text-shadow: 0px 0px 9px #1e6024;
-    font-size: 24px;
-    font-family: Arial;
+    text-shadow: 0px 0px 7px #1e6024;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
     direction: rtl;
     text-align: right;
 }
-
-#dua-arabic {
-    direction: rtl;
-    text-align: right;
-    text-shadow: 0px 0px 9px #1e6024;
-}
-
 
 #asma-arabic {
     background-color: #298933;
     text-shadow: 0px 0px 9px #1e6024;
     font-size: 41px;
-    font-family: Arial;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #asma-name {
     font-size: 25px;
-    font-family: Arial;
 }
 
-#asma-meaning {
-    font-size: 15px;
-    font-family: Arial;
+#dua-text,
+#dua-arabic,
+#asma-hadith {
+    font-size: 0.95em;
 }

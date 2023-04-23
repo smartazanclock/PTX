@@ -382,8 +382,8 @@ const SmartAzanClock = {
     extensionOps() {
 
         let isRamadan = false;
-        let hijriMonth = new Intl.DateTimeFormat('en-US-u-ca-islamic', { month: 'numeric' }).format(this.hijriCurrentTime);
-        if (hijriMonth === "9")
+        let enHijriDate = new Intl.DateTimeFormat('en', { calendar: 'islamic-umalqura', day: 'numeric', month: 'long', year: 'numeric' }).format(this.hijriCurrentTime);
+        if (enHijriDate.indexOf('Ramadan') >= 0)
             isRamadan = true;
 
         let elapsedText = this.appSettings.i18n.elapsedTimeTitle + ' ' + diffBetweenTimes(this.currentVakit.time, this.currentTimeString);

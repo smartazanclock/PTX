@@ -8,7 +8,7 @@
         },
         {
             "name": "Er-Rahim",
-            "meaning": "Ahirette inananlara sonsuz ihsan, ikram ve lütufta bulunan",
+            "meaning": "Çok merhamet edici",
             "arabic_text": "ٱلْرَّحِيْمُ"
         },
         {
@@ -228,27 +228,27 @@
         },
         {
             "name": "El-Hakîm",
-            "meaning": "Hikmetli",
+            "meaning": "Hikmet sahibi",
             "arabic_text": "ٱلْحَكِيمُ"
         },
         {
             "name": "El-Vedûd",
-            "meaning": "Kullarını seven",
+            "meaning": "Sevilmeye layık olan",
             "arabic_text": "ٱلْوَدُودُ"
         },
         {
             "name": "El-Mecîd",
-            "meaning": "Şerefi yüksek olan",
+            "meaning": "Şanı yüce olan",
             "arabic_text": "ٱلْمَجِيدُ"
         },
         {
             "name": "El-Bâis",
-            "meaning": "Ölmüş olanları dirilten",
+            "meaning": "Ölüleri dirilten",
             "arabic_text": "ٱلْبَاعِثُ"
         },
         {
             "name": "Eş-Şehîd",
-            "meaning": "The Witness",
+            "meaning": "Gizli açık, geçmiş, gelecek, her şeyi en ince detaylarına kadar bilen",
             "arabic_text": "ٱلْشَّهِيدُ"
         },
         {
@@ -488,12 +488,12 @@
         },
         {
             "name": "Er-Reşîd",
-            "meaning": "Yol gösteren",
+            "meaning": "İrşad eden, yol gösteren",
             "arabic_text": "ٱلْرَّشِيدُ"
         },
         {
             "name": "Es-Sabûr",
-            "meaning": "En Sabırlı",
+            "meaning": "Çok sabırlı olan",
             "arabic_text": "ٱلْصَّبُورُ"
         }
     ]

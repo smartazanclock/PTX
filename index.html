@@ -34,6 +34,7 @@
                             class="offset-adjustments menu-img menu-offsets img-fluid rounded pointerOn"
                             src="images/offset-adjustments-red.png" />
                     </div>
+
                     <div class="col-1"><img class="menu-img menu-asma img-fluid rounded pointerOn"
                             src="images/asma.png" />
                     </div>
@@ -54,7 +55,7 @@
 
             </div>
 
-            <div class="card-body py-0">
+            <div class="card-body py-0 px-3">
 
                 <div id="times" class="tabDiv text-center">
 
@@ -65,8 +66,8 @@
                             <div><span id="ntTitle" class="small"></span></div>
                             <div id="nextText" class="badge"></div>
                             <div class="mt-1">
-                                <span id="elapsedText" class="badge badge-darkish"></span>
-                                <span id="remainingForIftar" class="badge badge-darkish"></span>
+                                <span id="elapsedText" class="badge bg-darkish"></span>
+                                <span id="remainingForIftar" class="badge bg-success text-light"></span>
                             </div>
                         </div>
 
@@ -270,17 +271,22 @@
 
                 </div>
 
-                <div id="dua" class="tabDiv text-start csb" style="display:none">
-                    <div class="mt-2 csb pe-2" style="max-height:519px; overflow: auto;">
-                        <div id="dua-text" class="mb-2"></div>
+                <div id="dua" class="tabDiv text-start csb pe-2 h-100"
+                    style="display:none; max-height: 530px; overflow:auto;">
+                    <div class="d-flex flex-column h-100 justify-content-start align-items-center">
+                        <div id="dua-text" class="mt-1 mb-2"></div>
                         <div id="dua-dhikr" class="p-2 mb-2 text-light rounded"></div>
                         <div id="dua-arabic" class="mb-2"></div>
-                        <div id="dua-ref" class="badge bg-light text-dark col-12"></div>
-                        <div class="naInYourLanguage small mt-2 text-warning"></div>
+                        <div class="w-100 text-end">
+                            <a id="dua-ref" href="#" target="_blank"><img src="images/link.png" class="img-fluid" /></a>
+                        </div>
+                        <div class="naInYourLanguage small mt-2 mb-2 w-100 text-start text-warning"
+                            style="display:none"></div>
                     </div>
                 </div>
 
-                <div id="asma" class="tabDiv text-start h-100 " style="display:none">
+                <div id="asma" class="tabDiv text-start csb pe-2 h-100"
+                    style="display:none; max-height: 530px; overflow:auto;">
                     <div class="d-flex flex-column h-100 justify-content-between align-items-center text-center">
                         <div id="asma-arabic" class="w-100 rounded py-4 mt-3"></div>
                         <div id="asma-name"></div>
@@ -307,7 +313,8 @@
                             </div>
                         </div>
                         <div>
-                            <div id="asma-footer" class="naInYourLanguage small text-warning text-start mb-3"></div>
+                            <div id="asma-footer" class="naInYourLanguage small text-warning text-start mb-3"
+                                style="display:none;"></div>
                         </div>
                     </div>
                 </div>

@@ -46,6 +46,11 @@ const runApp = () => {
             $('.' + key).text(value);
         });
 
+        $('.naInYourLanguage').hide();
+        if (appSettings.i18n.naInYourLanguage) {
+            $('.naInYourLanguage').show();
+        }
+
         Object.entries(appSettings.appVakits).forEach(function ([vakit, value]) {
             let vd = $('.' + vakit.toLowerCase() + 'Div');
             let timeValue = (appSettings.timeFormat == 12) ? value.time12 : value.time24;
@@ -341,12 +346,13 @@ const displayDua = (dua) => {
     let duaDhikr = dua.dhikr ?? '';
     let duaRef = dua.ref ?? '';
     duaDhikr = duaDhikr.replace('\n', '<br/>')
+    duaRef = 'https://' + duaRef.replace('https://', '');
 
     $('#duaMenuText').html(duaTitle);
     $('#dua-text').html(duaText).show();
     $('#dua-arabic').html(duaArabic).show();
     $('#dua-dhikr').html(duaDhikr).show();
-    $('#dua-ref').html(duaRef).show();
+    $('#dua-ref').attr('href', duaRef).show();
 
     if (!duaText)
         $('#dua-text').hide();
@@ -355,7 +361,7 @@ const displayDua = (dua) => {
     if (!duaArabic)
         $('#dua-arabic').hide();
     if (!duaRef)
-        $('#dua-ref').hide();
+        $('#dua-ref').attr('href', '#').show();
 }
 
 const setLastReadDua = () => {
@@ -409,6 +415,7 @@ const nextAsma = () => {
     justSaveAppSettings(appSettings);
     displayAsma();
 }
+
 
 const populateCalculationMethods = () => {
     Object.entries(calculationMethods).forEach(function ([key, value]) {
