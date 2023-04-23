@@ -3,7 +3,6 @@ var appSettings;
 chrome.runtime.onMessage.addListener(() => { runApp() });
 
 $(function () {
-    /* once on 1st load */
     populateCalculationMethods();
     goGoRun('running on index load');
     setInterval(goGoRun, 1000);
@@ -488,7 +487,7 @@ const addressSearchFail = () => {
 }
 
 const showLoading = () => {
-    $('#loadingImg').attr('src', '/images/loading.png');
+    $('#loadingImg').attr('src', '');
     $('#loading').show();
 }
 

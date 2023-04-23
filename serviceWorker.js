@@ -617,8 +617,3 @@ const SmartAzanClock = {
 const goRun = (info) => {
     SmartAzanClock.run(info)
 }
-
-const all = () => {
-    chrome.storage.local.get((result) => { console.log(result) });
-    chrome.alarms.get('everyMinute', (d) => { console.log(d) });
-}
