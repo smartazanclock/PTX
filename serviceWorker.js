@@ -68,7 +68,6 @@ const UserInitiation = {
         appSettings.timeZoneID = "Asia/Riyadh";
         appSettings.calculationMethod = 'Makkah';
         appSettings.iconStyle = 'badge';
-        appSettings.highLatsMethod = 'None';
         appSettings.desktopNotifications = 0;
         appSettings.showImsak = 0;
         appSettings.showMidnight = 0;
