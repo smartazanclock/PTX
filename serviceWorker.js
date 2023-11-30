@@ -68,6 +68,7 @@ const UserInitiation = {
         appSettings.timeZoneID = "Asia/Riyadh";
         appSettings.calculationMethod = 'Makkah';
         appSettings.iconStyle = 'badge';
+        appSettings.highLatsMethod = 'None';
         appSettings.desktopNotifications = 0;
         appSettings.showImsak = 0;
         appSettings.showMidnight = 0;
@@ -86,9 +87,9 @@ const UserInitiation = {
 const SmartAzanClock = {
     appSettings: {},
     colors: { black: 'black', silver: 'whitesmoke', tomato: '#F20031', gray: '#2E3338' },
-    ctx: new OffscreenCanvas(470, 470).getContext("2d", { alpha: true }),
-    itx: new OffscreenCanvas(38, 38).getContext("2d", { alpha: true }),
-    btx: new OffscreenCanvas(38, 38).getContext("2d", { alpha: true }),
+    ctx: new OffscreenCanvas(470, 470).getContext("2d", { alpha: true, willReadFrequently: true }),
+    itx: new OffscreenCanvas(38, 38).getContext("2d", { alpha: true, willReadFrequently: true }),
+    btx: new OffscreenCanvas(38, 38).getContext("2d", { alpha: true, willReadFrequently: true }),
     clearCanvas(canvas) {
         canvas.save();
         canvas.translate(0, 0);
@@ -122,9 +123,11 @@ const SmartAzanClock = {
         /* get prayer times */
         prayTimes.setMethod(this.appSettings.calculationMethod);
 
-        prayTimes.adjust({ asr: 'Standard' });
+
         if (this.appSettings.hanafiAsr === 1)
             prayTimes.adjust({ asr: 'Hanafi' });
+        else
+            prayTimes.adjust({ asr: 'Standard' });
 
 
         let baseTuneValues = { imsak: 0, sunrise: 0, fajr: 0, dhuhr: 0, asr: 0, maghrib: 0, isha: 0 }
@@ -204,13 +207,14 @@ const SmartAzanClock = {
         this.remainingMinutesInVakit = diffMinutesBetweenTimes(this.currentTimeString, this.nextVakit.time);
         this.passedInVakit = this.totalMinutesInVakit - this.remainingMinutesInVakit;
 
-        this.isLastHour = false;
+        this.appSettings.isLastHour = false;
 
         if (this.remainingMinutesInVakit <= 60)
-            this.isLastHour = true;
+            this.appSettings.isLastHour = true;
 
+        this.appSettings.lastHourHilite = this.appSettings.lastHourHilite ?? 1;
 
-        if (this.isLastHour) {
+        if (this.appSettings.isLastHour && this.appSettings.lastHourHilite == 1) {
             this.iconColor = this.colors.tomato;
             this.badgeBackgroundColor = this.colors.tomato;
             this.iconTextColor = this.colors.silver;
@@ -269,7 +273,7 @@ const SmartAzanClock = {
 
         let barColor = this.iconColor;
 
-        if (this.isLastHour) {
+        if (this.appSettings.isLastHour && this.appSettings.lastHourHilite == 1) {
             barColor = this.colors.tomato;
         }
 

@@ -161,6 +161,14 @@ $(function () {
         window.open('https://maps.google.com/?q=' + appSettings.address)
     });
 
+    $(".lastHourHilite").click(function (e) {
+        chrome.storage.local.get(['appSettings'], function (result) {
+            appSettings = result.appSettings;
+            appSettings.lastHourHilite = ((appSettings.lastHourHilite ?? 0) + 1) % 2;
+            saveAppSettingsAndRefresh(appSettings);
+        });
+    });
+
     $("#addressForm").submit(function (event) {
 
         event.preventDefault();
@@ -427,6 +435,17 @@ const setFields = (appSettings) => {
     else {
         $('#hour24On').show();
     }
+
+    $('.lastHourHilite').hide();
+    if (appSettings.isLastHour) {
+        if (appSettings.lastHourHilite == 0) {
+            $('#lastHourHiliteOff').show();
+        }
+        else {
+            $('#lastHourHiliteOn').show();
+        }
+    }
+
 }
 
 const saveOffset = (name, action) => {

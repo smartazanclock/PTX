@@ -86,7 +86,17 @@
                     </div>
 
                     <div class="mt-1">
-                        <div class="badge px-0" id="iconTitle"></div>
+
+                        <div class="d-flex flex-row justify-content-between align-items-baseline">
+                            <div class="badge px-0" id="iconTitle"></div>
+                            <div id="lastHourHiliteOn" class="lastHourHilite badge pointerOn p-0" style="display:none;">
+                                <img src="images/hiliteOn.png" title="Last hour highlight: ON" class="rounded" />
+                            </div>
+                            <div id="lastHourHiliteOff" class="lastHourHilite badge pointerOn p-0"
+                                style="display:none;">
+                                <img src="images/hiliteOff.png" title="Last hour highlight: OFF" class="rounded" />
+                            </div>
+                        </div>
                         <div class="btn-group btn-group-sm col-12" role="group">
                             <button id="badgeButton" type="button" value="badge" class="btn iconButton">
                                 <img id="barImg" class="mt-1" />
