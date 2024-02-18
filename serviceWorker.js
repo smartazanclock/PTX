@@ -391,7 +391,6 @@ const SmartAzanClock = {
 
         let elapsedText = this.appSettings.i18n.elapsedTimeTitle + ' ' + diffBetweenTimes(this.currentVakit.time, this.currentTimeString);
 
-
         let nextText = this.currentVakit.nextVakitIn();
         let nextTextTitle = this.appSettings.i18n.nextTextTitle;
 
