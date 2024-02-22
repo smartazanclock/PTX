@@ -61,8 +61,6 @@ const runApp = () => {
 
 $(function () {
 
-    /* event handlers */
-
     $(".menu-clock").click(function (e) {
         $('.menu-img').removeClass('bg-secondary');
         $('img.menu-clock').addClass('bg-secondary');
