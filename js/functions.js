@@ -8,7 +8,7 @@
     this.startAngle12 = () => { return timeToRadians(this.time, 12) };
     this.endAngle12 = () => { return timeToRadians(nextTime, 12) };
     this.nextVakitIn = () => { return diffBetweenTimes(currentTime, nextTime) };
-    this.isCurrentVakit = () => { return isTimeBetweenTheTwo(currentTime, time, nextTime)}
+    this.isCurrentVakit = () => { return isTimeBetweenTheTwo(currentTime, time, nextTime) }
 }
 const format12 = (t) => {
     let tt = t.split(':');
@@ -49,7 +49,7 @@ const minutesToRadians = (m)  =>  {
 
 const handOnTop = (a) => {
     let ang = a - 3 * Math.PI / 2;
-    if (ang <= Math.PI / 4 || ang >= 7 * Math.PI / 4) 
+    if (ang <= Math.PI / 4 || ang >= 7 * Math.PI / 4)
         return true;
     else
         return false;
@@ -57,7 +57,7 @@ const handOnTop = (a) => {
 
 const handOnBottom = (a) => {
     let ang = a - 3 * Math.PI / 2;
-    if (ang >= 3 * Math.PI / 4 && ang <= 5 * Math.PI / 4) 
+    if (ang >= 3 * Math.PI / 4 && ang <= 5 * Math.PI / 4)
         return true;
     else
         return false;
@@ -85,32 +85,28 @@ const diffMinutesBetweenTimes = (startTime, endTime) => {
     }
     return diffMinutes;
 }
-const isTimeBetweenTheTwo = (time, startTime, endTime) =>
-{
-    let t = getTotalMinutes(time); 
-    let s = getTotalMinutes(startTime); 
-    let e = getTotalMinutes(endTime); 
-
+const isTimeBetweenTheTwo = (time, startTime, endTime) => {
+    let t = getTotalMinutes(time);
+    let s = getTotalMinutes(startTime);
+    let e = getTotalMinutes(endTime);
     let r = false;
-
     if (e > s) {
         if (t >= s && t < e) {
             r = true;
         }
     }
-    else
-    {
+    else {
         r = !isTimeBetweenTheTwo(time, endTime, startTime);
     }
-    
     return r;
-
 }
+
 const getTotalMinutes = (t) =>
 {
     let tt = t.split(':');
     return tt[0] * 60 + tt[1] * 1;
 }
+
 const getOffsetHoursFromTimeZone = (tz) => 
 {
     let date = new Date();
@@ -121,4 +117,10 @@ const getOffsetHoursFromTimeZone = (tz) =>
 const addDaysToDate = (date, number) => {
     const newDate = new Date(date);
     return new Date(newDate.setDate(newDate.getDate() + number));
+}
+
+const getTimeZoneName = (tz) => {
+    var lf = new Intl.DateTimeFormat("en-US", { timeZone: tz, timeZoneName: "long" });
+    var sf = new Intl.DateTimeFormat("en-US", { timeZone: tz, timeZoneName: "short" });
+    return lf.format(new Date())
 }

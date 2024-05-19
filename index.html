@@ -52,9 +52,12 @@
 
                     <div class="d-flex flex-row justify-content-center align-items-center">
                         <div>
-                            <div><span id="ntTitle" class="small"></span></div>
+                            <div>
+                                <span id="ntTitle" class="small"></span>
+                            </div>
                             <div id="nextText" class="badge"></div>
                             <div class="mt-1">
+                                <span class="timeNowTitle badge bg-darkish"></span>
                                 <span id="elapsedText" class="badge bg-darkish"></span>
                                 <span id="remainingForIftar" class="badge bg-success text-light"></span>
                             </div>
@@ -186,12 +189,31 @@
                 <div id="offsetAdjustments" class="tabDiv text-start" style="display:none">
 
                     <span class="badge calculationMethodTitle p-0"></span>
-                    <div class="p-0">
-                        <span class="badge bg-light text-dark" id="calculationMethodName"></span><br />
-                        <span class="badge bg-light text-dark" id="fajrAngle"></span>
-                        <span class="badge bg-light text-dark" id="ishaAngle"></span>
+                    <div>
+                        <span class="badge bg-light text-dark" id="calculationMethodName"></span>
                     </div>
+
+                    <div class="d-flex flex-row gap-1 mt-1 align-items-center">
+                        <div>
+                            <span class="badge bg-light text-dark" id="fajrAngle"></span>
+                            <span class="badge bg-light text-dark" id="ishaAngle"></span>
+                            <span class="badge bg-light text-dark">HL: AngleBased</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-row gap-1 mt-1 alignt-items-center">
+                        <div>
+                            <span class="badge bg-light text-dark" id="timeZoneIDTitle"></span>
+                        </div>
+                        <div>
+                            <span class="badge bg-light text-dark timeNowTitle"></span>
+                        </div>
+                    </div>
+
+
+
                     <div class="badge p-0 mt-2" id="offsetTitle"></div>
+
 
                     <div class="d-flex flex-row justify-content-between gap-1">
                         <div class="bg-darkish rounded col-6 text-center p-2" id="imsakOffsetDiv">
@@ -264,9 +286,15 @@
                         <button id="hijriDateIncrease" class="btn btn-dark btn-xs pointerOn">+</button>
                     </div>
 
-                    <button id="offsetsResetButton" class="btn text-light border-0 btn-sm mt-2 mb-1 col-12"></button>
 
-                    <button id="appResetButton" class="btn btn-dark text-light btn-sm col-12"></span>
+                    <div class="d-flex flex-row justify-content-between mt-2 gap-2">
+                        <div class="flex-fill">
+                            <button id="offsetsResetButton" class="btn text-light btn-sm col-12"></button>
+                        </div>
+                        <div class="flex-fill">
+                            <button id="appResetButton" class="btn btn-danger text-light btn-sm col-12"></span>
+                        </div>
+                    </div>
 
                 </div>
 

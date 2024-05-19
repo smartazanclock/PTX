@@ -155,6 +155,8 @@ const SmartAzanClock = {
         this.prayerTimes = prayTimes.getTimes(this.currentTime, [this.appSettings.lat, this.appSettings.lng, 0], getOffsetHoursFromTimeZone(this.appSettings.timeZoneID), 0, '24h');
         this.appSettings.calculationMethodName = prayTimes.getDefaults()[this.appSettings.calculationMethod].name;
 
+        this.appSettings.timeNow = format12(this.currentTimeString);
+
         this.appSettings.fajrAngle = prayTimes.getDefaults()[this.appSettings.calculationMethod].params.fajr;
         if (this.appSettings.fajrAngle.toString().indexOf('min') < 0)
             this.appSettings.fajrAngle += '°';

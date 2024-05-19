@@ -295,7 +295,12 @@ const setFields = (appSettings) => {
     let topAddress = appSettings.address.substring(0, topAddressMaxLen) + ((appSettings.address.length > topAddressMaxLen) ? '…' : '');
     $('#addressMenuText').html(topAddress);
 
-    $('#appResetButton').text('Reset App V.' + chrome.runtime.getManifest().version);
+    $('#appResetButton').text('Reset App');
+    $('#appResetButton').attr('title', 'Version: ' + chrome.runtime.getManifest().version);
+
+    $('#timeZoneIDTitle').html(appSettings.timeZoneID);
+    $('.timeNowTitle').html(appSettings.timeNow);
+
     $('#calculationMethod').val(appSettings.calculationMethod);
     $('#calculationMethodName').html(appSettings.calculationMethodName);
     $('#fajrAngle').html(appSettings.i18n['fajrText'] + ' ' + appSettings.fajrAngle);
@@ -316,9 +321,10 @@ const setFields = (appSettings) => {
         Object.entries(appSettings.vakitOffsets).forEach(function (v) {
 
             let stdLimit = 90;
+            /*
             if (v[0] == 'maghrib')
                 stdLimit = 30;
-
+            */
             $('#' + v[0] + 'Offset').html(v[1]);
             if (v[1] != 0) {
                 $('#' + v[0] + 'Offset').removeClass('bg-light text-dark').addClass('bg-danger text-light');
