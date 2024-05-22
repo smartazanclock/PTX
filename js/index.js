@@ -295,8 +295,7 @@ const setFields = (appSettings) => {
     let topAddress = appSettings.address.substring(0, topAddressMaxLen) + ((appSettings.address.length > topAddressMaxLen) ? '…' : '');
     $('#addressMenuText').html(topAddress);
 
-    $('#appResetButton').text('Reset App');
-    $('#appResetButton').attr('title', 'Version: ' + chrome.runtime.getManifest().version);
+    $('#appResetButton').text('Reset ' + 'V.' + chrome.runtime.getManifest().version);
 
     $('#timeZoneIDTitle').html(appSettings.timeZoneID);
     $('.timeNowTitle').html(appSettings.timeNow);
