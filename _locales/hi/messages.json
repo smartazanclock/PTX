@@ -31,6 +31,10 @@
     "message": "सूर्योदय",
     "description": ""
   },
+  "duhaText": {
+    "message": "दुहा",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "ज़ोहर",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "साझा करने के लिए धन्यवाद!",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "समायोजन",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "ऑफसेट समायोजन",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "विकल्प साझा करना",
     "description": ""
   },
   "changeLanguageText": {

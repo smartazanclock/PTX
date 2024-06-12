@@ -31,6 +31,10 @@
     "message": "日の出",
     "description": ""
   },
+  "duhaText": {
+    "message": "ドゥハ",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "ズフル",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "共有してくださり、ありがとうございます。",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "設定",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "オフセットを調整",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "共有選択肢",
     "description": ""
   },
   "changeLanguageText": {

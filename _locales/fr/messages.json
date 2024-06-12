@@ -31,6 +31,10 @@
     "message": "Ishraq",
     "description": ""
   },
+  "duhaText": {
+    "message": "Duha",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "Dohr",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "Merci d'avoir partagé",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "Réglages",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "Décalages",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "Options de partage",
     "description": ""
   },
   "changeLanguageText": {

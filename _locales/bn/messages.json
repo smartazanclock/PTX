@@ -31,6 +31,10 @@
     "message": " সূর্যোদয়",
     "description": ""
   },
+  "duhaText": {
+    "message": "দুহা",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "যোহর",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "শেয়ার করার জন্য ধন্যবাদ!",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "সেটিংস",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "অফসেট এডজাস্টমেন্টস",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "শেয়ারিং অপশন ",
     "description": ""
   },
   "changeLanguageText": {

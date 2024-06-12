@@ -1,14 +1,13 @@
-﻿function Vakit(index, nextIndex, name, time, nextTime, currentTime) {
-    this.index = index;
-    this.nextIndex = nextIndex;
-    this.currentTime = currentTime;
+﻿function Vakit(name, time, nextTime, currentTime) {
     this.name = name;
-    this.time = time;
+    this.time12 = format12(time);
+    this.time24 = time;
+    this.currentTime = currentTime;
     this.nextTime = nextTime;
-    this.startAngle12 = () => { return timeToRadians(this.time, 12) };
-    this.endAngle12 = () => { return timeToRadians(nextTime, 12) };
-    this.nextVakitIn = () => { return diffBetweenTimes(currentTime, nextTime) };
-    this.isCurrentVakit = () => { return isTimeBetweenTheTwo(currentTime, time, nextTime) }
+    this.startAngle12 = timeToRadians(time, 12);
+    this.endAngle12 = timeToRadians(nextTime, 12);
+    this.nextVakitIn = diffBetweenTimes(currentTime, nextTime);
+    this.isCurrentVakit = isTimeBetweenTheTwo(currentTime, time, nextTime)
 }
 const format12 = (t) => {
     let tt = t.split(':');
@@ -43,7 +42,7 @@ const hoursToRadians = (m) => {
     return (m * 2 * Math.PI / 720) + 3 * Math.PI / 2;
     /* 720 mins =  2Pi */
 }
-const minutesToRadians = (m)  =>  {
+const minutesToRadians = (m) => {
     return (m * 2 * Math.PI / 60) + 3 * Math.PI / 2;
 }
 
@@ -101,14 +100,12 @@ const isTimeBetweenTheTwo = (time, startTime, endTime) => {
     return r;
 }
 
-const getTotalMinutes = (t) =>
-{
+const getTotalMinutes = (t) => {
     let tt = t.split(':');
     return tt[0] * 60 + tt[1] * 1;
 }
 
-const getOffsetHoursFromTimeZone = (tz) => 
-{
+const getOffsetHoursFromTimeZone = (tz) => {
     let date = new Date();
     let utcDate = new Date(date.toLocaleString('en-US', { timeZone: 'UTC' }));
     let tzDate = new Date(date.toLocaleString('en-US', { timeZone: tz }));

@@ -31,6 +31,10 @@
     "message": "إشراق",
     "description": ""
   },
+  "duhaText": {
+    "message": "الضحى",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "الظهر",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "شكرا للمشاركة",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "إعدادات",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "تعويضات",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "شارك من فضلك",
     "description": ""
   },
   "changeLanguageText": {

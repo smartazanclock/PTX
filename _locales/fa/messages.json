@@ -31,6 +31,10 @@
     "message": "اشراق",
     "description": ""
   },
+  "duhaText": {
+    "message": "دوحه",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "ظهر",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "متشکرم",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "ترتیب",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "تنظیم",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "اشتراک گذاری",
     "description": ""
   },
   "changeLanguageText": {

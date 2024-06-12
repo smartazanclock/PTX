@@ -31,6 +31,10 @@
     "message": "Güneş",
     "description": ""
   },
+  "duhaText": {
+    "message": "Duha",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "Öğle",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "Teşekkürler!",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "Ayarlar",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "Temkin Ayarları",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "Paylaşım",
     "description": ""
   },
   "changeLanguageText": {

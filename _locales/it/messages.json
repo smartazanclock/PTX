@@ -31,6 +31,10 @@
     "message": "Alba",
     "description": ""
   },
+  "duhaText": {
+    "message": "Duha",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "Dhuhr",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "Grazie per la condivisione!",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "Impostazioni",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "Regolazioni offset",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "Opzioni di condivisione",
     "description": ""
   },
   "changeLanguageText": {

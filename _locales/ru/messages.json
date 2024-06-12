@@ -31,6 +31,10 @@
     "message": "Восход",
     "description": ""
   },
+  "duhaText": {
+    "message": "Духа",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "Зухр",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "Спасибо, что поделился",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "Настройки",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "Смещения времени",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "Варианты обмена",
     "description": ""
   },
   "changeLanguageText": {

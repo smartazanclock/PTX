@@ -3,17 +3,18 @@ var appSettings;
 chrome.runtime.onMessage.addListener(() => { runApp() });
 
 $(function () {
-    populateCalculationMethods();
-    goGoRun('running on index load');
+    goGoRun('1stLoad');
     setInterval(goGoRun, 1000);
 });
 
 const goGoRun = (info) => {
-    if (navigator.serviceWorker)
+    if (navigator.serviceWorker) {
         navigator.serviceWorker.controller.postMessage({ 'msg': (info ?? '') })
+    }
 }
 
 const runApp = () => {
+
 
     chrome.storage.local.get(['appSettings'], function (result) {
 
@@ -43,20 +44,47 @@ const runApp = () => {
             $('.' + key).text(value);
         });
 
-        Object.entries(appSettings.appVakits).forEach(function ([vakit, value]) {
-            let vd = $('.' + vakit.toLowerCase() + 'Div');
-            let timeValue = (appSettings.timeFormat == 12) ? value.time12 : value.time24;
-            vd.html('<div class="pt-1 small">' + appSettings.i18n[value.name.toLowerCase() + 'Text'] + '</div>' + '<div class="p-1 vakitTime">' + timeValue + '</div>');
-            let cClass = 'currentVakit bg-dark  border border-light rounded';
+        for (let i = 0; i < appSettings.allVakits.length; i++) {
+            let vakit = appSettings.allVakits[i].name.toLowerCase();
+            let timeValue = (appSettings.timeFormat == 12) ? appSettings.allVakits[i].time12 : appSettings.allVakits[i].time24;
+            $('#' + vakit + 'Time').html(timeValue);
+        }
+
+        $('.vakitDiv').hide();
+        for (let i = 0; i < appSettings.appVakits.length; i++) {
+            let vakit = appSettings.appVakits[i].name.toLowerCase();
+            let vd = $('.' + vakit + 'Div');
+            let timeValue = (appSettings.timeFormat == 12) ? appSettings.appVakits[i].time12 : appSettings.appVakits[i].time24;
+
+            if (vakit === "duha") {
+                let duhaend = appSettings.allVakits.find(f => f.name === 'Duhaend');
+                let duhaendTime = (appSettings.timeFormat == 12) ? duhaend.time12 : duhaend.time24;
+                timeValue += " - " + duhaendTime;
+            }
+            vd.html(`
+                <div class="pt-1 small">
+                    ${appSettings.i18n[vakit + 'Text']}
+                </div>
+                <div class="p-1 vakitTime">
+                    ${timeValue}
+                </div>
+            `);
+            let cClass = 'currentVakit bg-dark border border-light rounded';
             vd.removeClass(cClass);
-            if (value.isCurrentVakit == 1) {
+            if (appSettings.appVakits[i].isCurrentVakit == 1) {
                 vd.addClass(cClass);
             }
-        });
+            if (i < Math.ceil(appSettings.appVakits.length / 2))
+                $('#vakitsRow1').append(vd);
+            else
+                $('#vakitsRow2').append(vd);
+            vd.show();
+        }
 
         setFields(appSettings);
 
     });
+
 }
 
 $(function () {
@@ -67,8 +95,6 @@ $(function () {
         $('.tabDiv').hide();
         $('#times').show();
         $('#footer').show();
-        $('.menu-text').hide();
-        $('#addressMenuText').show();
         $('.fdate').show();
     });
 
@@ -78,8 +104,6 @@ $(function () {
         $('.tabDiv').hide();
         $('#basicSettings').show();
         $('#footer').show();
-        $('.menu-text').hide();
-        $('#settingsMenuText').show();
         $('.fdate').hide();
     });
 
@@ -89,8 +113,14 @@ $(function () {
         $('.tabDiv').hide();
         $('#offsetAdjustments').show();
         $('#footer').hide();
-        $('.menu-text').hide();
-        $('#offsetsMenuText').show();
+    });
+
+    $(".menu-info").click(function (e) {
+        $('.menu-img').removeClass('bg-secondary');
+        $('img.menu-info').addClass('bg-secondary');
+        $('.tabDiv').hide();
+        $('#info').show();
+        $('#footer').hide();
     });
 
     $("#calculationMethod").change(function () {
@@ -123,6 +153,14 @@ $(function () {
         chrome.storage.local.get(['appSettings'], function (result) {
             appSettings = result.appSettings;
             appSettings.showImsak = ((appSettings.showImsak ?? 0) + 1) % 2;
+            saveAppSettingsAndRefresh(appSettings);
+        });
+    });
+
+    $("#showDuhaToggle").click(function () {
+        chrome.storage.local.get(['appSettings'], function (result) {
+            appSettings = result.appSettings;
+            appSettings.showDuha = ((appSettings.showDuha ?? 0) + 1) % 2;
             saveAppSettingsAndRefresh(appSettings);
         });
     });
@@ -257,12 +295,6 @@ $(function () {
 
 });
 
-const populateCalculationMethods = () => {
-    Object.entries(calculationMethods).forEach(function ([key, value]) {
-        $('#calculationMethod').append('<option value="' + key + '">' + value.name + '</option>');
-    });
-}
-
 const setThenSaveAndRefresh = (name, value) => {
     chrome.storage.local.get(['appSettings'], function (result) {
         appSettings = result.appSettings;
@@ -288,43 +320,50 @@ const setFields = (appSettings) => {
 
     if (!$('#basicSettings').is(':visible'))
         $('#address').val(appSettings.address);
-
     $('#displayLanguage').val(appSettings.i18n.languageCode);
-
-    let topAddressMaxLen = 21;
+    let topAddressMaxLen = 22;
     let topAddress = appSettings.address.substring(0, topAddressMaxLen) + ((appSettings.address.length > topAddressMaxLen) ? '…' : '');
     $('#addressMenuText').html(topAddress);
-
     $('#appResetButton').text('Reset ' + 'V.' + chrome.runtime.getManifest().version);
-
-    $('#timeZoneIDTitle').html(appSettings.timeZoneID);
     $('.timeNowTitle').html(appSettings.timeNow);
-
+    $('.timeNowTitle').attr('title', 'Current Time in ' + appSettings.timeZoneID);
     $('#calculationMethod').val(appSettings.calculationMethod);
-    $('#calculationMethodName').html(appSettings.calculationMethodName);
     $('#fajrAngle').html(appSettings.i18n['fajrText'] + ' ' + appSettings.fajrAngle);
     $('#ishaAngle').html(appSettings.i18n['ishaText'] + ' ' + appSettings.ishaAngle);
+
     $('#imsakOffset').html(0).removeClass('bg-danger text-light').addClass('bg-light text-dark');
     $('#fajrOffset').html(0).removeClass('bg-danger text-light').addClass('bg-light text-dark');
+    $('#duhaOffset').html(0).removeClass('bg-danger text-light').addClass('bg-light text-dark');
+    $('#duhaendOffset').html(0).removeClass('bg-danger text-light').addClass('bg-light text-dark');
     $('#dhuhrOffset').html(0).removeClass('bg-danger text-light').addClass('bg-light text-dark');
     $('#asrOffset').html(0).removeClass('bg-danger text-light').addClass('bg-light text-dark');
     $('#maghribOffset').html(0).removeClass('bg-danger text-light').addClass('bg-light text-dark');
     $('#ishaOffset').html(0).removeClass('bg-danger text-light').addClass('bg-light text-dark');
+    $('#duhaOffsetDecrease').attr("disabled", true);
+    $('#duhaendOffsetIncrease').attr("disabled", true);
     $('#imsakOffsetIncrease').attr("disabled", true);
     $('#maghribOffsetDecrease').attr("disabled", true);
     if (appSettings.calculationMethod == 'TurkiyeDiyanet' || appSettings.calculationMethod == 'EUDiyanet')
         $('#maghribOffsetDecrease').attr("disabled", false);
 
+
     let offsetPresent = false;
+    let duhaOffset = duhaDefaultOffset;
+    let duhaendOffset = duhaendDefaultOffset;
     if (appSettings.vakitOffsets) {
+
+        duhaOffset += (appSettings.vakitOffsets.duha ?? 0);
+        duhaendOffset += (appSettings.vakitOffsets.duhaend ?? 0);
+
         Object.entries(appSettings.vakitOffsets).forEach(function (v) {
 
             let stdLimit = 90;
-            /*
-            if (v[0] == 'maghrib')
-                stdLimit = 30;
-            */
+
+            if (v[0].indexOf('duha') == 0)
+                stdLimit = 45;
+
             $('#' + v[0] + 'Offset').html(v[1]);
+
             if (v[1] != 0) {
                 $('#' + v[0] + 'Offset').removeClass('bg-light text-dark').addClass('bg-danger text-light');
                 offsetPresent = true;
@@ -342,11 +381,19 @@ const setFields = (appSettings) => {
             if (v[0] == 'imsak' && v[1] >= 0)
                 $('#' + v[0] + 'OffsetIncrease').attr("disabled", true);
 
+            if (v[0] == 'duha' && v[1] <= 0)
+                $('#' + v[0] + 'OffsetDecrease').attr("disabled", true);
+
+            if (v[0] == 'duhaend' && v[1] >= 0)
+                $('#' + v[0] + 'OffsetIncrease').attr("disabled", true);
+
             if (v[0] == 'maghrib' && v[1] <= 0 && appSettings.calculationMethod != 'TurkiyeDiyanet' && appSettings.calculationMethod != 'EUDiyanet')
                 $('#' + v[0] + 'OffsetDecrease').attr("disabled", true);
 
         });
     }
+
+    $('#duhaPop').attr("title", '(' + appSettings.i18n.sunriseText + '+' + duhaOffset + ') - (' + appSettings.i18n.dhuhrText + duhaendOffset + ')');
 
     $('#hijriDateOffset').html(0).removeClass('bg-danger text-light').addClass('bg-light text-dark');
     $('#hijriDateIncrease').attr("disabled", false);
@@ -401,34 +448,31 @@ const setFields = (appSettings) => {
 
     $('#showImsakOn').hide();
     $('#showImsakOff').hide();
-    $('.vakitDiv.imsakDiv').hide();
-    $('#imsakOffsetDiv').hide();
     if (appSettings.showImsak == 1) {
         $('#showImsakOn').show();
-        $('.vakitDiv.imsakDiv').show();
-        $('#imsakOffsetDiv').show();
     }
     else {
         $('#showImsakOff').show();
     }
 
+    $('#showDuhaOn').hide();
+    $('#showDuhaOff').hide();
+    if (appSettings.showDuha == 1) {
+        $('#showDuhaOn').show();
+    }
+    else {
+        $('#showDuhaOff').show();
+    }
+
     $('#showMidnightOn').hide();
     $('#showMidnightOff').hide();
-    $('.vakitDiv.midnightDiv').hide();
     if (appSettings.showMidnight == 1) {
         $('#showMidnightOn').show();
-        $('.vakitDiv.midnightDiv').show();
     }
     else {
         $('#showMidnightOff').show();
 
     }
-
-    $('.vakitDiv').removeClass('col-3').removeClass('col-4');
-    if (appSettings.showImsak == 1 || appSettings.showMidnight == 1)
-        $('.vakitDiv').addClass('col-3');
-    else
-        $('.vakitDiv').addClass('col-4');
 
     $('#hour24On').hide();
     $('#hour24Off').hide();
@@ -522,4 +566,3 @@ const hideLoadingOnError = () => {
     $('#loadingImg').attr('src', '/images/x.png');
     setTimeout(() => { $('#loading').hide() }, 500);
 }
-

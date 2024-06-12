@@ -31,6 +31,10 @@
     "message": "Israq",
     "description": ""
   },
+  "duhaText": {
+    "message": "Duha",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "Dhuhur",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "Terima kasih",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "Pengaturan",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "Penyesuaian",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "Bagikan",
     "description": ""
   },
   "changeLanguageText": {

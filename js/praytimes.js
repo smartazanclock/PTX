@@ -1,5 +1,4 @@
-﻿//--------------------- Copyright Block ----------------------
-/* 
+﻿/* 
 PrayTimes.js: Prayer Times Calculator (ver 2.3) Copyright (C) 2007-2011 PrayTimes.org
 Developer: Hamid Zarrabi-Zadeh License: GNU LGPL v3.0
 TERMS OF USE:	Permission is granted to use this code, with or without modification, in any website or application provided that credit is given to the original work 	with a link back to PrayTimes.org.
@@ -20,6 +19,8 @@ function PrayTimes(method) {
 			imsak: 'Imsak',
 			fajr: 'Fajr',
 			sunrise: 'Sunrise',
+			duha: 'Duha',
+			duhaend: 'DuhaEnd',
 			dhuhr: 'Dhuhr',
 			asr: 'Asr',
 			sunset: 'Sunset',
@@ -52,7 +53,7 @@ function PrayTimes(method) {
 		timeSuffixes = ['am', 'pm'],
 		invalidTime = '-----',
 
-		numIterations = 1,
+		//numIterations = 1,
 		offset = {},
 
 
@@ -136,14 +137,10 @@ function PrayTimes(method) {
 			timeFormat = format || timeFormat;
 			if (date.constructor === Date)
 				date = [date.getFullYear(), date.getMonth() + 1, date.getDate()];
-			if (typeof (timezone) == 'undefined' || timezone == 'auto')
-				timezone = this.getTimeZone(date);
-			if (typeof (dst) == 'undefined' || dst == 'auto')
-				dst = this.getDst(date);
 			timeZone = 1 * timezone + (1 * dst ? 1 : 0);
 			jDate = this.julian(date[0], date[1], date[2]) - lng / (15 * 24);
 
-			return this.computeTimes();
+			return this.computeTimes()
 		},
 
 
@@ -259,16 +256,13 @@ function PrayTimes(method) {
 			};
 
 			// main iterations
-			for (var i = 1; i <= numIterations; i++)
-				times = this.computePrayerTimes(times);
-
+			// for (var i = 1; i <= numIterations; i++)
+			times = this.computePrayerTimes(times);
 			times = this.adjustTimes(times);
+			times.duha = times.sunrise + duhaDefaultOffset / 60;
+			times.duhaend = times.dhuhr + duhaendDefaultOffset / 60;
 			times = this.tuneTimes(times);
-
-			// add midnight time
-			// times.midnight = (setting.midnight == 'Jafari') ? times.sunset+ this.timeDiff(times.sunset, times.fajr)/ 2 : times.sunset+ this.timeDiff(times.sunset, times.sunrise)/ 2;
 			times.midnight = times.maghrib + this.timeDiff(times.maghrib, times.fajr) / 2;
-
 			return this.modifyFormats(times);
 		},
 
@@ -279,10 +273,8 @@ function PrayTimes(method) {
 			for (var i in times)
 				times[i] += timeZone - lng / 15;
 
-
 			if (params.highLats != 'None')
 				times = this.adjustHighLats(times);
-
 
 			if (this.isMin(params.imsak))
 				times.imsak = times.fajr - this.eval(params.imsak) / 60;
@@ -365,42 +357,12 @@ function PrayTimes(method) {
 			return portion * night;
 		},
 
-
 		// convert hours to day portions 
 		dayPortion: function (times) {
 			for (var i in times)
 				times[i] /= 24;
 			return times;
 		},
-
-
-		//---------------------- Time Zone Functions -----------------------
-
-
-		// get local time zone
-		getTimeZone: function (date) {
-			var year = date[0];
-			var t1 = this.gmtOffset([year, 0, 1]);
-			var t2 = this.gmtOffset([year, 6, 1]);
-			return Math.min(t1, t2);
-		},
-
-
-		// get daylight saving for a given date
-		getDst: function (date) {
-			return 1 * (this.gmtOffset(date) != this.getTimeZone(date));
-		},
-
-
-		// GMT offset for a given date
-		gmtOffset: function (date) {
-			var localDate = new Date(date[0], date[1] - 1, date[2], 12, 0, 0, 0);
-			var GMTString = localDate.toGMTString();
-			var GMTDate = new Date(GMTString.substring(0, GMTString.lastIndexOf(' ') - 1));
-			var hoursDiff = (localDate - GMTDate) / (1000 * 60 * 60);
-			return hoursDiff;
-		},
-
 
 		//---------------------- Misc Functions -----------------------
 

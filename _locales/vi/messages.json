@@ -31,6 +31,10 @@
     "message": "Bình Minh",
     "description": ""
   },
+  "duhaText": {
+    "message": "Duha",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "Zohar",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "Cám ơn vì đã chia sẻ!",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "Cài đặt ",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "Điều chỉnh bù đắp",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "Chia sẻ lựa chọn",
     "description": ""
   },
   "changeLanguageText": {

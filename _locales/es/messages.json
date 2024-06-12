@@ -31,6 +31,10 @@
     "message": "Amanecer",
     "description": ""
   },
+  "duhaText": {
+    "message": "Duha",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "Dhuhr",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "Gracias por compartir",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "Ajustes",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "Compensaciones",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "Por favor comparte",
     "description": ""
   },
   "changeLanguageText": {

@@ -31,6 +31,10 @@
     "message": "உதயம்",
     "description": ""
   },
+  "duhaText": {
+    "message": "துஹா",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "லுஹர்",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "பகிர்வுக்கு நன்றி!",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "அமைப்புகள்",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "ஆஃப்செட் சரிசெய்தல்",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "பகிர்வதற்கான தெரிவுகள்",
     "description": ""
   },
   "changeLanguageText": {

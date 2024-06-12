@@ -31,6 +31,10 @@
     "message": "Ishraq",
     "description": ""
   },
+  "duhaText": {
+    "message": "Duha",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "Dhuhr",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "Bedankt voor het delen!",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "Instellingen",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "Offset-aanpassingen",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "Opties voor delen",
     "description": ""
   },
   "changeLanguageText": {

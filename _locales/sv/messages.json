@@ -31,6 +31,10 @@
     "message": "Sol",
     "description": ""
   },
+  "duhaText": {
+    "message": "Duha",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "Dhuhr",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "Tack för din delning!",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "Inställningar",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "Inställningar För Utjämning",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "Alternativ För Delning",
     "description": ""
   },
   "changeLanguageText": {

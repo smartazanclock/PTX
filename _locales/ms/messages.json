@@ -31,6 +31,10 @@
     "message": "Syuruk",
     "description": ""
   },
+  "duhaText": {
+    "message": "Duha",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "Zohor",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "Terima kasih",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "Tetapan",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "Pelarasan masa",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "Sila kongsi",
     "description": ""
   },
   "changeLanguageText": {

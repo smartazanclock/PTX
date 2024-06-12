@@ -31,6 +31,10 @@
     "message": "Słońce",
     "description": ""
   },
+  "duhaText": {
+    "message": "Duha",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "Dhuhr",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "Dziękuję za dzielenie się!",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "Ustawienia",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "Korekty Odsunięcia",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "Opcje Udostępniania",
     "description": ""
   },
   "changeLanguageText": {

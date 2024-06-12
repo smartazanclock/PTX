@@ -31,6 +31,10 @@
     "message": "Схід сонця",
     "description": ""
   },
+  "duhaText": {
+    "message": "Духа",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "Зухр",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "Дякую, що поділились!",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "Налаштування",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "Коригування зміщення",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "Способи поділитися",
     "description": ""
   },
   "changeLanguageText": {

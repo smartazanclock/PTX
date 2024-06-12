@@ -31,6 +31,10 @@
     "message": "ซบุ ฮ",
     "description": ""
   },
+  "duhaText": {
+    "message": "ดูฮา",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "ซฮุ รยี",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "ของคณุ สำ หรับการแบง่ ปัน",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "การตงั้คา่ ",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "เมนูแกไ้ข",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "ตวัเลอื กการแบง่ ปัน",
     "description": ""
   },
   "changeLanguageText": {

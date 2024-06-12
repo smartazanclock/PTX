@@ -31,6 +31,10 @@
     "message": "Ishraq",
     "description": ""
   },
+  "duhaText": {
+    "message": "Duha",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "Dhuhr",
     "description": ""
@@ -109,18 +113,6 @@
   },
   "shareTitle": {
     "message": "Danke für das Teilen",
-    "description": ""
-  },
-  "settingsMenuText": {
-    "message": "Einstellungen",
-    "description": ""
-  },
-  "offsetsMenuText": {
-    "message": "Zeitverschiebungen",
-    "description": ""
-  },
-  "shareMenuText": {
-    "message": "Bitte teilen",
     "description": ""
   },
   "changeLanguageText": {
