@@ -23,5 +23,5 @@
 
 const availableLangs = ['ar', 'de', 'en', 'es', 'fr', 'id', 'ms', 'ru', 'tr', 'ta', 'bn', 'nl', 'sv', 'pl', 'ko', 'th', 'it', 'hi', 'fa', 'pt', 'ja', 'vi', 'uk'];
 
-const duhaDefaultOffset = 10;
+const duhaDefaultOffset = 15;
 const duhaendDefaultOffset = -10; 

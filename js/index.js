@@ -61,9 +61,14 @@ const runApp = () => {
                 let duhaendTime = (appSettings.timeFormat == 12) ? duhaend.time12 : duhaend.time24;
                 timeValue += " - " + duhaendTime;
             }
+
+            let vakitText = appSettings.i18n[vakit + 'Text'];
+            if (appSettings.isJumua && vakit === 'dhuhr')
+                vakitText = appSettings.i18n.jumuaText
+
             vd.html(`
                 <div class="pt-1 small">
-                    ${appSettings.i18n[vakit + 'Text']}
+                    ${vakitText}
                 </div>
                 <div class="p-1 vakitTime">
                     ${timeValue}

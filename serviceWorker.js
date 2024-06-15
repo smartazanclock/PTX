@@ -194,11 +194,7 @@ function populateVakitsAndVars() {
     sunriseDhuhrVakit = new Vakit('Sunrise', getPrayerTime('sunrise'), getPrayerTime('dhuhr'), currentTimeString);
     duhaVakit = new Vakit('Duha', getPrayerTime('duha'), getPrayerTime('duhaend'), currentTimeString);
     duhaendVakit = new Vakit('Duhaend', getPrayerTime('duhaend'), getPrayerTime('dhuhr'), currentTimeString);
-
     dhuhrVakit = new Vakit('Dhuhr', getPrayerTime('dhuhr'), getPrayerTime('asr'), currentTimeString);
-    if (currentTime.getDay() === 5)
-        dhuhrVakit = new Vakit('Jumua', getPrayerTime('dhuhr'), getPrayerTime('asr'), currentTimeString);
-
     asrVakit = new Vakit('Asr', getPrayerTime('asr'), getPrayerTime('maghrib'), currentTimeString);
     maghribVakit = new Vakit('Maghrib', getPrayerTime('maghrib'), getPrayerTime('isha'), currentTimeString);
     ishaImsakVakit = new Vakit('Isha', getPrayerTime('isha'), getPrayerTime('imsak'), currentTimeString);
@@ -298,6 +294,9 @@ function populateVakitsAndVars() {
         allVakits.push(aVakits[i]);
     }
 
+    appSettings.isJumua = false;
+    if (currentTime.getDay() === 5)
+        appSettings.isJumua = true;
     appSettings.appVakits = appVakits;
     appSettings.allVakits = allVakits;
 
