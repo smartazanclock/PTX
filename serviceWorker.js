@@ -221,6 +221,7 @@ function populateVakitsAndVars() {
     if (appSettings.showDuha === 1) {
         vakits.push(sunriseDuhaVakit);
         vakits.push(duhaVakit);
+        vakits.push(duhaendVakit);
     }
     else {
         vakits.push(sunriseDhuhrVakit);
