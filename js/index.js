@@ -51,6 +51,7 @@ const runApp = () => {
         }
 
         $('.vakitDiv').hide();
+        $('.offsetCurrentVakit').removeClass('offsetCurrentVakit');
         for (let i = 0; i < appSettings.appVakits.length; i++) {
             let vakit = appSettings.appVakits[i].name.toLowerCase();
             let vd = $('.' + vakit + 'Div');
@@ -74,11 +75,18 @@ const runApp = () => {
                     ${timeValue}
                 </div>
             `);
-            let cClass = 'currentVakit bg-dark border border-light rounded';
+
+            let cClass = 'bg-dark border border-light rounded';
             vd.removeClass(cClass);
             if (appSettings.appVakits[i].isCurrentVakit == 1) {
                 vd.addClass(cClass);
             }
+
+            if (appSettings.appVakits[i].isCurrentVakit == 1) {
+                $('#' + vakit + 'OffsetRow').addClass('offsetCurrentVakit');
+            }
+
+
             if (i < Math.ceil(appSettings.appVakits.length / 2))
                 $('#vakitsRow1').append(vd);
             else

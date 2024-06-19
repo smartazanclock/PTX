@@ -262,6 +262,8 @@ function PrayTimes(method) {
 			times.duha = times.sunrise + duhaDefaultOffset / 60;
 			times.duhaend = times.dhuhr + duhaendDefaultOffset / 60;
 			times = this.tuneTimes(times);
+			times.imsak = times.imsak + offset['fajr'] / 60;
+			times.duhaend = times.duhaend + offset['dhuhr'] / 60;
 			times.midnight = times.maghrib + this.timeDiff(times.maghrib, times.fajr) / 2;
 			return this.modifyFormats(times);
 		},
@@ -282,6 +284,7 @@ function PrayTimes(method) {
 				times.maghrib = times.sunset + this.eval(params.maghrib) / 60;
 			if (this.isMin(params.isha))
 				times.isha = times.maghrib + this.eval(params.isha) / 60;
+
 			times.dhuhr += this.eval(params.dhuhr) / 60;
 
 			return times;
@@ -306,8 +309,9 @@ function PrayTimes(method) {
 
 		// apply offsets to the times
 		tuneTimes: function (times) {
-			for (var i in times)
+			for (var i in times) {
 				times[i] += offset[i] / 60;
+			}
 			return times;
 		},
 

@@ -71,6 +71,10 @@ body {
     color: white !important;
 }
 
+.offsetCurrentVakit {
+    background-color: #0a58ca;
+}
+
 .offsetDecrease:disabled,
 .offsetIncrease:disabled {
     background-color: gray;
