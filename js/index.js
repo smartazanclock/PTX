@@ -363,8 +363,10 @@ const setFields = (appSettings) => {
     let offsetPresent = false;
     let duhaOffset = duhaDefaultOffset;
     let duhaendOffset = duhaendDefaultOffset;
+    let imsakOffset = -10;
     if (appSettings.vakitOffsets) {
 
+        imsakOffset += (appSettings.vakitOffsets.imsak ?? 0);
         duhaOffset += (appSettings.vakitOffsets.duha ?? 0);
         duhaendOffset += (appSettings.vakitOffsets.duhaend ?? 0);
 
@@ -406,6 +408,7 @@ const setFields = (appSettings) => {
         });
     }
 
+    $('#imsakPop').attr("title", appSettings.i18n.fajrText + imsakOffset);
     $('#duhaPop').attr("title", '(' + appSettings.i18n.sunriseText + '+' + duhaOffset + ') - (' + appSettings.i18n.dhuhrText + duhaendOffset + ')');
 
     $('#hijriDateOffset').html(0).removeClass('bg-danger text-light').addClass('bg-light text-dark');
