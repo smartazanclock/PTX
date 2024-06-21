@@ -189,7 +189,7 @@ $(function () {
     $("#hour24Toggle").click(function () {
         chrome.storage.local.get(['appSettings'], function (result) {
             appSettings = result.appSettings;
-            appSettings.timeFormat = (appSettings.timeFormat == 12) ? '24' : '12';
+            appSettings.timeFormat = (appSettings.timeFormat == 12) ? 24 : 12;
             saveAppSettingsAndRefresh(appSettings);
         });
     });

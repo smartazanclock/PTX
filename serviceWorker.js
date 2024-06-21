@@ -79,6 +79,7 @@ async function initUser(i18nValues, appSettings) {
             let appSettings = {
                 i18n: i18nValues,
                 ...data,
+                timeFormat: 12,
                 calculationMethod: i18nValues.defaultMethod,
                 iconStyle: 'badge',
                 desktopNotifications: 0,
