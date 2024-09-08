@@ -42,6 +42,7 @@ body {
 
 .menu-img {
     padding: 5px;
+    height: 27px;
 }
 
 .btn-xs {
@@ -71,8 +72,8 @@ body {
     color: white !important;
 }
 
-.offsetCurrentVakit {
-    background-color: #0a58ca;
+.offsetCurrentVakit span {
+    color: khaki;
 }
 
 .offsetDecrease:disabled,
@@ -111,4 +112,15 @@ body {
 
 .voff {
     border-left: 2px solid silver;
+}
+
+#audioPlayerDiv {
+    position: absolute;
+    z-index: 200;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 579px;
+    opacity: 0.13;
+    background-color: #212529;
 }

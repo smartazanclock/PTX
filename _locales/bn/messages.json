@@ -95,8 +95,8 @@
     "message": "আপনার লোকেশন সেট করুন",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "নামাজের সময় (মিনিট)",
+  "adhansAndOffsetsTitle": {
+    "message": "অফসেট সেটিংস এবং আযানসমূহ",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "ব্যায়িত সময়",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "রিসেট",
+  "enableAdhanCallsTitle": {
+    "message": "আযান সক্রিয় করুন",
     "description": ""
   }
 }

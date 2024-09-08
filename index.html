@@ -12,43 +12,55 @@
 <body>
     <div id="appDiv">
         <div id="topCard" class="card bg-dark text-light mt-0 pt-0 text-center border-0">
-
             <div id="loading" style="display:none;">
                 <div id="loadingInnerDiv">
                     <img id="loadingImg" src="images/check.png" />
                 </div>
             </div>
-
+            <div id="audioPlayerDiv" style="display:none;">
+                <div class="d-flex flex-column justify-content-center align-items-center gap-3 h-100">
+                    <div><audio id="audioPlayer"></audio></div>
+                </div>
+            </div>
             <div class="card-header p-1 m-0">
 
-                <div class="d-flex flex-row justify-content-between">
-                    <div class="col-1"><img class="menu-img menu-clock img-fluid rounded pointerOn bg-secondary" />
+                <div class="d-flex flex-row justify-content-between align-items-center">
+
+                    <div class="d-flex flex-row justify-content-center align-items-center">
+                        <div id="menu-div-clock" class="menu-div bg-secondary pointerOn rounded">
+                            <img class="menu-img menu-clock-img" />
+                        </div>
+                        <div id="menu-div-settings" class="menu-div menu-settings pointerOn rounded">
+                            <img class="menu-img pointerOn" src="images/settings.png" />
+                        </div>
+                        <div id="menu-div-adhans-offsets" class="menu-div menu-adhans-offsets rounded pointerOn">
+                            <img id="offset-adjustments-blank" style="display:none;" class="menu-img offset-adjustments"
+                                src="images/offset-adjustments-blank.png" />
+                            <img id="offset-adjustments-red" style="display:none;" class="menu-img offset-adjustments"
+                                src="images/offset-adjustments-red.png" />
+                        </div>
                     </div>
-                    <div class="col-1"><img class="menu-img menu-settings img-fluid rounded pointerOn"
-                            src="images/settings.png" />
+
+                    <div id="stopAdhanDiv" class="pointerOn rounded flex-grow-1"
+                        style="background-color: #F20031; display:none;">
+                        <img class="menu-img" src="images/stop.png" />
                     </div>
-                    <div class="col-1"><img id="offset-adjustments-blank" style="display:none"
-                            class="offset-adjustments menu-img menu-offsets img-fluid rounded pointerOn"
-                            src="images/offset-adjustments-blank.png" />
-                        <img id="offset-adjustments-red" style="display:none"
-                            class="offset-adjustments menu-img menu-offsets img-fluid rounded pointerOn"
-                            src="images/offset-adjustments-red.png" />
+
+                    <div class="d-flex flex-row align-items-center justify-content-end">
+                        <div class="adhansToggle pointerOn">
+                            <img class="menu-img adhan-on" style="display:none;" src="images/audio-on.png" />
+                            <img class="menu-img adhan-off" style="display:none;" src="images/audio-off.png" />
+                        </div>
+                        <div class="menu-text badge bg-darkish text-light timeNowTitle">
+                        </div>
+                        <div id="addressMenuText" class="menu-text badge bg-light text-dark menu-settings pointerOn">
+                        </div>
                     </div>
-                    <!--
-                    <div class="col-1">
-                        <img class="menu-img menu-info img-fluid rounded pointerOn" src="images/info.png" />
-                    </div>
-                    -->
-                    <div class="flex-grow-1 text-end pt-1">
-                        <span class="menu-text badge bg-darkish text-light timeNowTitle"></span>
-                        <span id="addressMenuText"
-                            class="menu-text badge bg-light text-dark menu-settings pointerOn"></span>
-                    </div>
+
                 </div>
 
             </div>
-
-            <div class="card-body py-0 px-3">
+            <div class="card-body py-0 px-3" style="overflow: hidden;">
 
                 <div id="times" class="tabDiv text-center">
 
@@ -87,27 +99,7 @@
 
                     <div class="mt-1">
                         <div class="badge p-0" id="calculationMethodTitle"></div>
-                        <select class="form-control form-control-sm" name="calculationMethod" id="calculationMethod">
-                            <option value="Algerian">Algerian Ministry of Religous Affairs</option>
-                            <option value="Egypt">Egyptian General Authority of Survey</option>
-                            <option value="FranceAngle18">France - 18° Angle</option>
-                            <option value="FranceUOIFAngle12">France UOIF - 12° Angle</option>
-                            <option value="ISNA">Islamic Society of North America (ISNA)</option>
-                            <option value="JAKIM">Jabatan Kemajuan Islam Malaysia</option>
-                            <option value="KEMENAG">Kementrian Agama Indonesia</option>
-                            <option value="Kuwait">Kuwait</option>
-                            <option value="UIPTL">London Unified Islamic Prayer Timetable</option>
-                            <option value="MUIS">Majlis Ugama Islam Singapura</option>
-                            <option value="MoonSightingCommittee">Moon Sighting Committee</option>
-                            <option value="MWL">Muslim World League</option>
-                            <option value="Qatar">Qatar</option>
-                            <option value="Karachi">University of Islamic Sciences, Karachi</option>
-                            <option value="Makkah">Umm Al-Qura University, Makkah</option>
-                            <option value="Dubai">UAE / Dubai</option>
-                            <option value="Tunusian">Tunisian Ministry of Religous Affairs</option>
-                            <option value="TurkiyeDiyanet">Türkiye Diyanet İşleri Baskanlığı</option>
-                            <option value="EUDiyanet">Turkish Diyanet Offsets with 15° Angles</option>
-                            <option value="Tehran">University of Tehran</option>
+                        <select class="form-control form-control-sm" id="calculationMethod">
                         </select>
                     </div>
 
@@ -138,297 +130,109 @@
                         </div>
                     </div>
 
-                    <div id="desktopNotificationsToggle" class="bg-darkish rounded px-2 py-1 mt-2 pointerOn">
+                    <div class="d-flex flex-row justify-content-between gap-1 mt-2">
+                        <div class="adhansToggle bg-darkish rounded px-2 py-1 pointerOn flex-fill">
+                            <img src="images/on.png" class="adhan-on" style="display:none;" />
+                            <img src="images/off.png" class="adhan-off" style="display:none;" />
+                            <span class="badge px-1" id="enableAdhanCallsTitle"></span>
+                            <img class="adhan-on" src="images/audio-on.png" style="height:19px; display: none;" />
+                            <img class="adhan-off" src="images/audio-off.png" style="height:19px; display:none;" />
+                        </div>
+                        <div class="bg-darkish menu-adhans-offsets px-2 py-1 pointerOn">
+                            <img class="adhan-on" src="images/mic.png" style="height:19px; display: none;" />
+                            <img class="adhan-off" src="images/mic-na.png" style="height:19px; display:none;" />
+                        </div>
+                    </div>
+
+                    <div id="desktopNotificationsToggle" class="bg-darkish rounded px-2 py-1 mt-1 pointerOn flex-fill">
                         <img src="images/on.png" id="desktopNotificationsOn" style="display:none;" />
                         <img src="images/off.png" id="desktopNotificationsOff" style="display:none;" />
                         <span class="badge px-1" id="desktopNotificationsTitle"></span>
                     </div>
 
                     <div id="hanafiAsrToggle" class="bg-darkish rounded px-2 py-1 mt-1 pointerOn">
-                        <img src="images/on.png" id="hanafiAsrOn" style="display:none;" />
-                        <img src="images/off.png" id="hanafiAsrOff" style="display:none;" />
+                        <img src="images/on.png" class="hanafiAsrOption" id="hanafiAsrOn" style="display:none;" />
+                        <img src="images/off.png" class="hanafiAsrOption" id="hanafiAsrOff" style="display:none;" />
                         <span class="badge px-1" id="hanafiAsrTitle"></span>
                     </div>
 
                     <div class="d-flex flex-row justify-content-between gap-1 mt-1">
                         <div id="showImsakToggle" class="bg-darkish rounded px-2 py-1 pointerOn flex-fill">
-                            <img src="images/on.png" id="showImsakOn" style="display:none;" />
-                            <img src="images/off.png" id="showImsakOff" style="display:none;" />
+                            <img src="images/on.png" class="showImsakOption" id="showImsakOn" style="display:none;" />
+                            <img src="images/off.png" class="showImsakOption" id="showImsakOff" style="display:none;" />
                             <span class="badge px-1" id="showImsakTitle"></span>
                         </div>
                         <div id="showDuhaToggle" class="bg-darkish rounded px-2 py-1 pointerOn flex-fill">
-                            <img src="images/on.png" id="showDuhaOn" style="display:none;" />
-                            <img src="images/off.png" id="showDuhaOff" style="display:none;" />
+                            <img src="images/on.png" class="showDuhaOption" id="showDuhaOn" style="display:none;" />
+                            <img src="images/off.png" class="showDuhaOption" id="showDuhaOff" style="display:none;" />
                             <span class="badge px-1 duhaText"></span>
                         </div>
 
                     </div>
+
                     <div class="d-flex flex-row justify-content-between gap-1 mt-1">
                         <div id="showMidnightToggle" class="bg-darkish rounded px-2 py-1 pointerOn flex-fill">
-                            <img src="images/on.png" id="showMidnightOn" style="display:none;" />
-                            <img src="images/off.png" id="showMidnightOff" style="display:none;" />
+                            <img src="images/on.png" class="showMidnightOption" id="showMidnightOn"
+                                style="display:none;" />
+                            <img src="images/off.png" class="showMidnightOption" id="showMidnightOff"
+                                style="display:none;" />
                             <span class="badge px-1" id="showMidnightTitle"></span>
                         </div>
                         <div id="hour24Toggle" class="bg-darkish rounded px-2 py-1 pointerOn flex-fill">
-                            <img src="images/on.png" id="hour24On" style="display:none;" />
-                            <img src="images/off.png" id="hour24Off" style="display:none;" />
+                            <img src="images/on.png" class="hour24Option" id="hour24On" style="display:none;" />
+                            <img src="images/off.png" class="hour24Option" id="hour24Off" style="display:none;" />
                             <span class="badge px-1" id="hour24Title"></span>
                         </div>
                     </div>
-
-
                 </div>
 
-                <div id="offsetAdjustments" class="tabDiv text-start" style="display:none">
+                <div id="adhanOffsetSettings" class="tabDiv text-start h-100 pb-3" style="display:none;">
+                    <div class="d-flex flex-column h-100 justify-content-between">
 
-                    <div class="badge p-0 mt-0" id="offsetTitle"></div>
+                        <div id="adhanOffsetSettingsContent"></div>
+                        <div>
+                            <div class="badge p-0 mt-2" id="hijriDateOffsetTitle"></div>
+                            <div class="bg-darkish px-1 py-2 rounded">
+                                <div class="d-flex flex-row align-items-end justify-content-between">
+                                    <div class="col-7">
+                                        <span class="todaysDateArabic badge"></span>
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="d-flex flex-row gap-1 justify-content-center">
+                                            <div><button id="hijriDateDecrease"
+                                                    class="btn btn-dark btn-xs pointerOn">-</button>
+                                            </div>
+                                            <div><span id="hijriDateOffset" class="badge bg-light text-dark">0</span>
+                                            </div>
+                                            <div><button id="hijriDateIncrease"
+                                                    class="btn btn-dark btn-xs pointerOn">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                    <div id="imsakOffsetRow" class="d-flex flex-row bg-darkish rounded p-1 mt-1">
-                        <div class="col-5 d-flex flex-row">
+                        <div class="d-flex flex-row justify-content-between align-items-center mt-2 gap-2">
                             <div>
-                                <span class="badge imsakText"></span>
+                                <select class="form-control form-control-sm" id="displayLanguage">
+                                </select>
+                            </div>
+                            <div class="flex-fill">
+                                <button id="appResetButton" class="btn btn-danger text-light btn-sm col-12"></span>
                             </div>
                             <div>
-                                <span id="imsakPop"><img src="images/info.png" style="width:13px;" /></span>
+                                <a title="Chrome Extension Reviews Page"
+                                    href="https://chromewebstore.google.com/detail/prayer-times-chrome-exten/fbkmgnkliklgbmanjkmiihkdioepnkce/reviews"
+                                    target="_blank"><img src="images/review.png" class="img-fluid p-0 m-0" /></a>
                             </div>
                         </div>
-                        <div class="col-4"><span id="imsakTime" class="badge"></span></div>
-                        <div class="col-3">
-                            <div class="d-flex flex-row gap-2  float-end">
-                                <div><button class="btn btn-dark btn-xs offsetDecrease" id="imsakOffsetDecrease"
-                                        data-vakit="imsak">-</button></div>
-                                <div>
-                                    <span id="imsakOffset" class="badge bg-light text-dark">0</span>
-                                </div>
-                                <div>
-                                    <button class="btn btn-dark btn-xs offsetIncrease" id="imsakOffsetIncrease"
-                                        data-vakit="imsak">+</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div id="fajrOffsetRow" class="d-flex flex-row bg-darkish rounded p-1 mt-1">
-                        <div class="col-5"><span id="fajrText" class="badge"></span></div>
-                        <div class="col-4"><span id="fajrTime" class="badge"></span></div>
-                        <div class="col-3">
-                            <div class="d-flex flex-row gap-2  float-end">
-                                <div><button class="btn btn-dark btn-xs offsetDecrease" id="fajrOffsetDecrease"
-                                        data-vakit="fajr">-</button></div>
-                                <div>
-                                    <span id="fajrOffset" class="badge bg-light text-dark">0</span>
-                                </div>
-                                <div>
-                                    <button class="btn btn-dark btn-xs offsetIncrease" id="fajrOffsetIncrease"
-                                        data-vakit="fajr">+</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="sunriseOffsetRow" class="d-flex flex-row bg-darkish rounded p-1 mt-1">
-                        <div class="col-5"><span id="sunriseText" class="badge"></span></div>
-                        <div class="col-4"><span id="sunriseTime" class="badge"></span></div>
-                        <div class="col-3"></div>
-                    </div>
-
-                    <div id="duhaOffsetRow" class="bg-darkish rounded p-1 mt-1">
-                        <div>
-                            <div class="d-flex flex-row align-items-center justify-content-center mt-1">
-                                <div class="col-5 d-flex flex-row">
-                                    <div>
-                                        <span class="badge duhaText"></span>
-                                    </div>
-                                    <div>
-                                        <span id="duhaPop"><img src="images/info.png" style="width:13px;" /></span>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <span id="duhaTime" class="badge"></span>
-                                </div>
-                                <div class="col-3">
-                                    <div class="d-flex flex-row gap-2  float-end">
-                                        <div><button class="btn btn-dark btn-xs offsetDecrease" id="duhaOffsetDecrease"
-                                                data-vakit="duha">-</button></div>
-                                        <div>
-                                            <span id="duhaOffset" class="badge bg-light text-dark">0</span>
-                                        </div>
-                                        <div>
-                                            <button class="btn btn-dark btn-xs offsetIncrease" id="duhaOffsetIncrease"
-                                                data-vakit="duha">+</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="d-flex flex-row align-items-center justify-content-center mt-1">
-                                <div class="col-5">
-
-                                </div>
-                                <div class="col-4">
-                                    <span id="duhaendTime" class="badge"></span>
-                                </div>
-                                <div class="col-3">
-                                    <div class="d-flex flex-row gap-2  float-end">
-                                        <div><button class="btn btn-dark btn-xs offsetDecrease"
-                                                id="duhaendOffsetDecrease" data-vakit="duhaend">-</button></div>
-                                        <div>
-                                            <span id="duhaendOffset" class="badge bg-light text-dark">0</span>
-                                        </div>
-                                        <div>
-                                            <button class="btn btn-dark btn-xs offsetIncrease"
-                                                id="duhaendOffsetIncrease" data-vakit="duhaend">+</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="dhuhrOffsetRow" class="d-flex flex-row bg-darkish rounded p-1 mt-1">
-                        <div class="col-5"><span id="dhuhrText" class="badge"></span></div>
-                        <div class="col-4"><span id="dhuhrTime" class="badge"></span></div>
-                        <div class="col-3">
-                            <div class="d-flex flex-row gap-2  float-end">
-                                <div><button class="btn btn-dark btn-xs offsetDecrease" id="dhuhrOffsetDecrease"
-                                        data-vakit="dhuhr">-</button></div>
-                                <div>
-                                    <span id="dhuhrOffset" class="badge bg-light text-dark">0</span>
-                                </div>
-                                <div>
-                                    <button class="btn btn-dark btn-xs offsetIncrease" id="dhuhrOffsetIncrease"
-                                        data-vakit="dhuhr">+</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="asrOffsetRow" class="d-flex flex-row bg-darkish rounded p-1 mt-1">
-                        <div class="col-5"><span id="asrText" class="badge"></span></div>
-                        <div class="col-4"><span id="asrTime" class="badge"></span></div>
-                        <div class="col-3">
-                            <div class="d-flex flex-row gap-2  float-end">
-                                <div><button class="btn btn-dark btn-xs offsetDecrease" id="asrOffsetDecrease"
-                                        data-vakit="asr">-</button></div>
-                                <div>
-                                    <span id="asrOffset" class="badge bg-light text-dark">0</span>
-                                </div>
-                                <div>
-                                    <button class="btn btn-dark btn-xs offsetIncrease" id="asrOffsetIncrease"
-                                        data-vakit="asr">+</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="maghribOffsetRow" class="d-flex flex-row bg-darkish rounded p-1 mt-1">
-                        <div class="col-5"><span id="maghribText" class="badge"></span></div>
-                        <div class="col-4"><span id="maghribTime" class="badge"></span></div>
-                        <div class="col-3">
-                            <div class="d-flex flex-row gap-2  float-end">
-                                <div><button class="btn btn-dark btn-xs offsetDecrease" id="maghribOffsetDecrease"
-                                        data-vakit="maghrib">-</button></div>
-                                <div>
-                                    <span id="maghribOffset" class="badge bg-light text-dark">0</span>
-                                </div>
-                                <div>
-                                    <button class="btn btn-dark btn-xs offsetIncrease" id="maghribOffsetIncrease"
-                                        data-vakit="maghrib">+</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="ishaOffsetRow" class="d-flex flex-row bg-darkish rounded p-1 mt-1">
-                        <div class="col-5"><span id="ishaText" class="badge"></span></div>
-                        <div class="col-4"><span id="ishaTime" class="badge"></span></div>
-                        <div class="col-3">
-                            <div class="d-flex flex-row gap-2  float-end">
-                                <div><button class="btn btn-dark btn-xs offsetDecrease" id="ishaOffsetDecrease"
-                                        data-vakit="isha">-</button></div>
-                                <div>
-                                    <span id="ishaOffset" class="badge bg-light text-dark">0</span>
-                                </div>
-                                <div>
-                                    <button class="btn btn-dark btn-xs offsetIncrease" id="ishaOffsetIncrease"
-                                        data-vakit="isha">+</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="midnightOffsetRow" class="d-flex flex-row bg-darkish rounded p-1 mt-1">
-                        <div class="col-5"><span id="midnightText" class="badge"></span></div>
-                        <div class="col-4"><span id="midnightTime" class="badge"></span></div>
-                        <div class="col-3"></div>
-                    </div>
-
-                    <div class="badge p-0 mt-3" id="hijriDateOffsetTitle"></div>
-
-                    <div class="d-flex flex-row justify-content-between align-items-center bg-darkish p-1 rounded">
-                        <div class="todaysDateArabic badge"></div>
-                        <div class="d-flex flex-row gap-2">
-                            <div><button id="hijriDateDecrease" class="btn btn-dark btn-xs pointerOn">-</button></div>
-                            <div><span id="hijriDateOffset" class="badge bg-light text-dark">0</span></div>
-                            <div><button id="hijriDateIncrease" class="btn btn-dark btn-xs pointerOn">+</button></div>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-row justify-content-between mt-2 gap-2">
-                        <div class="flex-fill">
-                            <button id="offsetsResetButton" class="btn text-light btn-sm col-12"></button>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-row justify-content-between align-items-center mt-2 gap-2">
-                        <div>
-                            <select class="form-control form-control-sm" name="displayLanguage" id="displayLanguage">
-                                <option value="ar">العربية</option>
-                                <option value="id">Bahasa Indonesia</option>
-                                <option value="ms">Bahasa Melayu</option>
-                                <option value="de">Deutsch</option>
-                                <option value="en">English</option>
-                                <option value="es">español</option>
-                                <option value="fr">Français</option>
-                                <option value="nl">Nederlands</option>
-                                <option value="it">italiano</option>
-                                <option value="pl">polski</option>
-                                <option value="pt">Portuguese</option>
-                                <option value="sv">svenska</option>
-                                <option value="ru">русский</option>
-                                <option value="vi">Tiếng Việt</option>
-                                <option value="tr">Türkçe</option>
-                                <option value="uk">українська</option>
-                                <option value="fa">فارسی</option>
-                                <option value="hi">हिन्दी</option>
-                                <option value="bn">বাংলা</option>
-                                <option value="ta">தமிழ்</option>
-                                <option value="th">ไทย</option>
-                                <option value="ko">한국어</option>
-                                <option value="ja">日本</option>
-                            </select>
-                        </div>
-                        <div class="flex-fill">
-                            <button id="appResetButton" class="btn btn-danger text-light btn-sm col-12"></span>
-                        </div>
-                        <div>
-                            <a title="Chrome Extension Reviews Page"
-                                href="https://chromewebstore.google.com/detail/prayer-times-chrome-exten/fbkmgnkliklgbmanjkmiihkdioepnkce/reviews"
-                                target="_blank"><img src="images/review.png" class="img-fluid p-0 m-0" /></a>
-                        </div>
                     </div>
 
                 </div>
 
-                <!--
-                <div id="info" class="tabDiv text-start" style="display:none">
-
-
-
-                </div>
-                -->
             </div>
-
             <div id="footer" class="card-footer bg-darkish pt-1">
 
                 <div class="fdate row mt-1">
@@ -462,11 +266,6 @@
 
 
             </div>
-
-        </div>
-
-        <div id="errorDiv" style="display: none;">
-            <h2>Error!</h2>
         </div>
     </div>
     <script src="js/index.js"></script>

@@ -95,8 +95,8 @@
     "message": "位置を設定",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "お祈り時間オフセット “「分」",
+  "adhansAndOffsetsTitle": {
+    "message": "オフセット設定とアザーン",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "経過時間",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "オフセットを再設定",
+  "enableAdhanCallsTitle": {
+    "message": "アザーンを有効にする",
     "description": ""
   }
 }

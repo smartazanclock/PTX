@@ -76,7 +76,7 @@
     "description": ""
   },
   "desktopNotificationsOnTitle": {
-    "message": "Desktop notifications are on.",
+    "message": "Desktop notifications are on. (Adhan calls cancel notifications)",
     "description": ""
   },
   "showImsakTitle": {
@@ -95,8 +95,8 @@
     "message": "Set Your Location",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "Prayer Time Offsets (Minutes)",
+  "adhansAndOffsetsTitle": {
+    "message": "Offsets & Adhans",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "Elapsed",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "Clear Offsets",
+  "enableAdhanCallsTitle": {
+    "message": "Enable Adhan Calls",
     "description": ""
   }
 }

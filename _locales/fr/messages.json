@@ -95,8 +95,8 @@
     "message": "Votre localisation",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "Décalage horaire",
+  "adhansAndOffsetsTitle": {
+    "message": "Paramètres de Décalage et Adhans",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "Partagez s'il vous plait",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "Réinitialiser",
+  "enableAdhanCallsTitle": {
+    "message": "Activer les Adhans",
     "description": ""
   }
 }

@@ -95,8 +95,8 @@
     "message": "Ustaw Swoją Lokalizację",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "Przesunięcia Czasu Modlitwy (Minuty)",
+  "adhansAndOffsetsTitle": {
+    "message": "Ustawienia Offsetu i Adhany",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "Czas, który upłynął",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "Resetowanie",
+  "enableAdhanCallsTitle": {
+    "message": "Włącz Adhany",
     "description": ""
   }
 }

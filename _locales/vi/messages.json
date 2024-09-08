@@ -95,8 +95,8 @@
     "message": "Thiết lập vị trí của bạn",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "Thời gian nghỉ cầu nguyện (Phút)",
+  "adhansAndOffsetsTitle": {
+    "message": "Cài đặt Bù trừ & Adhan",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "Thời gian đã trôi qua",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "Đặt lại Offsets",
+  "enableAdhanCallsTitle": {
+    "message": "Bật Adhan",
     "description": ""
   }
 }

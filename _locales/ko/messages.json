@@ -95,8 +95,8 @@
     "message": "당신의 위치를 설정하세요",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "기도 시간 오프셋 (분(시간))",
+  "adhansAndOffsetsTitle": {
+    "message": "오프셋 설정 및 아잔",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "경과 시간",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "초기화",
+  "enableAdhanCallsTitle": {
+    "message": "아잔 활성화",
     "description": ""
   }
 }

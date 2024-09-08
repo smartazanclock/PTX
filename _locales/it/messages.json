@@ -95,8 +95,8 @@
     "message": "Imposta la tua posizione",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "Offset del tempo di preghiera (minuti)",
+  "adhansAndOffsetsTitle": {
+    "message": "Impostazioni Offset e Adhan",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "Tempo trascorso",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "Ripristina",
+  "enableAdhanCallsTitle": {
+    "message": "Abilita Adhan",
     "description": ""
   }
 }

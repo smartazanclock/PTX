@@ -95,8 +95,8 @@
     "message": "Tu ubicación",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "Desplazamiento de tiempo",
+  "adhansAndOffsetsTitle": {
+    "message": "Configuración de Desplazamiento y Adhane",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "Tiempo transcurrido",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "Reiniciar",
+  "enableAdhanCallsTitle": {
+    "message": "Habilitar Adhanes",
     "description": ""
   }
 }

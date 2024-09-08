@@ -95,8 +95,8 @@
     "message": "موقعك الجغرافي",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "تعويض الدقائق",
+  "adhansAndOffsetsTitle": {
+    "message": "إعدادات التمكين والأذان",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "الوقت المنقضي",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "اعادة الضبط",
+  "enableAdhanCallsTitle": {
+    "message": "تفعيل الأذان",
     "description": ""
   }
 }

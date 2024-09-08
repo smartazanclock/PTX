@@ -95,8 +95,8 @@
     "message": "Bepaal jouw locatie",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "Gebedstijdverschuivingen (minuten)",
+  "adhansAndOffsetsTitle": {
+    "message": "Offset-instellingen en Adhans",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "Verstreken tijd",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "Resetten",
+  "enableAdhanCallsTitle": {
+    "message": "Adhans inschakelen",
     "description": ""
   }
 }

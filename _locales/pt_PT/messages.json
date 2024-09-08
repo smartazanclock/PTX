@@ -95,8 +95,8 @@
     "message": "Defina Sua Localização",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "Deslocamentos do Tempo de Oração (Minutos)",
+  "adhansAndOffsetsTitle": {
+    "message": "Configurações de Offset e Adhans",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "Tempo Decorrido",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "Redefinir",
+  "enableAdhanCallsTitle": {
+    "message": "Ativar Adhans",
     "description": ""
   }
 }

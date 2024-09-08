@@ -95,12 +95,12 @@
     "message": "Встановіть своє місцезнаходження",
     "description": ""
   },
-  "offsetTitle": {
+  "adhansAndOffsetsTitle": {
     "message": "Зміщення часу молитви (хвилини)",
     "description": ""
   },
   "hijriDateOffsetTitle": {
-    "message": "Зміщення дати Хіджри (дні)",
+    "message": "Налаштування зсуву та азани",
     "description": ""
   },
   "remainingForIftarTitle": {
@@ -127,8 +127,8 @@
     "message": "Минулий час",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "Скинути зміщення",
+  "enableAdhanCallsTitle": {
+    "message": "Увімкнути азани",
     "description": ""
   }
 }

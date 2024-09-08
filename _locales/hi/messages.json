@@ -95,8 +95,8 @@
     "message": "अपना स्थान तय करे",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "प्रार्थना का समय (मिनट)",
+  "adhansAndOffsetsTitle": {
+    "message": "ऑफ़सेट सेटिंग्स और अज़ान",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "बीता हुआ समय",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "रीसेट",
+  "enableAdhanCallsTitle": {
+    "message": "अज़ान सक्षम करें",
     "description": ""
   }
 }

@@ -95,8 +95,8 @@
     "message": "உங்கள் இடத்தை அமைக்கவும்",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "தொழுகை நேர ஆஃப்செட் (நிமிடங்கள்)",
+  "adhansAndOffsetsTitle": {
+    "message": "ஆஃப்செட் அமைப்புகள் மற்றும் அசான்",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "கழிந்த நேரம்",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "மீட்டமை",
+  "enableAdhanCallsTitle": {
+    "message": "அசானை இயக்கவும்",
     "description": ""
   }
 }

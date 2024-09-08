@@ -95,8 +95,8 @@
     "message": "Ställ In Din Plats",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "Utjämning För Bönetider (Minuter)",
+  "adhansAndOffsetsTitle": {
+    "message": "Offsetinställningar och Adhaner",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "Förfluten tid",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "Återställa",
+  "enableAdhanCallsTitle": {
+    "message": "Aktivera Adhan",
     "description": ""
   }
 }

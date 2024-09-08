@@ -95,8 +95,8 @@
     "message": "Ihr Standort",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "Zeitversatz in Minuten",
+  "adhansAndOffsetsTitle": {
+    "message": "Offset-Einstellungen und Gebetsrufe",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "Verstrichene Zeit",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "Zurücksetzen",
+  "enableAdhanCallsTitle": {
+    "message": "Adhans aktivieren",
     "description": ""
   }
 }

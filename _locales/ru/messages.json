@@ -95,8 +95,8 @@
     "message": "Свое местоположение",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "Смещение времени",
+  "adhansAndOffsetsTitle": {
+    "message": "Настройки смещения и азаны",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "Пройденное время",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "Сброс настроек",
+  "enableAdhanCallsTitle": {
+    "message": "Включить азаны",
     "description": ""
   }
 }

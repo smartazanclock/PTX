@@ -95,8 +95,8 @@
     "message": "محل",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "تنظیم زمان",
+  "adhansAndOffsetsTitle": {
+    "message": "تنظیمات افست و اذان‌ها",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "زمان سپری شده",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "بازنشانی کنید",
+  "enableAdhanCallsTitle": {
+    "message": "فعال‌سازی اذان‌ها",
     "description": ""
   }
 }

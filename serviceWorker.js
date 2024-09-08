@@ -3,23 +3,45 @@ self.importScripts('js/praytimes.js', 'js/functions.js');
 chrome.runtime.onInstalled.addListener(async () => { await start() });
 chrome.runtime.onStartup.addListener(async () => { await run('onStartUp') });
 chrome.alarms.onAlarm.addListener(async (alarm) => { await run('via alarm:' + alarm.name + ' at ' + Date.now()) }); /* every minute */
-self.addEventListener('message', async () => { await run('run via message') }); /* every second from index */
+self.addEventListener('message', async (msg) => {
+    if ('goGoRun' in msg.data) {
+        await run('run via message')
+    }
+    else if ('endAdhanCall' in msg.data) {
+        await endAdhanCall();
+    }
+});
 
 let appSettings = {};
+let adhanStatus = {};
+let currentVakit;
 const r = 160;
 const ir = 12;
 const colors = { black: '#212529', silver: 'whitesmoke', tomato: '#F20031', gray: '#2E3338' };
 const ctx = new OffscreenCanvas(470, 470).getContext("2d", { alpha: true, willReadFrequently: true });
 const itx = new OffscreenCanvas(38, 38).getContext("2d", { alpha: true, willReadFrequently: true });
 const btx = new OffscreenCanvas(38, 38).getContext("2d", { alpha: true, willReadFrequently: true });
+const defaultAdhanSettings = { fajr: 12, dhuhr: 7, asr: 3, maghrib: 6, isha: 1 };
 
 async function run(info) {
+
     let result = await chrome.storage.local.get(['appSettings']);
     if (!result.appSettings) {
         return start();
     }
-
     appSettings = result.appSettings;
+
+    let asResult = await chrome.storage.local.get(['adhanStatus']);
+    if (asResult.adhanStatus)
+        adhanStatus = asResult.adhanStatus;
+
+    /* in case all chrome windows are closed during an adhan call */
+    let isOffscreenDocAvailable = await offScreenDocumentAvailable();
+    if (adhanStatus.isBeingCalled && !isOffscreenDocAvailable) {
+        adhanStatus.isBeingCalled = false;
+        await chrome.storage.local.set({ 'adhanStatus': adhanStatus });
+    }
+
     let lastRunMS = new Date().getTime() - (appSettings.lastRun ?? 0);
     if (lastRunMS < 700 && info && info.indexOf('alarm') > 0) { return }
 
@@ -35,25 +57,21 @@ async function run(info) {
     updateBar(btx, ir);
 
     extensionOps();
-
 }
 
 async function start() {
     let i18nValues = {};
     let navLang = navigator.language;
-    let lang = (availableLangs.indexOf(navLang) >= 0) ? navLang : 'en';
-
+    let lang = languages.some(f => f.code == navLang) ? navLang : 'en';
     let result = await chrome.storage.local.get(['appSettings']);
     if (result.appSettings && result.appSettings.i18n) {
         let lc = result.appSettings.i18n.languageCode;
-        lang = (availableLangs.indexOf(lc) >= 0) ? lc : 'en';
+        lang = (languages.some(f => f.code == lc)) ? lc : 'en';
     }
-
     const response = await fetch(`../_locales/${lang}/messages.json`);
     if (!response.ok) {
         throw new Error(`Failed to fetch language messages: ${response.status} ${response.statusText}`);
     }
-
     const data = await response.json();
     Object.entries(data).forEach(([key, value]) => { i18nValues[key] = value.message });
     await initUser(i18nValues, result.appSettings);
@@ -66,6 +84,15 @@ async function initUser(i18nValues, appSettings) {
         if (appSettings && appSettings.address) {
             /* existing user: new version */
             appSettings.i18n = i18nValues;
+            if (!appSettings.adhans) {
+                appSettings.adhans = defaultAdhanSettings;
+            }
+            if (!appSettings.areAdhansEnabled) {
+                appSettings.areAdhansEnabled = false;
+            }
+            if (!appSettings.hanafiAsr) {
+                appSettings.hanafiAsr = false;
+            }
             await chrome.storage.local.set({ 'appSettings': appSettings });
             await initAlarm();
         }
@@ -82,10 +109,13 @@ async function initUser(i18nValues, appSettings) {
                 timeFormat: 12,
                 calculationMethod: i18nValues.defaultMethod,
                 iconStyle: 'badge',
-                desktopNotifications: 0,
-                showImsak: 0,
-                showDuha: 0,
-                showMidnight: 0
+                desktopNotifications: true,
+                hanafiAsr: false,
+                showImsak: false,
+                showDuha: false,
+                showMidnight: false,
+                adhans: defaultAdhanSettings,
+                areAdhansEnabled: false
             };
             await chrome.storage.local.set({ 'appSettings': appSettings });
         }
@@ -106,10 +136,13 @@ async function initDefaultUser(i18nValues) {
     appSettings.timeZoneID = "Asia/Riyadh";
     appSettings.calculationMethod = 'Makkah';
     appSettings.iconStyle = 'badge';
-    appSettings.desktopNotifications = 0;
-    appSettings.showImsak = 0;
-    appSettings.showDuha = 0;
-    appSettings.showMidnight = 0;
+    appSettings.desktopNotifications = true;
+    appSettings.hanafiAsr = false;
+    appSettings.showImsak = false;
+    appSettings.showDuha = false;
+    appSettings.showMidnight = false;
+    appSettings.adhans = defaultAdhanSettings;
+    appSettings.areAdhansEnabled = false;
     await chrome.storage.local.set({ 'appSettings': appSettings });
 }
 
@@ -135,14 +168,14 @@ function populateVakitsAndVars() {
     /* get prayer times */
     prayTimes.setMethod(appSettings.calculationMethod);
 
-    if (appSettings.hanafiAsr === 1)
+    if (appSettings.hanafiAsr)
         prayTimes.adjust({ asr: 'Hanafi' });
     else
         prayTimes.adjust({ asr: 'Standard' });
 
 
     let baseTuneValues = { imsak: 0, sunrise: 0, duha: 0, duhaend: 0, fajr: 0, dhuhr: 0, asr: 0, maghrib: 0, isha: 0 }
-    let methodDefaultTuneValues = calculationMethods[appSettings.calculationMethod].methodOffsets;
+    let methodDefaultTuneValues = methods.find(f => f.id == appSettings.calculationMethod).methodOffsets;
     tuneValues = { ...baseTuneValues, ...methodDefaultTuneValues }
 
     if (appSettings.vakitOffsets) {
@@ -171,6 +204,7 @@ function populateVakitsAndVars() {
     prayerTimes = prayTimes.getTimes(currentTime, [appSettings.lat, appSettings.lng, 0], getOffsetHoursFromTimeZone(appSettings.timeZoneID), 0, '24h');
     appSettings.calculationMethodName = prayTimes.getDefaults()[appSettings.calculationMethod].name;
 
+    appSettings.timeNow24 = currentTimeString;
     appSettings.timeNow = format12(currentTimeString);
 
     appSettings.fajrAngle = prayTimes.getDefaults()[appSettings.calculationMethod].params.fajr;
@@ -189,20 +223,20 @@ function populateVakitsAndVars() {
     let aVakits = [];
     let vakits = [];
 
-    imsakVakit = new Vakit('Imsak', getPrayerTime('imsak'), getPrayerTime('fajr'), currentTimeString);
-    fajrVakit = new Vakit('Fajr', getPrayerTime('fajr'), getPrayerTime('sunrise'), currentTimeString);
-    sunriseDuhaVakit = new Vakit('Sunrise', getPrayerTime('sunrise'), getPrayerTime('duha'), currentTimeString);
-    sunriseDhuhrVakit = new Vakit('Sunrise', getPrayerTime('sunrise'), getPrayerTime('dhuhr'), currentTimeString);
-    duhaVakit = new Vakit('Duha', getPrayerTime('duha'), getPrayerTime('duhaend'), currentTimeString);
-    duhaendVakit = new Vakit('Duhaend', getPrayerTime('duhaend'), getPrayerTime('dhuhr'), currentTimeString);
-    dhuhrVakit = new Vakit('Dhuhr', getPrayerTime('dhuhr'), getPrayerTime('asr'), currentTimeString);
-    asrVakit = new Vakit('Asr', getPrayerTime('asr'), getPrayerTime('maghrib'), currentTimeString);
-    maghribVakit = new Vakit('Maghrib', getPrayerTime('maghrib'), getPrayerTime('isha'), currentTimeString);
-    ishaImsakVakit = new Vakit('Isha', getPrayerTime('isha'), getPrayerTime('imsak'), currentTimeString);
-    ishaFajrVakit = new Vakit('Isha', getPrayerTime('isha'), getPrayerTime('fajr'), currentTimeString);
-    ishaMidnightVakit = new Vakit('Isha', getPrayerTime('isha'), getPrayerTime('midnight'), currentTimeString);
-    midnightFajrVakit = new Vakit('Midnight', getPrayerTime('midnight'), getPrayerTime('fajr'), currentTimeString);
-    midnightImsakVakit = new Vakit('Midnight', getPrayerTime('midnight'), getPrayerTime('imsak'), currentTimeString);
+    imsakVakit = new Vakit('Imsak', getPrayerTime('imsak'), getPrayerTime('fajr'), currentTimeString, appSettings.timeFormat);
+    fajrVakit = new Vakit('Fajr', getPrayerTime('fajr'), getPrayerTime('sunrise'), currentTimeString, appSettings.timeFormat);
+    sunriseDuhaVakit = new Vakit('Sunrise', getPrayerTime('sunrise'), getPrayerTime('duha'), currentTimeString, appSettings.timeFormat);
+    sunriseDhuhrVakit = new Vakit('Sunrise', getPrayerTime('sunrise'), getPrayerTime('dhuhr'), currentTimeString, appSettings.timeFormat);
+    duhaVakit = new Vakit('Duha', getPrayerTime('duha'), getPrayerTime('duhaend'), currentTimeString, appSettings.timeFormat);
+    duhaendVakit = new Vakit('Duhaend', getPrayerTime('duhaend'), getPrayerTime('dhuhr'), currentTimeString, appSettings.timeFormat);
+    dhuhrVakit = new Vakit('Dhuhr', getPrayerTime('dhuhr'), getPrayerTime('asr'), currentTimeString, appSettings.timeFormat);
+    asrVakit = new Vakit('Asr', getPrayerTime('asr'), getPrayerTime('maghrib'), currentTimeString, appSettings.timeFormat);
+    maghribVakit = new Vakit('Maghrib', getPrayerTime('maghrib'), getPrayerTime('isha'), currentTimeString, appSettings.timeFormat);
+    ishaImsakVakit = new Vakit('Isha', getPrayerTime('isha'), getPrayerTime('imsak'), currentTimeString, appSettings.timeFormat);
+    ishaFajrVakit = new Vakit('Isha', getPrayerTime('isha'), getPrayerTime('fajr'), currentTimeString, appSettings.timeFormat);
+    ishaMidnightVakit = new Vakit('Isha', getPrayerTime('isha'), getPrayerTime('midnight'), currentTimeString, appSettings.timeFormat);
+    midnightFajrVakit = new Vakit('Midnight', getPrayerTime('midnight'), getPrayerTime('fajr'), currentTimeString, appSettings.timeFormat);
+    midnightImsakVakit = new Vakit('Midnight', getPrayerTime('midnight'), getPrayerTime('imsak'), currentTimeString, appSettings.timeFormat);
 
     aVakits.push(imsakVakit);
     aVakits.push(fajrVakit);
@@ -215,11 +249,11 @@ function populateVakitsAndVars() {
     aVakits.push(ishaMidnightVakit);
     aVakits.push(midnightImsakVakit);
 
-    if (appSettings.showImsak === 1) {
+    if (appSettings.showImsak) {
         vakits.push(imsakVakit);
     }
-    vakits.push(new Vakit('Fajr', getPrayerTime('fajr'), getPrayerTime('sunrise'), currentTimeString));
-    if (appSettings.showDuha === 1) {
+    vakits.push(new Vakit('Fajr', getPrayerTime('fajr'), getPrayerTime('sunrise'), currentTimeString, appSettings.timeFormat));
+    if (appSettings.showDuha) {
         vakits.push(sunriseDuhaVakit);
         vakits.push(duhaVakit);
         vakits.push(duhaendVakit);
@@ -231,15 +265,15 @@ function populateVakitsAndVars() {
     vakits.push(asrVakit);
     vakits.push(maghribVakit);
 
-    if (appSettings.showMidnight === 1) {
+    if (appSettings.showMidnight) {
         vakits.push(ishaMidnightVakit);
-        if (appSettings.showImsak === 1)
+        if (appSettings.showImsak)
             vakits.push(midnightImsakVakit);
         else
             vakits.push(midnightFajrVakit);
     }
     else {
-        if (appSettings.showImsak === 1)
+        if (appSettings.showImsak)
             vakits.push(ishaImsakVakit);
         else
             vakits.push(ishaFajrVakit);
@@ -251,6 +285,8 @@ function populateVakitsAndVars() {
 
     cavi = aVakits.findIndex(a => a.isCurrentVakit);
     currentAllVakit = aVakits[cavi];
+
+    appSettings.currentVakitAdhanAudioID = appSettings.adhans[currentVakit.name.toLowerCase()] ?? 0;
 
     totalMinutesInVakit = diffMinutesBetweenTimes(currentVakit.time24, nextVakit.time24);
     aroundTheClock = totalMinutesInVakit >= 720;
@@ -345,7 +381,7 @@ function updateClock(canvas, r) {
 
     if (currentVakit.name === 'Isha' || currentVakit.name === 'Midnight') {
 
-        if (appSettings.showImsak === 0)
+        if (!appSettings.showImsak)
             drawArc(canvas, ishaFajrVakit.startAngle12, ishaFajrVakit.endAngle12, r * 1.19, arcLineWidth, colors.silver);
         else
             drawArc(canvas, ishaImsakVakit.startAngle12, ishaImsakVakit.endAngle12, r * 1.19, arcLineWidth, colors.silver);
@@ -466,11 +502,10 @@ function extensionOps() {
     appSettings.todaysDate = new Date().toLocaleString((appSettings.i18n.languageCode ?? navigator.language), { timeZone: appSettings.timeZoneID, weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
     appSettings.todaysDateArabic = hijriDate;
 
-    if (currentTimeString === currentVakit.time24 && appSettings.desktopNotifications === 1) {
-
+    if (currentTimeString === currentVakit.time24 && appSettings.desktopNotifications && !isAdhanAvailable()) {
         chrome.storage.local.get(['lastAlert'], (result) => {
 
-            let lastAlertString = currentVakit.name + (new Date().toLocaleString("en-US", { day: 'numeric', month: 'numeric', year: 'numeric' })).replaceAll('/', '-');
+            let lastAlertString = currentVakit.name + (new Date().toLocaleString("en-US", { day: 'numeric', month: 'numeric', year: 'numeric', minute: '2-digit' })).replace(/[\/, ]/g, '-');
 
             if (result.lastAlert && result.lastAlert === lastAlertString) {
                 /* already alerted for this vakit */
@@ -497,20 +532,22 @@ function extensionOps() {
     chrome.action.setTitle({ title: (clockFaceVakit ? '[' + clockFaceVakit + '] ' : '') + nextTextTitle + ' ' + nextText + ' -> ' + appSettings.i18n[nextVakit.name.toLowerCase() + 'Text'] });
 
     if (currentTimeString === currentVakit.time24) {
+
+        callAdhan();
+
         nextTextTitle = appSettings.i18n.azanTimeTitle;
+
         if (currentVakit.name === 'Imsak' || currentVakit.name === 'Sunrise' || currentVakit.name === 'Duha' || currentVakit.name === 'Duhaend' || currentVakit.name === 'Midnight')
             nextTextTitle = '&nbsp;';
         if (currentVakit.name !== 'Duhaend') {
             nextText = appSettings.i18n[currentVakit.name.toLowerCase() + 'Text'];
             chrome.action.setTitle({ title: nextText });
         }
+
     }
 
     if (nextText.length < 4)
         nextText = ' ' + nextText + ' ';
-
-
-
 
     chrome.action.setBadgeText({ 'text': '' });
 
@@ -555,7 +592,7 @@ function extensionOps() {
                             appSettings.lastRun = new Date().getTime();
 
                             chrome.storage.local.set({ 'appSettings': appSettings }, function () {
-                                chrome.runtime.sendMessage({ msg: "runApp" }, function (response) {
+                                chrome.runtime.sendMessage({ runApp: true }, function (response) {
                                     if (!chrome.runtime.lastError) {
                                         /* msg is received */
                                     }
@@ -684,3 +721,62 @@ function drawArrow(canvas, angle, x, width, height, color) {
     canvas.restore();
 }
 
+
+function isAdhanAvailable() {
+    return appSettings.areAdhansEnabled && appSettings.currentVakitAdhanAudioID > 0;
+}
+
+/* - - - - - - - - - - - - - - - - - */
+async function callAdhan() {
+
+    if (isAdhanAvailable()) {
+        let callString = appSettings.timeNow24 + '-' + currentVakit.name + '-' + appSettings.currentVakitAdhanAudioID;
+        if (adhanStatus.lastCall && adhanStatus.lastCall === callString) {
+            console.log('Already called for ' + callString);
+        }
+        else {
+            await chrome.storage.local.set({ 'adhanStatus': { lastCall: callString, isBeingCalled: true } });
+            await createOffscreen();
+            await chrome.runtime.sendMessage({ audioID: appSettings.currentVakitAdhanAudioID });
+        }
+    }
+    else {
+        console.log('Not enabled. Current vakit: ' + currentVakit.name);
+    }
+}
+
+async function endAdhanCall() {
+    chrome.runtime.sendMessage({ stopAdhanCall: true });
+    let result = await chrome.storage.local.get(['adhanStatus']);
+    if (result.adhanStatus) {
+        adhanStatus = result.adhanStatus;
+        adhanStatus.isBeingCalled = false;
+        chrome.storage.local.set({ 'adhanStatus': adhanStatus });
+    }
+}
+
+async function createOffscreen() {
+    await chrome.offscreen.createDocument({
+        url: 'offscreen.html',
+        reasons: ['AUDIO_PLAYBACK'],
+        justification: 'Adhan is being called for prayers.'
+    }).catch(() => { });
+}
+
+const offScreenDocumentAvailable = async () => {
+    const OFFSCREEN_DOCUMENT_PATH = chrome.runtime.getURL('offscreen.html');
+    if ('getContexts' in chrome.runtime) {
+        const contexts = await chrome.runtime.getContexts({
+            contextTypes: ['OFFSCREEN_DOCUMENT'],
+            documentUrls: [OFFSCREEN_DOCUMENT_PATH]
+        });
+        return Boolean(contexts.length);
+    } else {
+        const matchedClients = await clients.matchAll();
+        return await matchedClients.some(client => {
+            client.url.includes(chrome.runtime.id);
+        });
+    }
+}
+
+/* - - - - - - - - - - - - - - - - - */

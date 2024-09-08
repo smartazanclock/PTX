@@ -95,8 +95,8 @@
     "message": "Lokasi",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "Penyesuaian  Waktu",
+  "adhansAndOffsetsTitle": {
+    "message": "Pengaturan Offset & Adzan",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "Waktu berlalu",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "Mengatur ulang",
+  "enableAdhanCallsTitle": {
+    "message": "Aktifkan Adzan",
     "description": ""
   }
 }

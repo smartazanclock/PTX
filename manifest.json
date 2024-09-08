@@ -2,13 +2,14 @@
   "manifest_version": 3,
   "name": "__MSG_name__",
   "short_name": "__MSG_short_name__",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "default_locale": "en",
   "description": "__MSG_description__",
   "permissions": [
     "storage",
     "notifications",
-    "alarms"
+    "alarms",
+    "offscreen"
   ],
   "host_permissions": [
     "https://smartazanclock.com/"
@@ -16,7 +17,7 @@
   "background": {
     "service_worker": "serviceWorker.js"
   },
-  "minimum_chrome_version": "88",
+  "minimum_chrome_version": "109",
   "action": {
     "default_title": "__MSG_short_name__",
     "default_popup": "index.html",

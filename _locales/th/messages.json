@@ -95,8 +95,8 @@
     "message": "ตงั้สถานะทอี่ ยขู่ องคณุ ",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "การตงั้คา่ เวลาละหมาด(นาท)ี",
+  "adhansAndOffsetsTitle": {
+    "message": "การตั้งค่าออฟเซ็ตและอะซาน",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "เวลาที่ผ่านไป",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "รีเซ็ต",
+  "enableAdhanCallsTitle": {
+    "message": "เปิดใช้งานอะซาน",
     "description": ""
   }
 }

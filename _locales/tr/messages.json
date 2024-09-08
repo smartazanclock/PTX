@@ -95,8 +95,8 @@
     "message": "Konum",
     "description": ""
   },
-  "offsetTitle": {
-    "message": "Ekle/Çıkar (Dakika)",
+  "adhansAndOffsetsTitle": {
+    "message": "Temkin Ayarları ve Ezanlar",
     "description": ""
   },
   "hijriDateOffsetTitle": {
@@ -127,8 +127,8 @@
     "message": "Geçen Süre",
     "description": ""
   },
-  "offsetsResetButton": {
-    "message": "Temkin ayarlarını sıfırla",
+  "enableAdhanCallsTitle": {
+    "message": "Ezan Oku",
     "description": ""
   }
 }

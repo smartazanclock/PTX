@@ -1,7 +1,8 @@
-﻿function Vakit(name, time, nextTime, currentTime) {
+﻿function Vakit(name, time, nextTime, currentTime, timeFormat) {
     this.name = name;
     this.time12 = format12(time);
     this.time24 = time;
+    this.displayTime = (timeFormat == 12) ? format12(time) : time;
     this.currentTime = currentTime;
     this.nextTime = nextTime;
     this.startAngle12 = timeToRadians(time, 12);
@@ -9,6 +10,8 @@
     this.nextVakitIn = diffBetweenTimes(currentTime, nextTime);
     this.isCurrentVakit = isTimeBetweenTheTwo(currentTime, time, nextTime)
 }
+
+
 const format12 = (t) => {
     let tt = t.split(':');
     let th = tt[0];
