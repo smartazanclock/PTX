@@ -502,7 +502,7 @@ function extensionOps() {
     appSettings.todaysDate = new Date().toLocaleString((appSettings.i18n.languageCode ?? navigator.language), { timeZone: appSettings.timeZoneID, weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
     appSettings.todaysDateArabic = hijriDate;
 
-    if (currentTimeString === currentVakit.time24 && appSettings.desktopNotifications && !isAdhanAvailable()) {
+    if (currentTimeString === currentVakit.time24 && appSettings.desktopNotifications) {
         chrome.storage.local.get(['lastAlert'], (result) => {
 
             let lastAlertString = currentVakit.name + (new Date().toLocaleString("en-US", { day: 'numeric', month: 'numeric', year: 'numeric', minute: '2-digit' })).replace(/[\/, ]/g, '-');
