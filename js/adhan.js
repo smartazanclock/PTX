@@ -1,6 +1,10 @@
 const aap = document.getElementById('adhanAudioPlayer');
 
 chrome.runtime.onMessage.addListener(msg => {
+
+    if ('volume' in msg)
+        aap.volume = msg.volume / 10;
+
     if ('audioID' in msg) {
         if (aap.paused) {
             aap.src = '/adhans/' + msg.audioID + '.mp3';

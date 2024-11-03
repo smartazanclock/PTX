@@ -82,7 +82,12 @@ const runApp = async () => {
         vd.show();
     }
 
-    setFields(appSettings);
+    for (let i = 0; i < appSettings.allVakits.length; i++) {
+        let vakit = appSettings.allVakits[i].name.toLowerCase();
+        $('#offset-' + vakit).html(appSettings.allVakits[i].displayTime);
+    }
+
+    setFields();
 
 }
 
@@ -334,6 +339,15 @@ document.getElementById('adhanOffsetSettings').addEventListener('change', functi
     }
 });
 
+document.getElementById('volume').addEventListener('change', function (event) {
+    chrome.storage.local.get(['appSettings'], function (result) {
+        appSettings = result.appSettings;
+        appSettings.volume = event.target.value * 1;
+        saveAppSettingsAndRefresh(appSettings);
+        playAudio(102);
+    });
+});
+
 const saveAppSettingsAndRefresh = (appSettings) => {
     chrome.storage.local.set({ 'appSettings': appSettings }, function () {
         goGoRun('appSettings updated');
@@ -341,7 +355,7 @@ const saveAppSettingsAndRefresh = (appSettings) => {
     });
 }
 
-const setFields = async (appSettings) => {
+const setFields = async () => {
 
     $('#stopAdhanDiv').hide();
     if (adhanStatus.isBeingCalled)
@@ -440,12 +454,21 @@ const setFields = async (appSettings) => {
         calculationMethod.appendChild(option);
     });
 
+    $('#audioVolumeIcon').attr('src', 'images/audio-' + appSettings.volume + '.png');
+    $('#audioVolumeDiv').attr('title', 'Audio Volume: ' + appSettings.volume);
+    if (appSettings.areAdhansEnabled)
+        $('#volume').attr('disabled', false);
+    else
+        $('#volume').attr('disabled', true);
     if (!$('#adhanOffsetSettings').is(':visible'))
         displayAdhansAndOffsets();
 
 }
 
 const displayAdhansAndOffsets = () => {
+
+    $('#volume').val(appSettings.volume);
+
     $('.offsetCurrentVakit').removeClass('offsetCurrentVakit');
     let adhanVakits = ['imsak', 'fajr', 'duha', 'duhaend', 'dhuhr', 'asr', 'maghrib', 'isha'];
     let aoContent = `<div class="badge p-0 mt-0">${appSettings.i18n.adhansAndOffsetsTitle}</div>`;
@@ -454,7 +477,6 @@ const displayAdhansAndOffsets = () => {
     let duhaOffset = duhaDefaultOffset + (appSettings.vakitOffsets && appSettings.vakitOffsets.duha ? appSettings.vakitOffsets.duha : 0);
     let duhaendOffset = duhaendDefaultOffset + (appSettings.vakitOffsets && appSettings.vakitOffsets.duhaend ? appSettings.vakitOffsets.duhaend : 0);
     let currentVakit = appSettings.allVakits.find(f => f.isCurrentVakit).name.toLowerCase();
-
 
     $('.adhan-on').hide();
     $('.adhan-off').hide();
@@ -471,7 +493,7 @@ const displayAdhansAndOffsets = () => {
         let thisAdhanAudioID = appSettings.adhans[v] ?? 0;
         let thisAudioTitle = adhanAudios.find(a => a.id == thisAdhanAudioID)?.name;
         aoContent += `<div id=settingBox${v} class="bg-darkish px-1
-                    ${v == 'duha' ? 'rounded-top pt-2' : (v == 'duhaend' ? 'rounded-bottom pt-1 pb-2' : 'rounded py-2')}
+                    ${v == 'duha' ? 'rounded-top pt-1' : (v == 'duhaend' ? 'rounded-bottom pb-1' : 'rounded py-2')}
                     ${v != 'duha' ? 'mb-1' : ''}
                     ${thisTime.isCurrentVakit || (v == 'duhaend' && currentVakit == 'duha') ? 'border-start border-3 border-light' : ''}">`;
         aoContent += `<div class="d-flex flex-row justify-content-between">`;
@@ -491,7 +513,7 @@ const displayAdhansAndOffsets = () => {
 
         aoContent += '</div>';
 
-        aoContent += `<div class="col-2"><span class="badge">${timeValue}</span></div>`
+        aoContent += `<div class="col-2"><span id="offset-${v}" class="badge">${timeValue}</span></div>`
 
         /* offsets */
 
@@ -626,6 +648,7 @@ const displayAdhansAndOffsets = () => {
 
 const playAudio = (id) => {
     audioPlayer.src = '/adhans/' + id + '.mp3';
+    audioPlayer.volume = appSettings.volume / 10;
     $('.playAudioButton').attr('src', '/images/stop.png').addClass('bg-danger');
     audioPlayer.play();
     $('#audioPlayerDiv').show();

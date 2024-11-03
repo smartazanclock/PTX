@@ -15,6 +15,20 @@ self.addEventListener('message', async (msg) => {
 let appSettings = {};
 let adhanStatus = {};
 let currentVakit;
+let currentTime;
+let currentTimeString;
+let prayerTimes;
+let hijriCurrentTime;
+let hijriDate;
+let nextVakit;
+let totalMinutesInVakit;
+let remainingMinutesInVakit;
+let aroundTheClock;
+let iconColor;
+let badgeBackgroundColor;
+let iconTextColor;
+let clockFaceVakit;
+
 const r = 160;
 const ir = 12;
 const colors = { black: '#212529', silver: 'whitesmoke', tomato: '#F20031', gray: '#2E3338' };
@@ -93,6 +107,9 @@ async function initUser(i18nValues, appSettings) {
             if (!appSettings.hanafiAsr) {
                 appSettings.hanafiAsr = false;
             }
+            if (!appSettings.volume) {
+                appSettings.volume = 5;
+            }
             await chrome.storage.local.set({ 'appSettings': appSettings });
             await initAlarm();
         }
@@ -115,7 +132,8 @@ async function initUser(i18nValues, appSettings) {
                 showDuha: false,
                 showMidnight: false,
                 adhans: defaultAdhanSettings,
-                areAdhansEnabled: false
+                areAdhansEnabled: false,
+                volume: 5
             };
             await chrome.storage.local.set({ 'appSettings': appSettings });
         }
@@ -143,6 +161,7 @@ async function initDefaultUser(i18nValues) {
     appSettings.showMidnight = false;
     appSettings.adhans = defaultAdhanSettings;
     appSettings.areAdhansEnabled = false;
+    appSettings.volume = 5;
     await chrome.storage.local.set({ 'appSettings': appSettings });
 }
 
@@ -279,7 +298,7 @@ function populateVakitsAndVars() {
             vakits.push(ishaFajrVakit);
     }
 
-    cvi = vakits.findIndex(a => a.isCurrentVakit);
+    let cvi = vakits.findIndex(a => a.isCurrentVakit);
     currentVakit = vakits[cvi];
     nextVakit = vakits[(cvi + 1) % vakits.length];
 
@@ -291,7 +310,6 @@ function populateVakitsAndVars() {
     totalMinutesInVakit = diffMinutesBetweenTimes(currentVakit.time24, nextVakit.time24);
     aroundTheClock = totalMinutesInVakit >= 720;
     remainingMinutesInVakit = diffMinutesBetweenTimes(currentTimeString, nextVakit.time24);
-    passedInVakit = totalMinutesInVakit - remainingMinutesInVakit;
 
     appSettings.isLastHour = false;
 
@@ -728,7 +746,6 @@ function isAdhanAvailable() {
 
 /* - - - - - - - - - - - - - - - - - */
 async function callAdhan() {
-
     if (isAdhanAvailable()) {
         let callString = appSettings.timeNow24 + '-' + currentVakit.name + '-' + appSettings.currentVakitAdhanAudioID;
         if (adhanStatus.lastCall && adhanStatus.lastCall === callString) {
@@ -737,11 +754,8 @@ async function callAdhan() {
         else {
             await chrome.storage.local.set({ 'adhanStatus': { lastCall: callString, isBeingCalled: true } });
             await createOffscreen();
-            await chrome.runtime.sendMessage({ audioID: appSettings.currentVakitAdhanAudioID });
+            await chrome.runtime.sendMessage({ audioID: appSettings.currentVakitAdhanAudioID, volume: appSettings.volume });
         }
-    }
-    else {
-        console.log('Not enabled. Current vakit: ' + currentVakit.name);
     }
 }
 
