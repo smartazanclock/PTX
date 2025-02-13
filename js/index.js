@@ -521,7 +521,7 @@ const displayAdhansAndOffsets = () => {
         if (offsetValue != 0)
             offsetPresent = true;
         let stdLimit = 90;
-        if (v == 'duha')
+        if (v == 'duha' || v == 'maghrib')
             stdLimit = 45;
 
         let increaseDisabled = false;
@@ -542,7 +542,7 @@ const displayAdhansAndOffsets = () => {
         if (v == 'duhaend' && offsetValue >= 0)
             increaseDisabled = true;
 
-        if (v == 'maghrib' && offsetValue <= 0)
+        if (v == 'maghrib' && offsetValue <= -3)
             decreaseDisabled = true;
 
 
