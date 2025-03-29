@@ -56,15 +56,19 @@ const runApp = async () => {
             timeValue += " - " + duhaendTime;
         }
 
+        let dTitle = '';
+        if (vakit === "midnight")
+            dTitle = "2/3 @ " + appSettings.twoThirdTime;
+
         let vakitText = appSettings.i18n[vakit + 'Text'];
         if (appSettings.isJumua && vakit === 'dhuhr')
             vakitText = appSettings.i18n.jumuaText
 
         vd.html(`
-                <div class="pt-1 small">
+                <div class="pt-1 small" title="${dTitle}">
                     ${vakitText}
                 </div>
-                <div class="p-1 vakitTime">
+                <div class="p-1 vakitTime" title="${dTitle}">
                     ${timeValue}
                 </div>
             `);
@@ -509,7 +513,7 @@ const displayAdhansAndOffsets = () => {
             aoContent += `<img title="(${appSettings.i18n.sunriseText}+${duhaOffset}) - (${appSettings.i18n.dhuhrText}${duhaendOffset})" class="img-fluid" src="/images/info.png">`
 
         if (v == 'isha')
-            aoContent += `<img title="${appSettings.i18n.midnightText} @ ${appSettings.allVakits[9].displayTime}" class="img-fluid" src="/images/info.png">`
+            aoContent += `<img title="${appSettings.i18n.midnightText} @ ${appSettings.allVakits[9].displayTime} - 2/3 @ ${appSettings.twoThirdTime}" class="img-fluid" src="/images/info.png">`
 
         aoContent += '</div>';
 

@@ -409,6 +409,10 @@ function updateClock(canvas, r) {
         let oneThird = totalMinutesInIsha / 3;
         let twoThird = oneThird * 2;
 
+        appSettings.twoThirdTime = addMinutesToTime(getPrayerTime('maghrib'), twoThird);
+        if (appSettings.timeFormat === 12)
+            appSettings.twoThirdTime = format12(appSettings.twoThirdTime)
+
         let midnightRadians = timeToRadians(getPrayerTime('midnight'), 12);
         drawHand(canvas, midnightRadians, r * 1.15, r * 1.22, arcLineWidth / 1.7, colors.gray);
         printAt(canvas, '1/2', fractionTextSize, colors.silver, r, midnightRadians);
@@ -738,7 +742,6 @@ function drawArrow(canvas, angle, x, width, height, color) {
     canvas.fill();
     canvas.restore();
 }
-
 
 function isAdhanAvailable() {
     return appSettings.areAdhansEnabled && appSettings.currentVakitAdhanAudioID > 0;

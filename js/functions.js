@@ -124,3 +124,11 @@ const getTimeZoneName = (tz) => {
     var sf = new Intl.DateTimeFormat("en-US", { timeZone: tz, timeZoneName: "short" });
     return lf.format(new Date())
 }
+
+const addMinutesToTime = (t, m) => {
+    let thisTime = new Date();
+    let tt = t.split(':');
+    thisTime.setHours(tt[0], tt[1], 0);
+    thisTime.setMinutes(thisTime.getMinutes() + m * 1);
+    return (thisTime.getHours() + ':' + fillInZeros(thisTime.getMinutes()));
+};
