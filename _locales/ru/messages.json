@@ -35,6 +35,10 @@
     "message": "Духа",
     "description": ""
   },
+  "duhaendText": {
+    "message": "Конец Духа",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "Зухр",
     "description": ""

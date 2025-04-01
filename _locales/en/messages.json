@@ -35,6 +35,10 @@
     "message": "Duha",
     "description": ""
   },
+  "duhaendText": {
+    "message": "End of Duha",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "Dhuhr",
     "description": ""

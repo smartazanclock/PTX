@@ -35,6 +35,10 @@
     "message": "Duha",
     "description": ""
   },
+  "duhaendText": {
+    "message": "Kết thúc Duha",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "Zohar",
     "description": ""

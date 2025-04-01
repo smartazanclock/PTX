@@ -35,6 +35,10 @@
     "message": "Duha",
     "description": ""
   },
+  "duhaendText": {
+    "message": "Tamat Duha",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "Zohor",
     "description": ""

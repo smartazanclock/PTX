@@ -35,6 +35,10 @@
     "message": "الضحى",
     "description": ""
   },
+  "duhaendText": {
+    "message": "نهاية الضحى",
+    "description": ""
+  },
   "dhuhrText": {
     "message": "الظهر",
     "description": ""
